@@ -1,0 +1,221 @@
+'use client';
+
+export default function About() {
+  return (
+    <section id="apropos" className="relative py-32 overflow-hidden bg-linear-to-b from-white via-slate-50 to-white">
+      {/* Éléments décoratifs en arrière-plan */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-slate-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+        {/* En-tête de section */}
+        <div className="text-center mb-20">
+          <span className="inline-block text-slate-600 text-sm font-semibold tracking-widest uppercase bg-slate-100 px-4 py-2 rounded-full mb-4">
+            Mon parcours
+          </span>
+          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+            À propos de moi
+          </h2>
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-12 h-1 bg-slate-800 rounded-full"></div>
+            <div className="w-4 h-1 bg-slate-600 rounded-full"></div>
+            <div className="w-2 h-1 bg-slate-400 rounded-full"></div>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+          {/* Colonne gauche - Texte principal (3/5) */}
+          <div className="lg:col-span-3 space-y-8">
+            {/* Carte de présentation principale */}
+            <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center shrink-0">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Qui suis-je ?</h3>
+                  <p className="text-slate-600">Étudiante passionnée par l'informatique</p>
+                </div>
+              </div>
+
+              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Actuellement étudiante en <span className="font-bold text-slate-800 bg-slate-100 px-2 py-1 rounded">BTS SIO option SISR</span> à l'Institut Beaupeyrat,
+                  je me forme à l'administration des systèmes et réseaux, à la virtualisation, à la gestion de serveurs (web, DNS, FTP)
+                  et à la sécurisation des infrastructures informatiques.
+                </p>
+                <p>
+                  Mon parcours dans l'informatique a débuté par une <span className="font-semibold text-slate-800">curiosité naturelle</span> pour comprendre le fonctionnement des systèmes
+                  et des réseaux. Aujourd'hui, je mets en pratique mes compétences en BTS SIO SISR à travers des projets concrets,
+                  en administrant des systèmes et réseaux, en déployant des services et en veillant à la sécurité des infrastructures
+                  informatiques.
+                </p>
+              </div>
+            </div>
+
+            {/* Domaines d'expertise - Grille de cartes */}
+            <div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+                <span className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </span>
+                Domaines d'expertise
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {[
+                  { icon: '🖥️', title: 'Administration système', desc: 'Gestion et maintenance de systèmes' },
+                  { icon: '🌐', title: 'Gestion de réseaux', desc: 'Configuration et supervision' },
+                  { icon: '📦', title: 'Virtualisation', desc: 'Déploiement d\'environnements virtuels' },
+                  { icon: '🔧', title: 'Serveurs Web, DNS, FTP', desc: 'Installation et configuration' },
+                  { icon: '🔒', title: 'Sécurité informatique', desc: 'Protection des infrastructures' },
+                  { icon: '⚙️', title: 'Infrastructure IT', desc: 'Architecture et optimisation' }
+                ].map((domain, index) => (
+                  <div key={index} className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1">
+                    <div className="flex items-start gap-4">
+                      <span className="text-3xl">{domain.icon}</span>
+                      <div>
+                        <h4 className="font-bold text-slate-900 mb-1 group-hover:text-slate-700 transition-colors">{domain.title}</h4>
+                        <p className="text-sm text-slate-600">{domain.desc}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Colonne droite - Carte de contact sticky (2/5) */}
+          <div className="lg:col-span-2">
+            <div className="sticky top-24 space-y-6">
+              {/* Carte de contact principale */}
+              <div className="bg-white rounded-3xl p-8 shadow-2xl border-2 border-slate-200 overflow-hidden relative">
+                {/* Effet de dégradé en haut */}
+                <div className="absolute top-0 left-0 right-0 h-2 bg-linear-to-r from-slate-600 via-slate-800 to-slate-900"></div>
+
+                <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">Me contacter</h3>
+
+                <div className="space-y-6">
+                  {/* Email */}
+                  <div className="group">
+                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+                      <div className="shrink-0 w-14 h-14 bg-linear-to-br from-slate-700 to-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Email</p>
+                        <a href="mailto:vhanndanielle@gmail.com" className="text-slate-900 font-semibold hover:text-slate-700 transition-colors break-all">
+                          vhanndanielle@gmail.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Téléphone */}
+                  <div className="group">
+                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+                      <div className="shrink-0 w-14 h-14 bg-linear-to-br from-slate-700 to-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Téléphone</p>
+                        <a href="tel:+33771898971" className="text-slate-900 font-semibold hover:text-slate-700 transition-colors">
+                          +33 7 71 89 89 71
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Localisation */}
+                  <div className="group">
+                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+                      <div className="shrink-0 w-14 h-14 bg-linear-to-br from-slate-700 to-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                        <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Localisation</p>
+                        <p className="text-slate-900 font-semibold">Limoges, France</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Divider avec style */}
+                  <div className="relative py-6">
+                    <div className="absolute inset-0 flex items-center">
+                      <div className="w-full border-t border-slate-200"></div>
+                    </div>
+                    <div className="relative flex justify-center text-sm">
+                      <span className="px-4 bg-white text-slate-500 font-medium">Réseaux sociaux</span>
+                    </div>
+                  </div>
+
+                  {/* Réseaux sociaux */}
+                  <div className="flex gap-3 justify-center">
+                    <a
+                      href="https://github.com/Vhann14"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-14 h-14 bg-slate-800 text-white rounded-xl hover:bg-slate-900 hover:scale-110 hover:-rotate-6 transition-all duration-300 shadow-lg"
+                      aria-label="GitHub"
+                    >
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                      </svg>
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/vhann-kibamba-wilfride-8bba68334/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-14 h-14 bg-slate-700 text-white rounded-xl hover:bg-slate-900 hover:scale-110 hover:rotate-6 transition-all duration-300 shadow-lg"
+                      aria-label="LinkedIn"
+                    >
+                      <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
+                  </div>
+
+                  {/* CTA Button */}
+                  <a
+                    href="/CV.pdf"
+                    download
+                    className="w-full bg-linear-to-r from-slate-700 to-slate-900 text-white px-8 py-4 rounded-2xl hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold flex items-center justify-center gap-3 mt-8"
+                  >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Télécharger mon CV
+                  </a>
+                </div>
+              </div>
+
+              {/* Statistiques rapides */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow">
+                  <p className="text-3xl font-bold text-slate-900 mb-1">2+</p>
+                  <p className="text-sm text-slate-600 font-medium">Années d'étude</p>
+                </div>
+                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow">
+                  <p className="text-3xl font-bold text-slate-900 mb-1">100%</p>
+                  <p className="text-sm text-slate-600 font-medium">Motivation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
