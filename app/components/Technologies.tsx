@@ -100,12 +100,12 @@ export default function Technologies() {
   };
 
   return (
-    <section id="technologies" className="relative py-32 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden">
+    <section id="technologies" className="relative py-32 bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
       {/* Background décoratif amélioré */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-800 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-1/3 -left-40 w-96 h-96 bg-slate-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-slate-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-800 dark:bg-slate-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-1/3 -left-40 w-96 h-96 bg-slate-700 dark:bg-slate-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-slate-600 dark:bg-slate-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -120,13 +120,13 @@ export default function Technologies() {
           </div>
 
           <div className="relative">
-            <span className="inline-block text-slate-300 text-sm font-semibold tracking-widest uppercase bg-white/20 px-4 py-2 rounded-full mb-6">
+            <span className="inline-block text-slate-300 dark:text-slate-400 text-sm font-semibold tracking-widest uppercase bg-white/20 dark:bg-white/10 px-4 py-2 rounded-full mb-6">
               Stack Technique
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
               Technologies maîtrisées
             </h2>
-            <p className="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-200 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
               Découvrez les différentes technologies que j'utilise et maîtrise dans mes projets professionnels
             </p>
           </div>
@@ -170,9 +170,9 @@ export default function Technologies() {
                 {technologies.filter(t => t.category.includes('Administration système')).map((tech, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-purple-100 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-purple-100 dark:border-purple-900 hover:border-purple-300 dark:hover:border-purple-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent dark:from-purple-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
                       <Image
                         src={tech.logo}
@@ -182,7 +182,7 @@ export default function Technologies() {
                         unoptimized
                       />
                     </div>
-                    <p className="text-sm font-semibold text-slate-800 text-center relative z-10 group-hover:text-purple-700 transition-colors duration-300">{tech.name}</p>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-purple-700 dark:group-hover:text-purple-400 transition-colors duration-300">{tech.name}</p>
                   </div>
                 ))}
               </div>
@@ -201,9 +201,9 @@ export default function Technologies() {
                 {technologies.filter(t => t.category.includes('Réseau')).map((tech, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-green-100 hover:border-green-300 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-green-100 dark:border-green-900 hover:border-green-300 dark:hover:border-green-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-linear-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-green-50 to-transparent dark:from-green-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
                       <Image
                         src={tech.logo}
@@ -213,7 +213,7 @@ export default function Technologies() {
                         unoptimized
                       />
                     </div>
-                    <p className="text-sm font-semibold text-slate-800 text-center relative z-10 group-hover:text-green-700 transition-colors duration-300">{tech.name}</p>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors duration-300">{tech.name}</p>
                   </div>
                 ))}
               </div>
@@ -232,9 +232,9 @@ export default function Technologies() {
                 {technologies.filter(t => t.category.includes('Sécurité')).map((tech, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-red-100 hover:border-red-300 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-red-100 dark:border-red-900 hover:border-red-300 dark:hover:border-red-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-linear-to-br from-red-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-red-50 to-transparent dark:from-red-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
                       <Image
                         src={tech.logo}
@@ -244,7 +244,7 @@ export default function Technologies() {
                         unoptimized
                       />
                     </div>
-                    <p className="text-sm font-semibold text-slate-800 text-center relative z-10 group-hover:text-red-700 transition-colors duration-300">{tech.name}</p>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-red-700 dark:group-hover:text-red-400 transition-colors duration-300">{tech.name}</p>
                   </div>
                 ))}
               </div>
@@ -263,9 +263,9 @@ export default function Technologies() {
                 {technologies.filter(t => t.category.includes('Monitoring & Backup')).map((tech, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-amber-100 hover:border-amber-300 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-amber-100 dark:border-amber-900 hover:border-amber-300 dark:hover:border-amber-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-linear-to-br from-amber-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-amber-50 to-transparent dark:from-amber-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
                       <Image
                         src={tech.logo}
@@ -275,7 +275,7 @@ export default function Technologies() {
                         unoptimized
                       />
                     </div>
-                    <p className="text-sm font-semibold text-slate-800 text-center relative z-10 group-hover:text-amber-700 transition-colors duration-300">{tech.name}</p>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors duration-300">{tech.name}</p>
                   </div>
                 ))}
               </div>
@@ -343,9 +343,9 @@ export default function Technologies() {
                 {technologies.filter(t => t.category.includes('IA & Outils numériques')).map((tech, index) => (
                   <div
                     key={index}
-                    className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-pink-100 hover:border-pink-300 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-pink-100 dark:border-pink-900 hover:border-pink-300 dark:hover:border-pink-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-linear-to-br from-pink-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-linear-to-br from-pink-50 to-transparent dark:from-pink-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
                       <Image
                         src={tech.logo}
@@ -355,7 +355,7 @@ export default function Technologies() {
                         unoptimized
                       />
                     </div>
-                    <p className="text-sm font-semibold text-slate-800 text-center relative z-10 group-hover:text-pink-700 transition-colors duration-300">{tech.name}</p>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-pink-700 dark:group-hover:text-pink-400 transition-colors duration-300">{tech.name}</p>
                   </div>
                 ))}
               </div>
@@ -366,9 +366,9 @@ export default function Technologies() {
             {filteredTechnologies.map((tech, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-slate-100 hover:border-slate-800 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-slate-100 dark:border-slate-700 hover:border-slate-800 dark:hover:border-slate-600 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-linear-to-br from-slate-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-linear-to-br from-slate-50 to-transparent dark:from-slate-700/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
                   <Image
                     src={tech.logo}
@@ -378,7 +378,7 @@ export default function Technologies() {
                     unoptimized
                   />
                 </div>
-                <p className="text-sm font-semibold text-slate-800 text-center relative z-10 group-hover:text-slate-900 transition-colors duration-300">{tech.name}</p>
+                <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors duration-300">{tech.name}</p>
               </div>
             ))}
           </div>

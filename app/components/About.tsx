@@ -2,26 +2,26 @@
 
 export default function About() {
   return (
-    <section id="apropos" className="relative py-32 overflow-hidden bg-linear-to-b from-white via-slate-50 to-white">
+    <section id="apropos" className="relative py-32 overflow-hidden bg-linear-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       {/* Éléments décoratifs en arrière-plan */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-slate-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-slate-200 dark:bg-slate-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-slate-100 dark:bg-slate-700 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* En-tête de section */}
         <div className="text-center mb-20">
-          <span className="inline-block text-slate-600 text-sm font-semibold tracking-widest uppercase bg-slate-100 px-4 py-2 rounded-full mb-4">
+          <span className="inline-block text-slate-600 dark:text-slate-300 text-sm font-semibold tracking-widest uppercase bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full mb-4">
             Mon parcours
           </span>
-          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6">
+          <h2 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
             À propos de moi
           </h2>
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-slate-800 rounded-full"></div>
-            <div className="w-4 h-1 bg-slate-600 rounded-full"></div>
-            <div className="w-2 h-1 bg-slate-400 rounded-full"></div>
+            <div className="w-12 h-1 bg-slate-800 dark:bg-slate-200 rounded-full"></div>
+            <div className="w-4 h-1 bg-slate-600 dark:bg-slate-300 rounded-full"></div>
+            <div className="w-2 h-1 bg-slate-400 dark:bg-slate-400 rounded-full"></div>
           </div>
         </div>
 
@@ -29,27 +29,27 @@ export default function About() {
           {/* Colonne gauche - Texte principal (3/5) */}
           <div className="lg:col-span-3 space-y-8">
             {/* Carte de présentation principale */}
-            <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 hover:shadow-2xl transition-shadow duration-300">
+            <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-shadow duration-300">
               <div className="flex items-start gap-4 mb-6">
-                <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center shrink-0">
+                <div className="w-16 h-16 bg-slate-800 dark:bg-slate-700 rounded-2xl flex items-center justify-center shrink-0">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-2">Qui suis-je ?</h3>
-                  <p className="text-slate-600">Étudiante passionnée par l'informatique</p>
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">Qui suis-je ?</h3>
+                  <p className="text-slate-600 dark:text-slate-300">Étudiante passionnée par l'informatique</p>
                 </div>
               </div>
 
-              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+              <div className="space-y-6 text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
                 <p>
-                  Actuellement étudiante en <span className="font-bold text-slate-800 bg-slate-100 px-2 py-1 rounded">BTS SIO option SISR</span> à l'Institut Beaupeyrat,
+                  Actuellement étudiante en <span className="font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded">BTS SIO option SISR</span> à l'Institut Beaupeyrat,
                   je me forme à l'administration des systèmes et réseaux, à la virtualisation, à la gestion de serveurs (web, DNS, FTP)
                   et à la sécurisation des infrastructures informatiques.
                 </p>
                 <p>
-                  Mon parcours dans l'informatique a débuté par une <span className="font-semibold text-slate-800">curiosité naturelle</span> pour comprendre le fonctionnement des systèmes
+                  Mon parcours dans l'informatique a débuté par une <span className="font-semibold text-slate-800 dark:text-slate-200">curiosité naturelle</span> pour comprendre le fonctionnement des systèmes
                   et des réseaux. Aujourd'hui, je mets en pratique mes compétences en BTS SIO SISR à travers des projets concrets,
                   en administrant des systèmes et réseaux, en déployant des services et en veillant à la sécurité des infrastructures
                   informatiques.
@@ -59,8 +59,8 @@ export default function About() {
 
             {/* Domaines d'expertise - Grille de cartes */}
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                <span className="w-10 h-10 bg-slate-800 dark:bg-slate-700 rounded-lg flex items-center justify-center">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -76,12 +76,12 @@ export default function About() {
                   { icon: '🔒', title: 'Sécurité informatique', desc: 'Protection des infrastructures' },
                   { icon: '⚙️', title: 'Infrastructure IT', desc: 'Architecture et optimisation' }
                 ].map((domain, index) => (
-                  <div key={index} className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 hover:border-slate-300 transition-all duration-300 hover:-translate-y-1">
+                  <div key={index} className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md hover:shadow-xl border border-slate-100 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 transition-all duration-300 hover:-translate-y-1">
                     <div className="flex items-start gap-4">
                       <span className="text-3xl">{domain.icon}</span>
                       <div>
-                        <h4 className="font-bold text-slate-900 mb-1 group-hover:text-slate-700 transition-colors">{domain.title}</h4>
-                        <p className="text-sm text-slate-600">{domain.desc}</p>
+                        <h4 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-slate-700 dark:group-hover:text-slate-200 transition-colors">{domain.title}</h4>
+                        <p className="text-sm text-slate-600 dark:text-slate-300">{domain.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -94,24 +94,24 @@ export default function About() {
           <div className="lg:col-span-2">
             <div className="sticky top-24 space-y-6">
               {/* Carte de contact principale */}
-              <div className="bg-white rounded-3xl p-8 shadow-2xl border-2 border-slate-200 overflow-hidden relative">
+              <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-2xl border-2 border-slate-200 dark:border-slate-700 overflow-hidden relative">
                 {/* Effet de dégradé en haut */}
                 <div className="absolute top-0 left-0 right-0 h-2 bg-linear-to-r from-slate-600 via-slate-800 to-slate-900"></div>
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-8 text-center">Me contacter</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center">Me contacter</h3>
 
                 <div className="space-y-6">
                   {/* Email */}
                   <div className="group">
-                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-300">
                       <div className="shrink-0 w-14 h-14 bg-linear-to-br from-slate-700 to-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                         <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Email</p>
-                        <a href="mailto:vhanndanielle@gmail.com" className="text-slate-900 font-semibold hover:text-slate-700 transition-colors break-all">
+                        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Email</p>
+                        <a href="mailto:vhanndanielle@gmail.com" className="text-slate-900 dark:text-white font-semibold hover:text-slate-700 dark:hover:text-slate-200 transition-colors break-all">
                           vhanndanielle@gmail.com
                         </a>
                       </div>
@@ -120,15 +120,15 @@ export default function About() {
 
                   {/* Téléphone */}
                   <div className="group">
-                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-300">
                       <div className="shrink-0 w-14 h-14 bg-linear-to-br from-slate-700 to-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                         <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Téléphone</p>
-                        <a href="tel:+33771898971" className="text-slate-900 font-semibold hover:text-slate-700 transition-colors">
+                        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Téléphone</p>
+                        <a href="tel:+33771898971" className="text-slate-900 dark:text-white font-semibold hover:text-slate-700 dark:hover:text-slate-200 transition-colors">
                           +33 7 71 89 89 71
                         </a>
                       </div>
@@ -137,7 +137,7 @@ export default function About() {
 
                   {/* Localisation */}
                   <div className="group">
-                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-all duration-300">
+                    <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-300">
                       <div className="shrink-0 w-14 h-14 bg-linear-to-br from-slate-700 to-slate-900 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                         <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -145,8 +145,8 @@ export default function About() {
                         </svg>
                       </div>
                       <div className="flex-1">
-                        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Localisation</p>
-                        <p className="text-slate-900 font-semibold">Limoges, France</p>
+                        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Localisation</p>
+                        <p className="text-slate-900 dark:text-white font-semibold">Limoges, France</p>
                       </div>
                     </div>
                   </div>
@@ -154,10 +154,10 @@ export default function About() {
                   {/* Divider avec style */}
                   <div className="relative py-6">
                     <div className="absolute inset-0 flex items-center">
-                      <div className="w-full border-t border-slate-200"></div>
+                      <div className="w-full border-t border-slate-200 dark:border-slate-700"></div>
                     </div>
                     <div className="relative flex justify-center text-sm">
-                      <span className="px-4 bg-white text-slate-500 font-medium">Réseaux sociaux</span>
+                      <span className="px-4 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-medium">Réseaux sociaux</span>
                     </div>
                   </div>
 
@@ -203,13 +203,13 @@ export default function About() {
 
               {/* Statistiques rapides */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow">
-                  <p className="text-3xl font-bold text-slate-900 mb-1">2+</p>
-                  <p className="text-sm text-slate-600 font-medium">Années d'étude</p>
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl transition-shadow">
+                  <p className="text-3xl font-bold text-slate-900 dark:text-white mb-1">2+</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Années d'étude</p>
                 </div>
-                <div className="bg-white rounded-2xl p-6 shadow-lg border border-slate-100 text-center hover:shadow-xl transition-shadow">
-                  <p className="text-3xl font-bold text-slate-900 mb-1">100%</p>
-                  <p className="text-sm text-slate-600 font-medium">Motivation</p>
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl transition-shadow">
+                  <p className="text-3xl font-bold text-slate-900 dark:text-white mb-1">100%</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Motivation</p>
                 </div>
               </div>
             </div>

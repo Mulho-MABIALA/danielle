@@ -51,16 +51,16 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white">
+    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 dark:from-slate-950 dark:to-black text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         {/* Section principale */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* À propos */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-slate-300 to-slate-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-slate-300 to-slate-400 dark:from-slate-200 dark:to-slate-300 bg-clip-text text-transparent mb-4">
               Danielle
             </h3>
-            <p className="text-slate-400 mb-6 leading-relaxed">
+            <p className="text-slate-400 dark:text-slate-500 mb-6 leading-relaxed">
               Administratrice systèmes et réseaux passionnée par les nouvelles technologies et l'infrastructure IT.
             </p>
             <div className="flex gap-4">
@@ -70,7 +70,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-slate-800 hover:bg-slate-700 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="w-10 h-10 bg-slate-800 dark:bg-slate-900 hover:bg-slate-700 dark:hover:bg-slate-800 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -87,7 +87,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-slate-200 transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-slate-400 dark:text-slate-500 hover:text-slate-200 dark:hover:text-slate-300 transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-slate-400 transition-all duration-300"></span>
                     {link.name}
@@ -105,7 +105,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-slate-200 transition-colors duration-300 flex items-center gap-2 group"
+                    className="text-slate-400 dark:text-slate-500 hover:text-slate-200 dark:hover:text-slate-300 transition-colors duration-300 flex items-center gap-2 group"
                   >
                     <span className="w-0 group-hover:w-2 h-0.5 bg-slate-400 transition-all duration-300"></span>
                     {link.name}
@@ -146,32 +146,32 @@ export default function Footer() {
         </div>
 
         {/* Séparateur */}
-        <div className="border-t border-slate-800 my-8"></div>
+        <div className="border-t border-slate-800 dark:border-slate-900 my-8"></div>
 
         {/* Section bas */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-slate-400 text-sm text-center md:text-left">
+          <div className="text-slate-400 dark:text-slate-500 text-sm text-center md:text-left">
             <p>
               &copy; {currentYear} Danielle. Tous droits réservés.
             </p>
           </div>
 
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-slate-400 hover:text-slate-200 transition-colors duration-300">
+            <a href="#" className="text-slate-400 dark:text-slate-500 hover:text-slate-200 dark:hover:text-slate-300 transition-colors duration-300">
               Mentions légales
             </a>
-            <a href="#" className="text-slate-400 hover:text-slate-200 transition-colors duration-300">
+            <a href="#" className="text-slate-400 dark:text-slate-500 hover:text-slate-200 dark:hover:text-slate-300 transition-colors duration-300">
               Politique de confidentialité
             </a>
           </div>
         </div>
 
         {/* Message de crédit */}
-        <div className="mt-8 text-center">
+        {/* <div className="mt-8 text-center">
           <p className="text-slate-500 text-sm">
             Conçu et développé avec <span className="text-red-500">♥</span> par Danielle
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
