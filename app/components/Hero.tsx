@@ -26,7 +26,7 @@ export default function Hero() {
                 Bonjour, je suis{' '}
                 <span className="relative inline-block">
                   <span className="bg-linear-to-r from-slate-700 via-slate-800 to-slate-900 dark:from-slate-200 dark:via-slate-300 dark:to-slate-400 bg-clip-text text-transparent">
-                    Danielle
+                    Vhann Danielle
                   </span>
                   <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
                     <path d="M2 10C50 2 150 2 198 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
