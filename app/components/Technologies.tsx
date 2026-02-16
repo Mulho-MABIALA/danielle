@@ -18,8 +18,6 @@ export default function Technologies() {
     { name: 'Samba', logo: 'https://icon.icepanel.io/Technology/svg/Samba.svg', category: ['Administration système'] },
     { name: 'ProFTPD', logo: 'https://avatars.githubusercontent.com/u/6899006?s=200&v=4', category: ['Administration système'] },
     { name: 'MariaDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg', category: ['Administration système'] },
-    { name: 'OCS Inventory', logo: 'https://avatars.githubusercontent.com/u/6117560?s=200&v=4', category: ['Administration système'] },
-    { name: 'RescueZilla', logo: 'https://avatars.githubusercontent.com/u/47904038?s=200&v=4', category: ['Administration système'] },
 
     // Réseau
     { name: 'Packet Tracer', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg', category: ['Réseau'] },
@@ -39,8 +37,6 @@ export default function Technologies() {
     // Monitoring & Backup
     { name: 'BackupPC', logo: 'https://backuppc.github.io/backuppc/images/logos/logo320.png', category: ['Monitoring & Backup'] },
     { name: 'Proxmox', logo: 'https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_400px.png', category: ['Monitoring & Backup'] },
-    { name: 'IONOS', logo: 'https://cdn.simpleicons.org/ionos/003D8F', category: ['Monitoring & Backup'] },
-    { name: 'Netlify', logo: 'https://cdn.simpleicons.org/netlify/00C7B7', category: ['Monitoring & Backup'] },
 
     // IA & Outils numériques
     { name: 'Claude AI', logo: 'https://mintlify.s3.us-west-1.amazonaws.com/anthropic/_generated/favicon/apple-touch-icon.png?v=3', category: ['IA & Outils numériques'] },
@@ -290,11 +286,11 @@ export default function Technologies() {
                 </h4>
                 <div className="flex-1 h-1 bg-linear-to-r from-indigo-400 to-transparent rounded-full"></div>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
                 <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
                   <div className="w-20 h-20 mb-4 relative">
                     <Image
-                      src="https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_400px.png"
+                      src="/proxmox_image.png"
                       alt="Proxmox"
                       fill
                       className="object-contain"
@@ -306,26 +302,26 @@ export default function Technologies() {
                 <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
                   <div className="w-20 h-20 mb-4 relative">
                     <Image
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/IONOS_logo.svg/2560px-IONOS_logo.svg.png"
-                      alt="IONOS"
+                      src="https://opennebula.io/wp-content/uploads/2020/04/opennebula_cloud_logo_white_bg-4.png"
+                      alt="OpenNebula"
                       fill
                       className="object-contain"
                       unoptimized
                     />
                   </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">IONOS</p>
+                  <p className="text-sm font-semibold text-slate-800 text-center">OpenNebula</p>
                 </div>
                 <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
                   <div className="w-20 h-20 mb-4 relative">
                     <Image
-                      src="https://cdn.worldvectorlogo.com/logos/netlify.svg"
-                      alt="Netlify"
+                      src="/virtualBox_image.jpg"
+                      alt="VirtualBox"
                       fill
                       className="object-contain"
                       unoptimized
                     />
                   </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">Netlify</p>
+                  <p className="text-sm font-semibold text-slate-800 text-center">VirtualBox</p>
                 </div>
               </div>
             </div>
