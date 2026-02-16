@@ -131,27 +131,42 @@ export default function Veille() {
           {/* Pourquoi Faire de la Veille */}
           {activeTab === 'pourquoi' && (
             <div className="space-y-12">
-              {/* AndreanNews Card */}
+              {/* Vhann Card */}
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center text-3xl">
                       📡
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">AndreanNews</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Vhann</h3>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                    Ma plateforme personnelle d'agrégation de sources d'information et de veille technologique.
+                    Ma plateforme personnelle d&apos;agrégation de sources d&apos;information et de veille technologique.
                   </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors group"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                    Visiter AndreanNews
-                  </a>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="/Dossier_de_Veille_Technologique.pdf"
+                      download
+                      className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      Télécharger
+                    </a>
+                    <a
+                      href="/Dossier_de_Veille_Technologique.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Visualiser
+                    </a>
+                  </div>
                 </div>
 
                 <div className="lg:col-span-2 space-y-8">
@@ -199,27 +214,42 @@ export default function Veille() {
           {/* Bénéfices */}
           {activeTab === 'benefices' && (
             <div className="space-y-12">
-              {/* AndreanNews Card */}
+              {/* Vhann Card */}
               <div className="grid lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center text-3xl">
                       📡
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">AndreanNews</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Vhann</h3>
                   </div>
                   <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                    Ma plateforme personnelle d'agrégation de sources d'information et de veille technologique.
+                    Ma plateforme personnelle d&apos;agrégation de sources d&apos;information et de veille technologique.
                   </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors group"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                    Visiter AndreanNews
-                  </a>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="/Dossier_de_Veille_Technologique.pdf"
+                      download
+                      className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      Télécharger
+                    </a>
+                    <a
+                      href="/Dossier_de_Veille_Technologique.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Visualiser
+                    </a>
+                  </div>
                 </div>
 
                 <div className="lg:col-span-2 space-y-8">
