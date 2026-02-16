@@ -9,25 +9,28 @@ import Veille from "./components/Veille";
 import Technologies from "./components/Technologies";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import HomeWrapper from "./components/HomeWrapper";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
-      <Navbar />
+    <HomeWrapper>
+      <div className="min-h-screen bg-white dark:bg-slate-900 transition-colors duration-300">
+        <Navbar />
 
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Formations />
-        <Competences />
-        <Experience />
-        <Projets />
-        <Veille />
-        <Technologies />
-        <Contact />
-      </main>
+        <main className="pt-16">
+          <Hero />
+          <About />
+          <Formations />
+          <Competences />
+          <Experience />
+          <Projets />
+          <Veille />
+          <Technologies />
+          <Contact />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </HomeWrapper>
   );
 }
