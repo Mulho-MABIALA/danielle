@@ -110,7 +110,7 @@ export default function Hero() {
               {/* Image principale */}
               <div className="relative">
                 <Image
-                  src="/danielle.jpg"
+                  src="/Photo_Profil.png"
                   alt="Danielle - Étudiante BTS SIO SISR"
                   width={550}
                   height={550}
