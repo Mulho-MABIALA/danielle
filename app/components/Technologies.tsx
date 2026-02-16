@@ -18,8 +18,6 @@ export default function Technologies() {
     { name: 'Samba', logo: 'https://icon.icepanel.io/Technology/svg/Samba.svg', category: ['Administration système'] },
     { name: 'ProFTPD', logo: 'https://avatars.githubusercontent.com/u/6899006?s=200&v=4', category: ['Administration système'] },
     { name: 'MariaDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg', category: ['Administration système'] },
-    { name: 'OCS Inventory', logo: 'https://avatars.githubusercontent.com/u/6117560?s=200&v=4', category: ['Administration système'] },
-    { name: 'RescueZilla', logo: 'https://avatars.githubusercontent.com/u/47904038?s=200&v=4', category: ['Administration système'] },
 
     // Réseau
     { name: 'Packet Tracer', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg', category: ['Réseau'] },
@@ -38,9 +36,11 @@ export default function Technologies() {
 
     // Monitoring & Backup
     { name: 'BackupPC', logo: 'https://backuppc.github.io/backuppc/images/logos/logo320.png', category: ['Monitoring & Backup'] },
-    { name: 'Proxmox', logo: 'https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_400px.png', category: ['Monitoring & Backup'] },
-    { name: 'IONOS', logo: 'https://cdn.simpleicons.org/ionos/003D8F', category: ['Monitoring & Backup'] },
-    { name: 'Netlify', logo: 'https://cdn.simpleicons.org/netlify/00C7B7', category: ['Monitoring & Backup'] },
+
+    // Virtualisation
+    { name: 'Proxmox', logo: '/proxmox_image.png', category: ['Virtualisation'] },
+    { name: 'OpenNebula', logo: 'https://opennebula.io/wp-content/uploads/2020/04/opennebula_cloud_logo_white_bg-4.png', category: ['Virtualisation'] },
+    { name: 'VirtualBox', logo: '/virtualBox_image.jpg', category: ['Virtualisation'] },
 
     // IA & Outils numériques
     { name: 'Claude AI', logo: 'https://mintlify.s3.us-west-1.amazonaws.com/anthropic/_generated/favicon/apple-touch-icon.png?v=3', category: ['IA & Outils numériques'] },
@@ -281,52 +281,34 @@ export default function Technologies() {
               </div>
             </div>
 
-            {/* Virtualisation & Web */}
+            {/* Virtualisation */}
             <div className="mb-20">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-1 bg-linear-to-r from-indigo-600 to-indigo-400 rounded-full"></div>
                 <h4 className="text-3xl font-bold bg-linear-to-r from-indigo-700 to-indigo-500 bg-clip-text text-transparent">
-                  Virtualisation & Web
+                  Virtualisation
                 </h4>
                 <div className="flex-1 h-1 bg-linear-to-r from-indigo-400 to-transparent rounded-full"></div>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
-                  <div className="w-20 h-20 mb-4 relative">
-                    <Image
-                      src="https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_400px.png"
-                      alt="Proxmox"
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
+                {technologies.filter(t => t.category.includes('Virtualisation')).map((tech, index) => (
+                  <div
+                    key={index}
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-indigo-100 dark:border-indigo-900 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-linear-to-br from-indigo-50 to-transparent dark:from-indigo-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                      <Image
+                        src={tech.logo}
+                        alt={tech.name}
+                        fill
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </div>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors duration-300">{tech.name}</p>
                   </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">Proxmox</p>
-                </div>
-                <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
-                  <div className="w-20 h-20 mb-4 relative">
-                    <Image
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/IONOS_logo.svg/2560px-IONOS_logo.svg.png"
-                      alt="IONOS"
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">IONOS</p>
-                </div>
-                <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
-                  <div className="w-20 h-20 mb-4 relative">
-                    <Image
-                      src="https://cdn.worldvectorlogo.com/logos/netlify.svg"
-                      alt="Netlify"
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">Netlify</p>
-                </div>
+                ))}
               </div>
             </div>
 
