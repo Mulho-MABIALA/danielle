@@ -7,7 +7,6 @@ export default function Veille() {
 
   const tabs = [
     { id: 'pourquoi', label: 'Pourquoi Faire de la Veille ?', icon: '📖' },
-    { id: 'comment', label: 'Comment Réaliser une Veille ?', icon: '📈' },
     { id: 'benefices', label: 'Bénéfices', icon: '✅' }
   ];
 
@@ -53,26 +52,6 @@ export default function Veille() {
     }
   ];
 
-  const methodes = [
-    {
-      icon: '📡',
-      title: 'Agrégation de flux RSS',
-      description: 'Centralisation des sources d\'information via des flux RSS pour une consultation rapide et efficace.',
-      details: [
-        'Utilisation de Feedly et d\'IFTTT pour l\'automatisation',
-        'Développement d\'AndreanNews comme agrégateur personnel'
-      ]
-    },
-    {
-      icon: '🌐',
-      title: 'Réseaux sociaux',
-      description: 'Suivi de comptes spécialisés et d\'experts pour obtenir des insights de première main.',
-      details: [
-        'Curation de listes Twitter/X d\'experts en cybersécurité',
-        'Participation à des communautés LinkedIn spécialisées'
-      ]
-    }
-  ];
 
   const benefices = [
     {
@@ -208,89 +187,6 @@ export default function Veille() {
                         >
                           <h4 className="font-bold text-slate-900 dark:text-white mb-3">{axe.title}</h4>
                           <p className="text-sm text-slate-600 dark:text-slate-300">{axe.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Comment Réaliser une Veille */}
-          {activeTab === 'comment' && (
-            <div className="space-y-12">
-              {/* AndreanNews Card */}
-              <div className="grid lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-1 bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center text-3xl">
-                      📡
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">AndreanNews</h3>
-                  </div>
-                  <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-                    Ma plateforme personnelle d'agrégation de sources d'information et de veille technologique.
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors group"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                    Visiter AndreanNews
-                  </a>
-                </div>
-
-                <div className="lg:col-span-2 space-y-8">
-                  <div>
-                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">Présentation d'AndreanNews</h3>
-                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700 mb-8">
-                      <p className="text-lg text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
-                        AndreanNews est ma plateforme personnelle d'agrégation de contenus, conçue pour faciliter ma veille technologique quotidienne.
-                      </p>
-                      <div className="grid md:grid-cols-2 gap-4">
-                        {[
-                          'Sources triées et validées issues de médias spécialisés',
-                          'Actualisation en temps réel des flux d\'information',
-                          'Catégorisation intelligente des contenus par thématique',
-                          'Interface personnalisable selon mes centres d\'intérêt'
-                        ].map((feature, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <div className="w-6 h-6 bg-slate-100 dark:bg-slate-700 rounded-lg flex items-center justify-center shrink-0 mt-1">
-                              <svg className="w-4 h-4 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
-                            </div>
-                            <p className="text-slate-700 dark:text-slate-300">{feature}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">Méthodes de Veille</h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {methodes.map((methode, index) => (
-                        <div
-                          key={index}
-                          className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-xl transition-all duration-300"
-                        >
-                          <div className="flex items-start gap-4 mb-4">
-                            <div className="w-12 h-12 bg-slate-100 dark:bg-slate-700 rounded-xl flex items-center justify-center text-2xl shrink-0">
-                              {methode.icon}
-                            </div>
-                            <h4 className="font-bold text-slate-900 dark:text-white text-lg">{methode.title}</h4>
-                          </div>
-                          <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">{methode.description}</p>
-                          <ul className="space-y-2">
-                            {methode.details.map((detail, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
-                                <span className="text-slate-800 dark:text-slate-200 mt-1">•</span>
-                                <span>{detail}</span>
-                              </li>
-                            ))}
-                          </ul>
                         </div>
                       ))}
                     </div>
