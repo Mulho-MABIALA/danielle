@@ -36,7 +36,11 @@ export default function Technologies() {
 
     // Monitoring & Backup
     { name: 'BackupPC', logo: 'https://backuppc.github.io/backuppc/images/logos/logo320.png', category: ['Monitoring & Backup'] },
-    { name: 'Proxmox', logo: 'https://www.proxmox.com/images/proxmox/Proxmox_logo_standard_hex_400px.png', category: ['Monitoring & Backup'] },
+
+    // Virtualisation
+    { name: 'Proxmox', logo: '/proxmox_image.png', category: ['Virtualisation'] },
+    { name: 'OpenNebula', logo: 'https://opennebula.io/wp-content/uploads/2020/04/opennebula_cloud_logo_white_bg-4.png', category: ['Virtualisation'] },
+    { name: 'VirtualBox', logo: '/virtualBox_image.jpg', category: ['Virtualisation'] },
 
     // IA & Outils numériques
     { name: 'Claude AI', logo: 'https://mintlify.s3.us-west-1.amazonaws.com/anthropic/_generated/favicon/apple-touch-icon.png?v=3', category: ['IA & Outils numériques'] },
