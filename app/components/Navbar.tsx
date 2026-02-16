@@ -19,14 +19,14 @@ export default function Navbar() {
   }, []);
 
   const navItems = [
-    { name: 'Accueil', href: '#accueil' },
-    { name: 'À propos', href: '#apropos' },
-    { name: 'Formations', href: '#formations' },
-    { name: 'Compétences', href: '#competences' },
-    { name: 'Expériences', href: '#experiences' },
-    { name: 'Projets', href: '#projets' },
-    { name: 'Veille', href: '#veille' },
-    { name: 'Technologies', href: '#technologies' },
+    { name: 'Accueil', href: '/' },
+    { name: 'À propos', href: '/about' },
+    { name: 'Formations', href: '/formations' },
+    { name: 'Compétences', href: '/competences' },
+    { name: 'Expériences', href: '/experiences' },
+    { name: 'Projets', href: '/projets' },
+    { name: 'Veille', href: '/veille' },
+    { name: 'Technologies', href: '/technologies' },
   ];
 
   return (
@@ -52,14 +52,14 @@ export default function Navbar() {
           {/* Navigation Desktop */}
           <div className="hidden lg:flex lg:items-center lg:space-x-1">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-all duration-300 font-medium text-sm group"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 dark:bg-slate-200 group-hover:w-full transition-all duration-300"></span>
-              </a>
+              </Link>
             ))}
             {/* Bouton Toggle Theme */}
             <button
@@ -77,12 +77,12 @@ export default function Navbar() {
                 </svg>
               )}
             </button>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="ml-2 bg-slate-800 dark:bg-slate-700 text-white px-8 py-2.5 rounded-full hover:bg-slate-900 dark:hover:bg-slate-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm"
             >
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* Bouton Menu Mobile */}
@@ -136,7 +136,7 @@ export default function Navbar() {
         <div className="bg-gradient-to-b from-slate-800 to-slate-900 dark:from-slate-950 dark:to-black mt-2">
           <div className="px-4 pt-4 pb-6 space-y-2">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
                 className="block px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:translate-x-2"
@@ -144,15 +144,15 @@ export default function Navbar() {
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="block px-4 py-3 text-slate-800 bg-white hover:bg-slate-50 rounded-lg transition-all duration-300 font-medium text-center mt-4"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
