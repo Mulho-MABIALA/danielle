@@ -281,52 +281,34 @@ export default function Technologies() {
               </div>
             </div>
 
-            {/* Virtualisation & Web */}
+            {/* Virtualisation */}
             <div className="mb-20">
               <div className="flex items-center gap-4 mb-8">
                 <div className="w-12 h-1 bg-linear-to-r from-indigo-600 to-indigo-400 rounded-full"></div>
                 <h4 className="text-3xl font-bold bg-linear-to-r from-indigo-700 to-indigo-500 bg-clip-text text-transparent">
-                  Virtualisation & Web
+                  Virtualisation
                 </h4>
                 <div className="flex-1 h-1 bg-linear-to-r from-indigo-400 to-transparent rounded-full"></div>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
-                <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
-                  <div className="w-20 h-20 mb-4 relative">
-                    <Image
-                      src="/proxmox_image.png"
-                      alt="Proxmox"
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
+                {technologies.filter(t => t.category.includes('Virtualisation')).map((tech, index) => (
+                  <div
+                    key={index}
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl border-2 border-indigo-100 dark:border-indigo-900 hover:border-indigo-300 dark:hover:border-indigo-700 transition-all duration-300 hover:-translate-y-2 flex flex-col items-center relative overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-linear-to-br from-indigo-50 to-transparent dark:from-indigo-900/20 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="w-20 h-20 mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                      <Image
+                        src={tech.logo}
+                        alt={tech.name}
+                        fill
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </div>
+                    <p className="text-sm font-semibold text-slate-800 dark:text-white text-center relative z-10 group-hover:text-indigo-700 dark:group-hover:text-indigo-400 transition-colors duration-300">{tech.name}</p>
                   </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">Proxmox</p>
-                </div>
-                <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
-                  <div className="w-20 h-20 mb-4 relative">
-                    <Image
-                      src="https://opennebula.io/wp-content/uploads/2020/04/opennebula_cloud_logo_white_bg-4.png"
-                      alt="OpenNebula"
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">OpenNebula</p>
-                </div>
-                <div className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col items-center">
-                  <div className="w-20 h-20 mb-4 relative">
-                    <Image
-                      src="/virtualBox_image.jpg"
-                      alt="VirtualBox"
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                  <p className="text-sm font-semibold text-slate-800 text-center">VirtualBox</p>
-                </div>
+                ))}
               </div>
             </div>
 
