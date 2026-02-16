@@ -238,7 +238,7 @@ export default function Projets() {
     <section id="projets" className="relative py-32 bg-white dark:bg-slate-900 overflow-hidden">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-3xl p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden">
+        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
