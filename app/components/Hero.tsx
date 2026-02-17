@@ -57,7 +57,7 @@ export default function Hero() {
                 href="https://github.com/Vhann14"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 bg-slate-800 text-white rounded-full hover:bg-slate-900 hover:scale-110 transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center w-12 h-12 bg-[#333] text-white rounded-full hover:bg-[#24292f] hover:scale-110 transition-all duration-300 shadow-lg"
                 aria-label="GitHub"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -68,7 +68,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/vhann-kibamba-wilfride-8bba68334/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 bg-slate-700 text-white rounded-full hover:bg-slate-900 hover:scale-110 transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center w-12 h-12 bg-[#0A66C2] text-white rounded-full hover:bg-[#004182] hover:scale-110 transition-all duration-300 shadow-lg"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
