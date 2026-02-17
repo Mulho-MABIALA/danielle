@@ -140,24 +140,24 @@ export default function Projets() {
     },
   ];
 
-  const projetsAnnee1: Project[] = [
-    {
-      title: 'Virtualisation d\'infrastructure',
-      description: 'Mise en place d\'une infrastructure virtuelle complète avec Proxmox, comprenant plusieurs serveurs et un système de sauvegarde.',
-      image: '/proxmox_image.png',
-      tags: ['Proxmox', 'BackupPC', 'Linux', 'Virtualisation'],
-      date: 'Nov 2023 - Déc 2023',
-      github: '#',
-    },
-    {
-      title: 'Monitoring réseau avec Zabbix',
-      description: 'Implémentation d\'une solution de surveillance réseau complète avec Zabbix pour le monitoring en temps réel des équipements et services.',
-      image: '/ZABBIX.pdf',
-      tags: ['Zabbix', 'SNMP', 'Monitoring', 'Network'],
-      date: 'Jan 2024 - Fév 2024',
-      github: '#',
-    },
-  ];
+  // const projetsAnnee1: Project[] = [
+  //   {
+  //     title: 'Virtualisation d\'infrastructure',
+  //     description: 'Mise en place d\'une infrastructure virtuelle complète avec Proxmox, comprenant plusieurs serveurs et un système de sauvegarde.',
+  //     image: '/proxmox_image.png',
+  //     tags: ['Proxmox', 'BackupPC', 'Linux', 'Virtualisation'],
+  //     date: 'Nov 2023 - Déc 2023',
+  //     github: '#',
+  //   },
+  //   {
+  //     title: 'Monitoring réseau avec Zabbix',
+  //     description: 'Implémentation d\'une solution de surveillance réseau complète avec Zabbix pour le monitoring en temps réel des équipements et services.',
+  //     image: '/ZABBIX.pdf',
+  //     tags: ['Zabbix', 'SNMP', 'Monitoring', 'Network'],
+  //     date: 'Jan 2024 - Fév 2024',
+  //     github: '#',
+  //   },
+  // ];
 
   const docsAnnee1: Documentation[] = [
     {
