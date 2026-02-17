@@ -1,63 +1,72 @@
 'use client';
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden dark:bg-slate-900">
-      {/* Background avec animations */}
+      {/* Background */}
       <div className="absolute inset-0 bg-linear-to-br from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute bottom-20 left-20 w-72 h-72 bg-slate-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-slate-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-slate-200 dark:bg-blue-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute bottom-20 left-20 w-72 h-72 bg-slate-100 dark:bg-indigo-900/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-slate-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Texte */}
+          {/* Text */}
           <div className="space-y-8 order-2 lg:order-1">
             <div className="space-y-4">
-              <div className="inline-block">
+              {/* Welcome badge */}
+              <div className="inline-block opacity-0 animate-slide-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
                 <span className="text-slate-600 dark:text-slate-300 text-sm font-semibold tracking-widest uppercase bg-slate-100 dark:bg-slate-800 px-4 py-2 rounded-full">
-                  👋 Bienvenue
+                  Bienvenue
                 </span>
               </div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight">
-                Bonjour, je suis{' '}
-                <span className="relative inline-block">
-                  <span className="bg-linear-to-r from-slate-700 via-slate-800 to-slate-900 dark:from-slate-200 dark:via-slate-300 dark:to-slate-400 bg-clip-text text-transparent">
+
+              {/* Main heading */}
+              <h1 className="opacity-0 animate-slide-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight">
+                  Bonjour, je suis
+                </span>
+                <span className="relative inline-block mt-2">
+                  <span className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
                     Vhann Danielle
                   </span>
                   <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
-                    <path d="M2 10C50 2 150 2 198 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
+                    <path d="M2 10C50 2 150 2 198 10" stroke="url(#hero-gradient)" strokeWidth="3" strokeLinecap="round"/>
                     <defs>
-                      <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#1e293b" />
-                        <stop offset="100%" stopColor="#0f172a" />
+                      <linearGradient id="hero-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#6366f1" />
                       </linearGradient>
                     </defs>
                   </svg>
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-300">
-                Étudiante en BTS SIO option SISR
+
+              {/* Subtitle */}
+              <p className="text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-300 opacity-0 animate-slide-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+                Etudiante en BTS SIO option SISR
               </p>
             </div>
 
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-slate-800 dark:border-slate-400 pl-6">
-              Actuellement étudiante en <span className="font-bold text-slate-800 dark:text-slate-200">BTS SIO option SISR</span> à l'Institut Beaupeyrat,
-              je développe des compétences en administration système et réseau, en gestion d'infrastructures informatiques
-              et en maintenance de services afin d'assurer la sécurité et la continuité des systèmes.
+            {/* Description */}
+            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-blue-500 dark:border-indigo-400 pl-6 opacity-0 animate-slide-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+              Actuellement etudiante en <span className="font-bold text-slate-800 dark:text-slate-200">BTS SIO option SISR</span> au Lycee Beaupeyrat,
+              je developpe des competences en administration systeme et reseau, en gestion d&apos;infrastructures informatiques
+              et en maintenance de services afin d&apos;assurer la securite et la continuite des systemes.
             </p>
 
-            {/* Réseaux sociaux */}
-            <div className="flex items-center gap-4 pt-2">
+            {/* Social links */}
+            <div className="flex items-center gap-4 pt-2 opacity-0 animate-slide-up" style={{ animationDelay: '1.0s', animationFillMode: 'both' }}>
               <span className="text-sm font-medium text-slate-600 dark:text-slate-300">Retrouvez-moi sur :</span>
               <a
                 href="https://github.com/Vhann14"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 bg-[#333] text-white rounded-full hover:bg-[#24292f] hover:scale-110 transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center w-12 h-12 bg-[#333] text-white rounded-full hover:bg-[#24292f] hover:scale-110 hover:shadow-lg hover:shadow-[#333]/30 transition-all duration-300 shadow-md"
                 aria-label="GitHub"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -68,7 +77,7 @@ export default function Hero() {
                 href="https://www.linkedin.com/in/vhann-kibamba-wilfride-8bba68334/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-12 h-12 bg-[#0A66C2] text-white rounded-full hover:bg-[#004182] hover:scale-110 transition-all duration-300 shadow-lg"
+                className="flex items-center justify-center w-12 h-12 bg-[#0A66C2] text-white rounded-full hover:bg-[#004182] hover:scale-110 hover:shadow-lg hover:shadow-[#0A66C2]/30 transition-all duration-300 shadow-md"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -77,52 +86,57 @@ export default function Hero() {
               </a>
             </div>
 
-            {/* Boutons CTA */}
-            <div className="flex flex-wrap gap-4 pt-4">
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 pt-4 opacity-0 animate-slide-up" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
+              {/* Primary CTA */}
               <a
                 href="/CV.pdf"
                 download
-                className="group bg-slate-800 dark:bg-slate-700 text-white px-8 py-4 rounded-full hover:bg-slate-900 dark:hover:bg-slate-600 hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-2"
+                className="group relative bg-linear-to-r from-slate-800 via-slate-900 to-slate-800 dark:from-blue-600 dark:via-indigo-600 dark:to-blue-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-slate-800/30 dark:hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-3 overflow-hidden"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Télécharger mon CV
+                <span className="relative z-10">Telecharger mon CV</span>
               </a>
-              <a
-                href="#contact"
-                className="border-2 border-slate-800 dark:border-slate-400 text-slate-800 dark:text-slate-300 px-8 py-4 rounded-full hover:bg-slate-800 dark:hover:bg-slate-700 hover:text-white hover:shadow-xl transition-all duration-300 font-semibold"
+
+              {/* Secondary CTA */}
+              <Link
+                href="/contact"
+                className="relative border-2 border-slate-800 dark:border-slate-400 text-slate-800 dark:text-slate-300 px-10 py-4 rounded-full overflow-hidden group transition-all duration-300 font-semibold hover:text-white dark:hover:text-white hover:shadow-xl"
               >
-                Me contacter
-              </a>
+                <span className="absolute inset-0 bg-slate-800 dark:bg-indigo-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+                <span className="relative z-10">Me contacter</span>
+              </Link>
             </div>
           </div>
 
           {/* Image */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end opacity-0 animate-scale-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
             <div className="relative group">
-              {/* Effet de glow animé */}
-              <div className="absolute -inset-1 bg-linear-to-r from-slate-600 via-slate-800 to-slate-900 rounded-3xl blur-2xl opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+              {/* Glow */}
+              <div className="absolute -inset-1 bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
-              {/* Cadre décoratif */}
+              {/* Decorative frame */}
               <div className="absolute -inset-4 border-4 border-slate-200 dark:border-slate-700 rounded-3xl -rotate-3 transition-transform group-hover:rotate-0 duration-500"></div>
 
-              {/* Image principale */}
+              {/* Main image */}
               <div className="relative">
                 <Image
                   src="/Photo_Profil.png"
-                  alt="Danielle - Étudiante BTS SIO SISR"
+                  alt="Danielle - Etudiante BTS SIO SISR"
                   width={550}
                   height={550}
-                  className="rounded-3xl shadow-2xl object-cover ring-8 ring-white group-hover:scale-105 transition-transform duration-500"
+                  className="rounded-3xl shadow-2xl object-cover ring-8 ring-white dark:ring-slate-800 group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
               </div>
 
-              {/* Badge flottant */}
+              {/* Floating badge */}
               <div className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 border-4 border-slate-100 dark:border-slate-700 animate-bounce-slow">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-slate-800 dark:text-white">BTS</p>
+                  <p className="text-3xl font-bold bg-linear-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">BTS</p>
                   <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">SIO SISR</p>
                 </div>
               </div>
@@ -131,14 +145,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Indicateur de scroll */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <a href="#apropos" className="flex flex-col items-center gap-2 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors">
-          <span className="text-sm font-medium">Scroll</span>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in" style={{ animationDelay: '2s', animationFillMode: 'both' }}>
+        <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-500 rounded-full flex items-start justify-center p-1.5">
+          <div className="w-1.5 h-3 bg-slate-400 dark:bg-slate-500 rounded-full animate-bounce"></div>
+        </div>
+        <span className="text-xs font-medium text-slate-500 dark:text-slate-400 tracking-widest uppercase">Scroll</span>
       </div>
     </section>
   );

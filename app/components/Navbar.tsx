@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
@@ -8,6 +9,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,19 +33,19 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg py-2'
-          : 'bg-white dark:bg-slate-900 shadow-md py-3'
+          ? 'glass shadow-lg shadow-slate-900/5 dark:shadow-slate-900/30 py-2'
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo / Nom */}
+          {/* Logo */}
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-slate-950 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent hover:from-slate-700 hover:to-slate-900 dark:hover:from-slate-100 dark:hover:to-slate-300 transition-all duration-300"
+              className="text-3xl font-bold bg-gradient-to-r from-slate-800 to-slate-950 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent hover:from-blue-600 hover:to-indigo-600 dark:hover:from-blue-400 dark:hover:to-indigo-400 transition-all duration-500"
             >
               Danielle
             </Link>
@@ -51,24 +53,39 @@ export default function Navbar() {
 
           {/* Navigation Desktop */}
           <div className="hidden lg:flex lg:items-center lg:space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white transition-all duration-300 font-medium text-sm group"
-              >
-                {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-800 dark:bg-slate-200 group-hover:w-full transition-all duration-300"></span>
-              </Link>
-            ))}
-            {/* Bouton Toggle Theme */}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`relative px-4 py-2 transition-all duration-300 font-medium text-sm group ${
+                    isActive
+                      ? 'text-slate-900 dark:text-white font-semibold'
+                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  {isActive && (
+                    <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
+                  )}
+                  {item.name}
+                  <span
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-300 ${
+                      isActive ? 'w-3/4' : 'w-0 group-hover:w-3/4'
+                    }`}
+                  ></span>
+                </Link>
+              );
+            })}
+
+            {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="ml-2 p-2.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300"
+              className="ml-2 p-2.5 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:rotate-12 hover:scale-110"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <svg className="w-5 h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
               ) : (
@@ -77,23 +94,25 @@ export default function Navbar() {
                 </svg>
               )}
             </button>
+
+            {/* Contact CTA */}
             <Link
               href="/contact"
-              className="ml-2 bg-slate-800 dark:bg-slate-700 text-white px-8 py-2.5 rounded-full hover:bg-slate-900 dark:hover:bg-slate-600 hover:shadow-lg hover:scale-105 transition-all duration-300 font-medium text-sm"
+              className="ml-3 bg-gradient-to-r from-slate-800 to-slate-900 dark:from-blue-600 dark:to-indigo-600 text-white px-7 py-2.5 rounded-full hover:shadow-lg hover:shadow-slate-800/25 dark:hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 font-medium text-sm animate-glow-pulse"
             >
               Contact
             </Link>
           </div>
 
-          {/* Bouton Menu Mobile */}
+          {/* Mobile Controls */}
           <div className="lg:hidden flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300"
+              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:rotate-12"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
-                <svg className="w-5 h-5 text-slate-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                 </svg>
               ) : (
@@ -102,54 +121,56 @@ export default function Navbar() {
                 </svg>
               )}
             </button>
+
+            {/* Animated Hamburger */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 dark:text-gray-300 hover:text-slate-800 dark:hover:text-white focus:outline-none transition-colors p-2"
+              className="relative w-7 h-5 flex flex-col justify-between p-0"
               aria-label="Toggle menu"
             >
-              <svg
-                className="h-7 w-7"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              <span className={`block h-0.5 w-full bg-slate-800 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${isMenuOpen ? 'rotate-45 translate-y-[9px]' : ''}`}></span>
+              <span className={`block h-0.5 w-full bg-slate-800 dark:bg-slate-200 rounded-full transition-all duration-300 ${isMenuOpen ? 'opacity-0 scale-x-0' : ''}`}></span>
+              <span className={`block h-0.5 w-full bg-slate-800 dark:bg-slate-200 rounded-full transition-all duration-300 origin-center ${isMenuOpen ? '-rotate-45 -translate-y-[9px]' : ''}`}></span>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Menu Mobile - Slide from top */}
+      {/* Mobile Menu - Glassmorphism */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`lg:hidden overflow-hidden transition-all duration-400 ease-in-out ${
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-gradient-to-b from-slate-800 to-slate-900 dark:from-slate-950 dark:to-black mt-2">
-          <div className="px-4 pt-4 pb-6 space-y-2">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block px-4 py-3 text-white hover:bg-white/20 rounded-lg transition-all duration-300 font-medium transform hover:translate-x-2"
-                onClick={() => setIsMenuOpen(false)}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {item.name}
-              </Link>
-            ))}
+        <div className="glass rounded-2xl mx-4 mt-3 overflow-hidden">
+          <div className="px-4 pt-4 pb-6 space-y-1">
+            {navItems.map((item, index) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
+                    isActive
+                      ? 'bg-gradient-to-r from-blue-500/10 to-indigo-500/10 text-blue-600 dark:text-blue-400'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{
+                    animation: isMenuOpen ? `reveal-left 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${index * 60}ms both` : 'none',
+                  }}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <Link
               href="/contact"
-              className="block px-4 py-3 text-slate-800 bg-white hover:bg-slate-50 rounded-lg transition-all duration-300 font-medium text-center mt-4"
+              className="block px-4 py-3 bg-gradient-to-r from-slate-800 to-slate-900 dark:from-blue-600 dark:to-indigo-600 text-white rounded-xl transition-all duration-300 font-medium text-center mt-3"
               onClick={() => setIsMenuOpen(false)}
+              style={{
+                animation: isMenuOpen ? `reveal-left 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${navItems.length * 60}ms both` : 'none',
+              }}
             >
               Contact
             </Link>

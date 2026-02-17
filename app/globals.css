@@ -9,6 +9,8 @@
   --primary-red-dark: #991b1b;
   --primary-green: #16a34a;
   --primary-green-dark: #166534;
+  --accent-blue: #3b82f6;
+  --accent-indigo: #6366f1;
 }
 
 @theme inline {
@@ -23,84 +25,41 @@
   --foreground: #ededed;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Animations personnalisées */
+/* ===== ANIMATIONS EXISTANTES ===== */
+
 @keyframes blob {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(20px, -50px) scale(1.1);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  75% {
-    transform: translate(50px, 50px) scale(1.05);
-  }
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -50px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.9); }
+  75% { transform: translate(50px, 50px) scale(1.05); }
 }
 
 @keyframes bounce-slow {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(220, 38, 38, 0.6);
-  }
+  0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(220, 38, 38, 0.6); }
 }
 
 @keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animate-bounce-slow {
-  animation: bounce-slow 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-/* Splash screen animations */
 @keyframes fade-in {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -131,6 +90,90 @@ body {
   100% { background-position: 200% center; }
 }
 
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ===== NOUVELLES ANIMATIONS - SCROLL REVEAL ===== */
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-down {
+  from { opacity: 0; transform: translateY(-60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-left {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes reveal-right {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes card-lift {
+  from { opacity: 0; transform: translateY(40px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes progress-fill {
+  from { width: 0%; }
+  to { width: var(--progress-width, 0%); }
+}
+
+@keyframes underline-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2), 0 0 20px rgba(59, 130, 246, 0.1); }
+  50% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2); }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== CLASSES ANIMATIONS EXISTANTES ===== */
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
 .animate-fade-in {
   animation: fade-in 1s ease-out forwards;
 }
@@ -156,12 +199,75 @@ body {
   animation: shimmer 3s linear infinite;
 }
 
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* ===== CLASSES SCROLL REVEAL ===== */
+
+.scroll-reveal {
+  opacity: 0;
 }
 
-/* Custom scrollbar */
+.scroll-reveal-up.revealed {
+  animation: reveal-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scroll-reveal-down.revealed {
+  animation: reveal-down 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scroll-reveal-left.revealed {
+  animation: reveal-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scroll-reveal-right.revealed {
+  animation: reveal-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scroll-reveal-scale.revealed {
+  animation: reveal-scale 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.scroll-reveal-card.revealed {
+  animation: card-lift 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ===== STAGGER DELAYS ===== */
+
+.stagger-1 { animation-delay: 0.1s !important; }
+.stagger-2 { animation-delay: 0.2s !important; }
+.stagger-3 { animation-delay: 0.3s !important; }
+.stagger-4 { animation-delay: 0.4s !important; }
+.stagger-5 { animation-delay: 0.5s !important; }
+.stagger-6 { animation-delay: 0.6s !important; }
+.stagger-7 { animation-delay: 0.7s !important; }
+.stagger-8 { animation-delay: 0.8s !important; }
+
+/* ===== PROGRESS BAR ANIMATED ===== */
+
+.animate-progress {
+  animation: progress-fill 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ===== GLOW PULSE CTA ===== */
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ===== GLASSMORPHISM ===== */
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+:root.dark .glass {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+/* ===== CUSTOM SCROLLBAR ===== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -170,11 +276,15 @@ body {
   background: #f1f1f1;
 }
 
+:root.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #dc2626, #16a34a);
+  background: linear-gradient(to bottom, #3b82f6, #6366f1);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #991b1b, #166534);
+  background: linear-gradient(to bottom, #2563eb, #4f46e5);
 }
