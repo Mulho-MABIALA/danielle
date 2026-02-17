@@ -120,12 +120,12 @@ export default function Projets() {
       icon: '🛡️',
       pdf: '/inventaires_des_vlans_et_machines_de_gsb.pdf',
     },
-    {
-      title: 'Portsentry & Fail2ban',
-      description: 'Protection contre les intrusions avec Portsentry et Fail2ban - Détection et blocage automatiqu...',
-      icon: '🔒',
-      pdf: '/fail2ban.pdf',
-    },
+    // {
+    //   title: 'Portsentry & Fail2ban',
+    //   description: 'Protection contre les intrusions avec Portsentry et Fail2ban - Détection et blocage automatiqu...',
+    //   icon: '🔒',
+    //   pdf: '/fail2ban.pdf',
+    // },
     {
       title: 'Evolution de L\'infrastructure dû à une épreuve sur machine ',
       description: 'Modification du réseau et ajout de VLAN ...',
