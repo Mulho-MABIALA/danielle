@@ -27,15 +27,15 @@ export default function Projets() {
       description: 'Projet de spécialisation de deuxième année basé sur Apache Guacamole, une solution de bureau à distance qui permet l\'accès aux serveurs via un navigateur web sans plugin supplémentaire.',
       image: '/guacamole1.png',
       tags: ['Apache', 'Guacamole', 'Remote Desktop', 'Docker', 'HTML5'],
-      date: '2024 - 2025',
+      date: '2025 - 2026',
       github: '#',
     },
     {
       title: 'Sécurisation d\'infrastructure',
-      description: 'Mise en place d\'une infrastructure sécurisée avec pare-feu, détection d\'intrusion et gestion des acces basée sur OPNsense et Fail2ban.',
+      description: 'Mise en place d\'une infrastructure sécurisée avec 2 serveurs DNS , un serveur web chiffré , avec pour service Wordpress.',
       image: '/guacamole2.png',
-      tags: ['OPNsense', 'Fail2ban', 'HTTPS', 'SSH sécurisé'],
-      date: 'Oct 2024 - Déc 2024',
+      tags: ['OPNsense', 'DNS', 'HTTPS', 'SSH sécurisé'],
+      date: 'Fév 2026 - Mars 2026',
       github: '#',
       status: 'En cours',
     },
@@ -43,22 +43,22 @@ export default function Projets() {
 
   const docsAnnee2: Documentation[] = [
     {
-      title: 'Récupération d\'une configuration',
-      description: 'Procédures de sauvegarde et restauration des configurations systèmes - Backup des...',
+      title: 'Installation et Configuration des systèmes GSB ',
+      description: 'Prodécure d\'installation et de  configuration du réseau GSB ...',
       icon: '🖥️',
+      pdf: '/Installation&Configuration_Systeme.pdf',
+    },
+    {
+      title: 'Serveur de sauvegarde BACKUPPC',
+      description: 'Installation et Configuration du service de sauvegarde Backuppc ...',
+      icon: '🔍',
       pdf: '/Backuppc.pdf',
     },
     {
-      title: 'Active Directory Windows Server',
-      description: 'Installation et administration d\'Active Directory - Gestion des utilisateurs, GPO, et services...',
-      icon: '🔍',
-      pdf: '/Active_Directory.pdf',
-    },
-    {
-      title: 'Authentification GPG',
-      description: 'Mise en place de l\'authentification par clés GPG - Chiffrement et signature des communication...',
+      title: 'Serveur DHCP',
+      description: 'Mise en place de D\'un serveur d\'attribution automatique de configuration réseau , serveur DHCP ...',
       icon: '🔐',
-      pdf: '/Chiffrement_TLS.pdf',
+      pdf: '/DHCP.pdf',
     },
     {
       title: 'Configuration d\'un serveur BDD',
@@ -67,10 +67,10 @@ export default function Projets() {
       pdf: '/Maria_DB.pdf',
     },
     {
-      title: 'Configuration TLS sur ProFTPD',
-      description: 'Sécurisation d\'un serveur FTP avec ProFTPD - Configuration du chiffrement TLS et gestion d...',
+      title: 'Configuration du serveur ProFTPD & SAMBA',
+      description: 'Sécurisation d\'un serveur FTP avec ProFTPD - Configuration du serveur de partage de fichiers SAMBA ...',
       icon: '🐧',
-      pdf: '/Chiffrement_TLS.pdf',
+      pdf: '/Serveur_FTP&SAMBA.pdf',
     },
     {
       title: 'Contexte GSB',
