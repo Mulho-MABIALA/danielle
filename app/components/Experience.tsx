@@ -81,23 +81,21 @@ export default function Experience() {
         </div>
 
         {/* Timeline des expériences */}
-        <div className="relative">
-          {/* Ligne verticale centrale */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-slate-800 via-slate-600 to-slate-400 rounded-full hidden lg:block"></div>
+        <div className="relative max-w-4xl mx-auto">
+          {/* Ligne verticale gauche */}
+          <div className="absolute left-6 lg:left-8 top-0 w-1 h-full bg-gradient-to-b from-slate-800 via-slate-600 to-slate-400 rounded-full"></div>
 
-          <div className="space-y-12 lg:space-y-16">
+          <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div
                 key={exp.id}
-                className={`relative flex flex-col lg:flex-row items-center gap-8 ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                }`}
+                className="relative flex items-start gap-8 pl-16 lg:pl-20"
               >
                 {/* Point sur la timeline */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-slate-800 dark:bg-slate-200 rounded-full border-4 border-slate-50 dark:border-slate-900 z-10 hidden lg:block"></div>
+                <div className="absolute left-4 lg:left-6 w-6 h-6 bg-slate-800 dark:bg-slate-200 rounded-full border-4 border-slate-50 dark:border-slate-900 z-10"></div>
 
                 {/* Carte d'expérience */}
-                <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-12' : 'lg:pl-12'}`}>
+                <div className="w-full">
                   <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 hover:shadow-2xl transition-all duration-300">
                     {/* En-tête de la carte */}
                     <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -167,8 +165,6 @@ export default function Experience() {
                   </div>
                 </div>
 
-                {/* Espace pour l'autre côté de la timeline */}
-                <div className="hidden lg:block w-5/12"></div>
               </div>
             ))}
           </div>
