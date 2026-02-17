@@ -103,22 +103,22 @@ export default function Projets() {
       pdf: '/Configuration_du_pare-feu_opensense (1).pdf',
     },
     {
-      title: 'HTTP',
-      description: 'Configuration d\'un serveur web IIS - Installation, hébergement de sites et sécurisation HTTPS.',
+      title: 'Mise en Place de l\'hyperviseur PROXMOX ',
+      description: 'Déploiement d\'un serveur Proxmox permettant la virtualisation de systèmes Windows et Linux, avec gestion des ressources, du stockage et du réseau virtuel..',
       icon: '☁️',
-      pdf: '/Serveur_HTTP.pdf',
+      pdf: '/Deploiement_Proxmox.pdf',
     },
     {
-      title: 'Installation',
-      description: 'Guide d\'installation pas à pas de Windows Server - Configuration initiale et paramétrage...',
+      title: 'Configuration de VLAN ',
+      description: 'Guide de Configuration de VLAN sur un SWITCH Cisco ...',
       icon: '🗃️',
       pdf: '/Installation.pdf',
     },
     {
-      title: 'OPNsense',
-      description: 'Déploiement d\'OPNsense comme pare-feu - Configuration des règles, VPN et surveillance ...',
+      title: 'Inventaire des Machines Et VLAN de GSB',
+      description: 'Ensemble des Machines , d\'adressage IP et des Vlans de l\'organisme GSB  ...',
       icon: '🛡️',
-      pdf: '/OPNsense.pdf',
+      pdf: '/inventaires_des_vlans_et_machines_de_gsb.pdf',
     },
     {
       title: 'Portsentry & Fail2ban',
@@ -127,16 +127,16 @@ export default function Projets() {
       pdf: '/fail2ban.pdf',
     },
     {
-      title: 'Serveur de sauvegarde',
-      description: 'Mise en place d\'une solution de backup centralisée - Planification et automatisation de...',
+      title: 'Evolution de L\'infrastructure dû à une épreuve sur machine ',
+      description: 'Modification du réseau et ajout de VLAN ...',
       icon: '💾',
-      pdf: '/Backuppc.pdf',
+      pdf: '/epreuve_sur_machine.pdf',
     },
     {
-      title: 'Zabbix',
-      description: 'Installation et configuration de Zabbix - Supervision complète de l\'infrastructure et...',
+      title: 'Chiffrement Avec SSL/TLS ',
+      description: 'Implémentation du chiffrement SSL/TLS sur un serveur afin de protéger les flux réseau contre l\'interception et assurer une connexion sécurisée en HTTPS....',
       icon: '📊',
-      pdf: '/ZABBIX.pdf',
+      pdf: '/Chiffrement_TLS.pdf',
     },
   ];
 
