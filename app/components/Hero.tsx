@@ -2,8 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 export default function Hero() {
+  const router = useRouter();
+
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/api/download/cv';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(() => router.push('/'), 800);
+  };
+
   return (
     <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden dark:bg-slate-900">
       {/* Background */}
@@ -89,16 +101,17 @@ export default function Hero() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-4 opacity-0 animate-slide-up" style={{ animationDelay: '1.2s', animationFillMode: 'both' }}>
               {/* Primary CTA */}
-              <a
-                href="/api/download/cv"
-                className="group relative bg-linear-to-r from-red-600 to-green-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-red-500/30 hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-3 overflow-hidden"
+              <button
+                type="button"
+                onClick={handleDownloadCV}
+                className="group relative bg-linear-to-r from-red-600 to-green-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-red-500/30 hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-3 overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                <span className="relative z-10">Telecharger mon CV</span>
-              </a>
+                <span className="relative z-10">Télécharger mon CV</span>
+              </button>
 
               {/* Secondary CTA */}
               <Link
