@@ -237,6 +237,12 @@ export const fr = {
       { title: 'Optimisation des stratégies', desc: 'Adaptation des stratégies numériques en fonction des nouvelles opportunités identifiées.' },
       { title: 'Réduction des risques', desc: 'Identification précoce des vulnérabilités et des menaces potentielles pour renforcer la sécurité.' },
     ],
+    indicateurs: [
+      { label: 'Temps de détection des nouvelles tendances', value: 95 },
+      { label: "Nombre d'insights exploitables générés", value: 88 },
+      { label: "Délai d'adaptation aux changements", value: 82 },
+      { label: 'Réduction des vulnérabilités potentielles', value: 90 },
+    ],
   },
   technologies: {
     badge: 'Stack technique',

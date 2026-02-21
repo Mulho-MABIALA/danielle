@@ -239,6 +239,12 @@ export const it: Translations = {
       { title: 'Ottimizzazione delle strategie', desc: 'Adattamento delle strategie digitali in base alle nuove opportunità identificate.' },
       { title: 'Riduzione dei rischi', desc: 'Identificazione precoce delle vulnerabilità e delle minacce potenziali per rafforzare la sicurezza.' },
     ],
+    indicateurs: [
+      { label: 'Tempo di rilevamento delle nuove tendenze', value: 95 },
+      { label: 'Numero di insight sfruttabili generati', value: 88 },
+      { label: 'Ritardo di adattamento ai cambiamenti', value: 82 },
+      { label: 'Riduzione delle vulnerabilità potenziali', value: 90 },
+    ],
   },
   technologies: {
     badge: 'Stack tecnico',

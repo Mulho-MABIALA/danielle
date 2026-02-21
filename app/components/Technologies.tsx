@@ -5,74 +5,70 @@ import Image from 'next/image';
 import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext';
 
+type CatKey = 'sys' | 'net' | 'sec' | 'mon' | 'virt' | 'ai' | 'web';
+
 type Technology = {
   name: string;
   logo: string;
-  category: string[];
+  category: CatKey[];
 };
 
 export default function Technologies() {
   const { t } = useLanguage();
-  const [activeFilter, setActiveFilter] = useState('Toutes');
+  const [activeFilter, setActiveFilter] = useState<'all' | CatKey>('all');
 
   const technologies: Technology[] = [
     // Administration système
-    { name: 'Active Directory', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg', category: ['Administration système'] },
-    { name: 'Samba', logo: 'https://icon.icepanel.io/Technology/svg/Samba.svg', category: ['Administration système'] },
-    { name: 'ProFTPD', logo: 'https://avatars.githubusercontent.com/u/6899006?s=200&v=4', category: ['Administration système'] },
-    { name: 'MariaDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg', category: ['Administration système'] },
+    { name: 'Active Directory', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg', category: ['sys'] },
+    { name: 'Samba', logo: 'https://icon.icepanel.io/Technology/svg/Samba.svg', category: ['sys'] },
+    { name: 'ProFTPD', logo: 'https://avatars.githubusercontent.com/u/6899006?s=200&v=4', category: ['sys'] },
+    { name: 'MariaDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg', category: ['sys'] },
 
     // Réseau
-    { name: 'Packet Tracer', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg', category: ['Réseau'] },
-    { name: 'DNS', logo: 'https://cdn-icons-png.flaticon.com/512/2891/2891491.png', category: ['Réseau'] },
-    { name: 'DHCP', logo: 'https://cdn-icons-png.flaticon.com/512/1183/1183672.png', category: ['Réseau'] },
-    { name: 'SSH', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original-wordmark.svg', category: ['Réseau'] },
-    { name: 'Netfilter', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: ['Réseau'] },
+    { name: 'Packet Tracer', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Cisco_logo.svg', category: ['net'] },
+    { name: 'DNS', logo: 'https://cdn-icons-png.flaticon.com/512/2891/2891491.png', category: ['net'] },
+    { name: 'DHCP', logo: 'https://cdn-icons-png.flaticon.com/512/1183/1183672.png', category: ['net'] },
+    { name: 'SSH', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ssh/ssh-original-wordmark.svg', category: ['net'] },
+    { name: 'Netfilter', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', category: ['net'] },
 
     // Sécurité
-    { name: 'OPNsense', logo: 'https://opnsense.org/wp-content/themes/OPNsense/assets/img/opnsense.png', category: ['Sécurité'] },
-    { name: 'HTTPS', logo: 'https://cdn-icons-png.flaticon.com/512/4744/4744417.png', category: ['Sécurité'] },
-    { name: 'Fail2ban', logo: 'https://avatars.githubusercontent.com/u/6818092?s=200&v=4', category: ['Sécurité'] },
-    { name: 'Zabbix', logo: 'https://assets.zabbix.com/img/logo/zabbix_logo_500x131.png', category: ['Sécurité'] },
-    { name: 'Munin', logo: 'https://avatars.githubusercontent.com/u/1809568?s=200&v=4', category: ['Sécurité'] },
-    { name: 'GPG', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Gnupg_logo.svg/1200px-Gnupg_logo.svg.png', category: ['Sécurité'] },
+    { name: 'OPNsense', logo: 'https://opnsense.org/wp-content/themes/OPNsense/assets/img/opnsense.png', category: ['sec'] },
+    { name: 'HTTPS', logo: 'https://cdn-icons-png.flaticon.com/512/4744/4744417.png', category: ['sec'] },
+    { name: 'Fail2ban', logo: 'https://avatars.githubusercontent.com/u/6818092?s=200&v=4', category: ['sec'] },
+    { name: 'Zabbix', logo: 'https://assets.zabbix.com/img/logo/zabbix_logo_500x131.png', category: ['sec'] },
+    { name: 'Munin', logo: 'https://avatars.githubusercontent.com/u/1809568?s=200&v=4', category: ['sec'] },
+    { name: 'GPG', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Gnupg_logo.svg/1200px-Gnupg_logo.svg.png', category: ['sec'] },
 
     // Monitoring & Backup
-    { name: 'BackupPC', logo: 'https://backuppc.github.io/backuppc/images/logos/logo320.png', category: ['Monitoring & Backup'] },
+    { name: 'BackupPC', logo: 'https://backuppc.github.io/backuppc/images/logos/logo320.png', category: ['mon'] },
 
     // Virtualisation
-    { name: 'Proxmox', logo: '/proxmox_image.png', category: ['Virtualisation'] },
-    { name: 'OpenNebula', logo: 'https://opennebula.io/wp-content/uploads/2020/04/opennebula_cloud_logo_white_bg-4.png', category: ['Virtualisation'] },
-    { name: 'VirtualBox', logo: '/virtualBox_image.jpg', category: ['Virtualisation'] },
+    { name: 'Proxmox', logo: '/proxmox_image.png', category: ['virt'] },
+    { name: 'OpenNebula', logo: 'https://opennebula.io/wp-content/uploads/2020/04/opennebula_cloud_logo_white_bg-4.png', category: ['virt'] },
+    { name: 'VirtualBox', logo: '/virtualBox_image.jpg', category: ['virt'] },
 
     // IA & Outils numériques
-    { name: 'Claude AI', logo: 'https://mintlify.s3.us-west-1.amazonaws.com/anthropic/_generated/favicon/apple-touch-icon.png?v=3', category: ['IA & Outils numériques'] },
-    { name: 'QwenLM', logo: 'https://avatars.githubusercontent.com/u/133262055?s=200&v=4', category: ['IA & Outils numériques'] },
-    { name: 'Gamma AI', logo: 'https://avatars.githubusercontent.com/u/108307481?s=200&v=4', category: ['IA & Outils numériques'] },
-    { name: 'Perplexity', logo: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/perplexity-ai-icon.svg', category: ['IA & Outils numériques'] },
-    { name: 'LM Studio', logo: 'https://avatars.githubusercontent.com/u/142217632?s=200&v=4', category: ['IA & Outils numériques'] },
-    { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo.svg', category: ['IA & Outils numériques'] },
-    { name: 'Mistral AI', logo: 'https://avatars.githubusercontent.com/u/132372032?s=200&v=4', category: ['IA & Outils numériques'] },
-    { name: 'Botpress', logo: 'https://avatars.githubusercontent.com/u/23510677?s=200&v=4', category: ['IA & Outils numériques'] },
-    { name: 'Gemini', logo: 'https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg', category: ['IA & Outils numériques'] },
-    { name: 'Prezi', logo: 'https://avatars.githubusercontent.com/u/888466?s=200&v=4', category: ['IA & Outils numériques'] },
+    { name: 'Claude AI', logo: 'https://mintlify.s3.us-west-1.amazonaws.com/anthropic/_generated/favicon/apple-touch-icon.png?v=3', category: ['ai'] },
+    { name: 'QwenLM', logo: 'https://avatars.githubusercontent.com/u/133262055?s=200&v=4', category: ['ai'] },
+    { name: 'Gamma AI', logo: 'https://avatars.githubusercontent.com/u/108307481?s=200&v=4', category: ['ai'] },
+    { name: 'Perplexity', logo: 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/perplexity-ai-icon.svg', category: ['ai'] },
+    { name: 'LM Studio', logo: 'https://avatars.githubusercontent.com/u/142217632?s=200&v=4', category: ['ai'] },
+    { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo.svg', category: ['ai'] },
+    { name: 'Mistral AI', logo: 'https://avatars.githubusercontent.com/u/132372032?s=200&v=4', category: ['ai'] },
+    { name: 'Botpress', logo: 'https://avatars.githubusercontent.com/u/23510677?s=200&v=4', category: ['ai'] },
+    { name: 'Gemini', logo: 'https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg', category: ['ai'] },
+    { name: 'Prezi', logo: 'https://avatars.githubusercontent.com/u/888466?s=200&v=4', category: ['ai'] },
 
     // Hébergement & Web
-    { name: 'Hébergement & Web', logo: 'https://cdn-icons-png.flaticon.com/512/1183/1183621.png', category: ['Hébergement & Web'] },
+    { name: 'Web Hosting', logo: 'https://cdn-icons-png.flaticon.com/512/1183/1183621.png', category: ['web'] },
   ];
 
-  const filters = [
-    { name: 'Toutes', color: 'blue' },
-    { name: 'Administration système', color: 'purple' },
-    { name: 'Réseau', color: 'green' },
-    { name: 'Sécurité', color: 'red' },
-    { name: 'Monitoring & Backup', color: 'yellow' },
-    { name: 'Virtualisation', color: 'indigo' },
-    { name: 'IA & Outils numériques', color: 'pink' },
-    { name: 'Hébergement & Web', color: 'cyan' }
-  ];
+  const filterKeys: Array<'all' | CatKey> = ['all', 'sys', 'net', 'sec', 'mon', 'virt', 'ai', 'web'];
 
-  const filteredTechnologies = activeFilter === 'Toutes'
+  const getFilterLabel = (key: 'all' | CatKey) =>
+    key === 'all' ? t.technologies.all : t.technologies.categories[key];
+
+  const filteredTechnologies = activeFilter === 'all'
     ? technologies
     : technologies.filter(tech => tech.category.includes(activeFilter));
 
@@ -89,18 +85,25 @@ export default function Technologies() {
 
   const categoryReveals = [catAdminReveal, catReseauReveal, catSecuriteReveal, catMonitoringReveal, catVirtualisationReveal, catIAReveal];
 
-  const getButtonColor = (filterName: string) => {
-    const isActive = activeFilter === filterName;
-
+  const getButtonColor = (key: 'all' | CatKey) => {
+    const isActive = activeFilter === key;
     if (isActive) {
       return 'bg-linear-to-r from-blue-800 to-indigo-900 text-white shadow-lg scale-105';
     }
     return 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 shadow-md hover:shadow-lg border border-slate-200 dark:border-slate-700';
   };
 
-  const categories = [
+  const categories: Array<{
+    key: CatKey;
+    colorFrom: string; colorTo: string;
+    gradientHeader: string;
+    borderColor: string;
+    hoverBg: string;
+    hoverText: string;
+    gridCols: string;
+  }> = [
     {
-      name: 'Administration système',
+      key: 'sys',
       colorFrom: 'purple-600', colorTo: 'purple-400',
       gradientHeader: 'from-purple-700 to-purple-500',
       borderColor: 'border-purple-100 dark:border-purple-900 hover:border-purple-300 dark:hover:border-purple-700',
@@ -109,7 +112,7 @@ export default function Technologies() {
       gridCols: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-6',
     },
     {
-      name: 'Réseau',
+      key: 'net',
       colorFrom: 'green-600', colorTo: 'green-400',
       gradientHeader: 'from-green-700 to-green-500',
       borderColor: 'border-green-100 dark:border-green-900 hover:border-green-300 dark:hover:border-green-700',
@@ -118,7 +121,7 @@ export default function Technologies() {
       gridCols: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
     },
     {
-      name: 'Sécurité',
+      key: 'sec',
       colorFrom: 'red-600', colorTo: 'red-400',
       gradientHeader: 'from-red-700 to-red-500',
       borderColor: 'border-red-100 dark:border-red-900 hover:border-red-300 dark:hover:border-red-700',
@@ -127,7 +130,7 @@ export default function Technologies() {
       gridCols: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-6',
     },
     {
-      name: 'Monitoring & Backup',
+      key: 'mon',
       colorFrom: 'amber-600', colorTo: 'amber-400',
       gradientHeader: 'from-amber-700 to-amber-500',
       borderColor: 'border-amber-100 dark:border-amber-900 hover:border-amber-300 dark:hover:border-amber-700',
@@ -136,7 +139,7 @@ export default function Technologies() {
       gridCols: 'grid-cols-2 md:grid-cols-2 lg:grid-cols-4',
     },
     {
-      name: 'Virtualisation',
+      key: 'virt',
       colorFrom: 'indigo-600', colorTo: 'indigo-400',
       gradientHeader: 'from-indigo-700 to-indigo-800',
       borderColor: 'border-indigo-100 dark:border-indigo-900 hover:border-indigo-300 dark:hover:border-indigo-700',
@@ -145,7 +148,7 @@ export default function Technologies() {
       gridCols: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-3',
     },
     {
-      name: 'IA & Outils numériques',
+      key: 'ai',
       colorFrom: 'pink-600', colorTo: 'pink-400',
       gradientHeader: 'from-pink-700 to-pink-500',
       borderColor: 'border-pink-100 dark:border-pink-900 hover:border-pink-300 dark:hover:border-pink-700',
@@ -165,9 +168,8 @@ export default function Technologies() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Hero Section amélioré */}
+        {/* Hero Section */}
         <div ref={heroReveal.ref} className={`bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden scroll-reveal scroll-reveal-up ${heroReveal.isRevealed ? 'revealed' : ''}`}>
-          {/* Pattern de fond */}
           <div className={`absolute inset-0 opacity-10 scroll-reveal scroll-reveal-up ${heroReveal.isRevealed ? 'revealed' : ''}`}>
             <div className="absolute inset-0" style={{
               backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
@@ -183,12 +185,12 @@ export default function Technologies() {
               {t.technologies.title}
             </h2>
             <p className="text-lg md:text-xl text-slate-200 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Découvrez les différentes technologies que j'utilise et maîtrise dans mes projets professionnels
+              {t.technologies.subtitle}
             </p>
           </div>
         </div>
 
-        {/* Section Title épurée */}
+        {/* Section Title */}
         <div ref={titleReveal.ref} className={`text-center mb-16 scroll-reveal scroll-reveal-up ${titleReveal.isRevealed ? 'revealed' : ''}`}>
           <div className="flex items-center justify-center gap-2 mb-8">
             <div className="w-12 h-1 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full"></div>
@@ -197,34 +199,36 @@ export default function Technologies() {
           </div>
         </div>
 
-        {/* Filtres améliorés */}
+        {/* Filtres */}
         <div className="flex flex-wrap justify-center gap-3 mb-16">
-          {filters.map((filter) => (
+          {filterKeys.map((key) => (
             <button
-              key={filter.name}
-              onClick={() => setActiveFilter(filter.name)}
-              className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-xl ${getButtonColor(filter.name)}`}
+              key={key}
+              type="button"
+              onClick={() => setActiveFilter(key)}
+              className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-xl ${getButtonColor(key)}`}
             >
-              {filter.name === 'Toutes' ? t.technologies.all : filter.name}
+              {getFilterLabel(key)}
             </button>
           ))}
         </div>
 
         {/* Section par catégorie */}
-        {activeFilter === 'Toutes' ? (
+        {activeFilter === 'all' ? (
           <>
             {categories.map((cat, catIndex) => {
               const reveal = categoryReveals[catIndex];
-              const catTechs = technologies.filter(t => t.category.includes(cat.name));
+              const catTechs = technologies.filter(tech => tech.category.includes(cat.key));
+              const displayName = t.technologies.categories[cat.key];
               return (
-                <div key={cat.name} className="mb-20">
+                <div key={cat.key} className="mb-20">
                   <div
                     ref={reveal.ref}
                     className={`flex items-center gap-4 mb-8 scroll-reveal scroll-reveal-left ${reveal.isRevealed ? 'revealed' : ''}`}
                   >
                     <div className={`w-12 h-1 bg-linear-to-r from-${cat.colorFrom} to-${cat.colorTo} rounded-full`}></div>
                     <h4 className={`text-3xl font-bold bg-linear-to-r ${cat.gradientHeader} bg-clip-text text-transparent`}>
-                      {cat.name}
+                      {displayName}
                     </h4>
                     <div className={`flex-1 h-1 bg-linear-to-r from-${cat.colorTo} to-transparent rounded-full`}></div>
                   </div>
