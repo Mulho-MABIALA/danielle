@@ -258,7 +258,7 @@ export default function Projets() {
             }}></div>
           </div>
           {/* Subtle blue glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-800/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Mes Projets
@@ -284,13 +284,13 @@ export default function Projets() {
             Technologies utilisées: Docker, Apache, HTML5, MySQL, LDAP, RDP, SSH, VNC et plus encore.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a href="#" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-blue-800 dark:hover:text-blue-400 transition-colors">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
               Voir le dépôt GitHub
             </a>
-            <a href="https://guacamole.apache.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            <a href="https://guacamole.apache.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-blue-800 dark:hover:text-blue-400 transition-colors">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
@@ -307,7 +307,7 @@ export default function Projets() {
           <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Mes Projets & Documentations
           </h3>
-          <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-indigo-500 mx-auto mb-6 rounded-full"></div>
+          <div className="w-20 h-1 bg-linear-to-r from-blue-800 to-indigo-800 mx-auto mb-6 rounded-full"></div>
           <p className="text-slate-500 dark:text-slate-400 text-lg max-w-3xl mx-auto italic">
             Découvrez mes réalisations techniques et documentations tout au long de mon parcours de formation
           </p>

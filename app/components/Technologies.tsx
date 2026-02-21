@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal';
+import { useLanguage } from '../context/LanguageContext';
 
 type Technology = {
   name: string;
@@ -11,6 +12,7 @@ type Technology = {
 };
 
 export default function Technologies() {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('Toutes');
 
   const technologies: Technology[] = [
@@ -91,7 +93,7 @@ export default function Technologies() {
     const isActive = activeFilter === filterName;
 
     if (isActive) {
-      return 'bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-105';
+      return 'bg-linear-to-r from-blue-800 to-indigo-900 text-white shadow-lg scale-105';
     }
     return 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 shadow-md hover:shadow-lg border border-slate-200 dark:border-slate-700';
   };
@@ -136,7 +138,7 @@ export default function Technologies() {
     {
       name: 'Virtualisation',
       colorFrom: 'indigo-600', colorTo: 'indigo-400',
-      gradientHeader: 'from-indigo-700 to-indigo-500',
+      gradientHeader: 'from-indigo-700 to-indigo-800',
       borderColor: 'border-indigo-100 dark:border-indigo-900 hover:border-indigo-300 dark:hover:border-indigo-700',
       hoverBg: 'from-indigo-50 to-transparent dark:from-indigo-900/20 dark:to-transparent',
       hoverText: 'group-hover:text-indigo-700 dark:group-hover:text-indigo-400',
@@ -175,10 +177,10 @@ export default function Technologies() {
 
           <div className="relative">
             <span className="inline-block text-slate-300 dark:text-slate-400 text-sm font-semibold tracking-widest uppercase bg-white/20 dark:bg-white/10 px-4 py-2 rounded-full mb-6">
-              Stack Technique
+              {t.technologies.badge}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Technologies maîtrisées
+              {t.technologies.title}
             </h2>
             <p className="text-lg md:text-xl text-slate-200 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
               Découvrez les différentes technologies que j'utilise et maîtrise dans mes projets professionnels
@@ -189,8 +191,8 @@ export default function Technologies() {
         {/* Section Title épurée */}
         <div ref={titleReveal.ref} className={`text-center mb-16 scroll-reveal scroll-reveal-up ${titleReveal.isRevealed ? 'revealed' : ''}`}>
           <div className="flex items-center justify-center gap-2 mb-8">
-            <div className="w-12 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
-            <div className="w-4 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
+            <div className="w-12 h-1 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full"></div>
+            <div className="w-4 h-1 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full"></div>
             <div className="w-2 h-1 bg-green-500 rounded-full"></div>
           </div>
         </div>
@@ -203,7 +205,7 @@ export default function Technologies() {
               onClick={() => setActiveFilter(filter.name)}
               className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-xl ${getButtonColor(filter.name)}`}
             >
-              {filter.name}
+              {filter.name === 'Toutes' ? t.technologies.all : filter.name}
             </button>
           ))}
         </div>

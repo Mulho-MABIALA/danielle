@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { useScrollReveal, useProgressReveal } from '../hooks/useScrollReveal';
 
 type Competence = {
@@ -12,6 +13,7 @@ type Competence = {
 };
 
 export default function Competences() {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState('all');
   const headerReveal = useScrollReveal();
   const progressReveal = useProgressReveal();
@@ -71,19 +73,18 @@ export default function Competences() {
         {/* Header */}
         <div ref={headerReveal.ref} className={`text-center mb-16 scroll-reveal scroll-reveal-up ${headerReveal.isRevealed ? 'revealed' : ''}`}>
           <span className="inline-block text-slate-600 dark:text-slate-300 text-sm font-semibold tracking-widest uppercase bg-slate-100 dark:bg-slate-700 px-4 py-2 rounded-full mb-4">
-            Mes expertises
+            {t.competences.badge}
           </span>
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
             <span className="bg-linear-to-r from-slate-700 to-slate-900 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">
-              Mes Compétences Techniques
-            </span>
+              {t.competences.title}</span>
           </h2>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8">
             Compétences acquises et développées dans le cadre de ma formation BTS SIO et de mes stages
           </p>
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
-            <div className="w-4 h-1 bg-blue-400 rounded-full"></div>
+            <div className="w-12 h-1 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full"></div>
+            <div className="w-4 h-1 bg-blue-700 rounded-full"></div>
             <div className="w-2 h-1 bg-indigo-400 rounded-full"></div>
           </div>
         </div>
@@ -96,12 +97,12 @@ export default function Competences() {
               onClick={() => setActiveFilter(filter.id)}
               className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 flex items-center gap-2 ${
                 activeFilter === filter.id
-                  ? 'bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-lg shadow-red-600/20 scale-105'
+                  ? 'bg-linear-to-r from-blue-800 to-indigo-900 text-white shadow-lg shadow-red-600/20 scale-105'
                   : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 shadow-md hover:shadow-lg border border-slate-200 dark:border-slate-700'
               }`}
             >
               <span>{filter.icon}</span>
-              {filter.label}
+              {filter.id === 'all' ? t.competences.all : filter.label}
             </button>
           ))}
         </div>
@@ -119,7 +120,7 @@ export default function Competences() {
               style={{ animationDelay: `${(index % 6) * 0.1}s` }}
             >
               {comp.level >= 90 && (
-                <div className="absolute top-0 left-4 right-4 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-b-full"></div>
+                <div className="absolute top-0 left-4 right-4 h-1 bg-linear-to-r from-blue-700 to-indigo-800 rounded-b-full"></div>
               )}
 
               <div className="flex items-start gap-4 mb-4">
@@ -131,7 +132,7 @@ export default function Competences() {
                   {comp.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h3 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors">
                     {comp.title}
                   </h3>
                   <p className="text-sm text-slate-600 dark:text-slate-300">{comp.subtitle}</p>
@@ -150,7 +151,7 @@ export default function Competences() {
                   <div
                     className={`h-full rounded-full transition-all duration-1500 ease-out ${
                       comp.level >= 90
-                        ? 'bg-linear-to-r from-blue-400 to-indigo-500'
+                        ? 'bg-linear-to-r from-blue-700 to-indigo-800'
                         : 'bg-linear-to-r from-green-500 to-green-600 dark:from-green-400 dark:to-green-500'
                     }`}
                     style={{ width: progressReveal.shouldAnimate ? `${comp.level}%` : '0%', transition: 'width 1.5s cubic-bezier(0.22, 1, 0.36, 1)' }}
