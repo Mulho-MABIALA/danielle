@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useScrollReveal, useStaggerReveal } from '../hooks/useScrollReveal';
 
 type Project = {
   title: string;
@@ -21,6 +22,14 @@ type Documentation = {
 };
 
 export default function Projets() {
+  const heroReveal = useScrollReveal();
+  const aboutReveal = useScrollReveal();
+  const titleReveal = useScrollReveal();
+  const year2HeaderReveal = useScrollReveal();
+  const year1HeaderReveal = useScrollReveal();
+  const docsAnnee2Stagger = useStaggerReveal(16);
+  const docsAnnee1Stagger = useStaggerReveal(12);
+
   const projetsAnnee2: Project[] = [
     {
       title: 'Projet Apache Guacamole',
@@ -238,13 +247,18 @@ export default function Projets() {
     <section id="projets" className="relative py-32 bg-white dark:bg-slate-900 overflow-hidden">
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden">
+        <div
+          ref={heroReveal.ref}
+          className={`bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden scroll-reveal scroll-reveal-up ${heroReveal.isRevealed ? 'revealed' : ''}`}
+        >
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
               backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
               backgroundSize: '30px 30px'
             }}></div>
           </div>
+          {/* Subtle blue glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
           <div className="relative">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Mes Projets
@@ -256,7 +270,10 @@ export default function Projets() {
         </div>
 
         {/* À propos du projet Apache Guacamole */}
-        <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200 dark:border-slate-700 mb-20">
+        <div
+          ref={aboutReveal.ref}
+          className={`bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200 dark:border-slate-700 mb-20 scroll-reveal scroll-reveal-up ${aboutReveal.isRevealed ? 'revealed' : ''}`}
+        >
           <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-6">
             À propos du projet Apache Guacamole
           </h3>
@@ -267,13 +284,13 @@ export default function Projets() {
             Technologies utilisées: Docker, Apache, HTML5, MySQL, LDAP, RDP, SSH, VNC et plus encore.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors">
+            <a href="#" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
               Voir le dépôt GitHub
             </a>
-            <a href="https://guacamole.apache.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-slate-900 dark:hover:text-white transition-colors">
+            <a href="https://guacamole.apache.org/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-300 font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
@@ -283,20 +300,26 @@ export default function Projets() {
         </div>
 
         {/* Titre principal */}
-        <div className="text-center mb-20">
+        <div
+          ref={titleReveal.ref}
+          className={`text-center mb-20 scroll-reveal scroll-reveal-up ${titleReveal.isRevealed ? 'revealed' : ''}`}
+        >
           <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Mes Projets & Documentations
           </h3>
-          <div className="w-20 h-1 bg-slate-700 mx-auto mb-6 rounded-full"></div>
+          <div className="w-20 h-1 bg-linear-to-r from-blue-500 to-indigo-500 mx-auto mb-6 rounded-full"></div>
           <p className="text-slate-500 dark:text-slate-400 text-lg max-w-3xl mx-auto italic">
             Découvrez mes réalisations techniques et documentations tout au long de mon parcours de formation
           </p>
         </div>
 
         {/* ===== BTS SIO SISR - Année 2 ===== */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-2">
-            <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center">
+        <div className="mb-20 scroll-reveal scroll-reveal-left">
+          <div
+            ref={year2HeaderReveal.ref}
+            className={`flex items-center gap-4 mb-2 scroll-reveal scroll-reveal-up ${year2HeaderReveal.isRevealed ? 'revealed' : ''}`}
+          >
+            <div className="w-12 h-12 bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl flex items-center justify-center">
               <svg className="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -308,15 +331,16 @@ export default function Projets() {
           {/* Projets Année 2 */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {projetsAnnee2.map((projet, index) => (
-              <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div key={index} className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
                 <div className="h-56 relative bg-slate-100 dark:bg-slate-700 overflow-hidden">
                   <Image
                     src={projet.image}
                     alt={projet.title}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                     unoptimized
                   />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-t from-slate-900/60 to-transparent transition-opacity duration-300"></div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -341,7 +365,7 @@ export default function Projets() {
                   <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">{projet.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {projet.tags.map((tag, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-600">
+                      <span key={idx} className="px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -350,7 +374,7 @@ export default function Projets() {
                     <span className="text-sm text-slate-500 dark:text-slate-400">{projet.date}</span>
                     <div className="flex items-center gap-3">
                       {projet.status && (
-                        <span className="text-sm text-orange-500 font-semibold">{projet.status}</span>
+                        <span className="text-sm text-amber-500 font-semibold bg-amber-50 dark:bg-amber-900/20 px-3 py-1 rounded-full">{projet.status}</span>
                       )}
                       {projet.github && (
                         <a href={projet.github} className="inline-flex items-center gap-1 text-sm text-slate-700 dark:text-slate-300 font-semibold hover:text-slate-900 transition-colors">
@@ -375,10 +399,18 @@ export default function Projets() {
               </svg>
               <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Documentations Techniques</h4>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div ref={docsAnnee2Stagger.containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {docsAnnee2.map((doc, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl mb-3">{doc.icon}</div>
+                <div
+                  key={index}
+                  className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:-translate-y-2 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300"
+                  style={{
+                    opacity: docsAnnee2Stagger.revealedItems[index] ? 1 : 0,
+                    transform: docsAnnee2Stagger.revealedItems[index] ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'all 0.5s ease',
+                  }}
+                >
+                  <div className="w-10 h-10 bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center text-2xl mb-3">{doc.icon}</div>
                   <h5 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{doc.title}</h5>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed line-clamp-2">{doc.description}</p>
                   <div className="flex gap-3">
@@ -386,7 +418,7 @@ export default function Projets() {
                       href={doc.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -397,7 +429,7 @@ export default function Projets() {
                     <a
                       href={doc.pdf}
                       download
-                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -412,9 +444,12 @@ export default function Projets() {
         </div>
 
         {/* ===== BTS SIO SISR - Année 1 ===== */}
-        <div className="mb-20">
-          <div className="flex items-center gap-4 mb-2">
-            <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-xl flex items-center justify-center">
+        <div className="mb-20 scroll-reveal scroll-reveal-left">
+          <div
+            ref={year1HeaderReveal.ref}
+            className={`flex items-center gap-4 mb-2 scroll-reveal scroll-reveal-up ${year1HeaderReveal.isRevealed ? 'revealed' : ''}`}
+          >
+            <div className="w-12 h-12 bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl flex items-center justify-center">
               <svg className="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
@@ -426,15 +461,16 @@ export default function Projets() {
           {/* Projets Année 1 */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {projetsAnnee1.map((projet, index) => (
-              <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div key={index} className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
                 <div className="h-56 relative bg-slate-100 dark:bg-slate-700 overflow-hidden">
                   <Image
                     src={projet.image}
                     alt={projet.title}
                     fill
-                    className="object-cover"
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
                     unoptimized
                   />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-t from-slate-900/60 to-transparent transition-opacity duration-300"></div>
                 </div>
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
@@ -452,7 +488,7 @@ export default function Projets() {
                   <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">{projet.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {projet.tags.map((tag, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-600">
+                      <span key={idx} className="px-3 py-1 bg-slate-100 dark:bg-slate-700/50 text-slate-700 dark:text-slate-300 text-xs font-medium rounded-full border border-slate-200 dark:border-slate-600 hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -481,10 +517,18 @@ export default function Projets() {
               </svg>
               <h4 className="text-2xl font-bold text-slate-900 dark:text-white">Documentations Techniques</h4>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div ref={docsAnnee1Stagger.containerRef} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {docsAnnee1.map((doc, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700 hover:shadow-lg transition-all duration-300">
-                  <div className="text-3xl mb-3">{doc.icon}</div>
+                <div
+                  key={index}
+                  className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:-translate-y-2 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300"
+                  style={{
+                    opacity: docsAnnee1Stagger.revealedItems[index] ? 1 : 0,
+                    transform: docsAnnee1Stagger.revealedItems[index] ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'all 0.5s ease',
+                  }}
+                >
+                  <div className="w-10 h-10 bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-lg flex items-center justify-center text-2xl mb-3">{doc.icon}</div>
                   <h5 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{doc.title}</h5>
                   <p className="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed line-clamp-2">{doc.description}</p>
                   <div className="flex gap-3">
@@ -492,7 +536,7 @@ export default function Projets() {
                       href={doc.pdf}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -503,7 +547,7 @@ export default function Projets() {
                     <a
                       href={doc.pdf}
                       download
-                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors"
+                      className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 bg-slate-100 dark:bg-slate-700 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors"
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

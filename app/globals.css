@@ -138,8 +138,8 @@ body {
 }
 
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2), 0 0 20px rgba(59, 130, 246, 0.1); }
-  50% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2); }
+  0%, 100% { box-shadow: 0 0 5px rgba(220, 38, 38, 0.2), 0 0 20px rgba(22, 163, 74, 0.1); }
+  50% { box-shadow: 0 0 10px rgba(220, 38, 38, 0.4), 0 0 40px rgba(22, 163, 74, 0.2); }
 }
 
 @keyframes count-up {
@@ -281,10 +281,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #3b82f6, #6366f1);
+  background: linear-gradient(to bottom, #dc2626, #16a34a);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #2563eb, #4f46e5);
+  background: linear-gradient(to bottom, #991b1b, #166534);
 }
