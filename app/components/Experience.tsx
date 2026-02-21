@@ -12,57 +12,8 @@ export default function Experience() {
   const card3Reveal = useScrollReveal();
   const cardReveals = [card1Reveal, card2Reveal, card3Reveal];
 
-  const experiences = [
-    {
-      id: 1,
-      type: 'stage',
-      title: 'Stagiaire Administrateur Système & Sécurité',
-      company: 'DGFIP (ESI)',
-      location: 'France',
-      period: '05/01/2026 - 13/02/2026',
-      description: 'Stage en administration système et sécurité informatique',
-      missions: [
-        'Administrer des pares-feux Fortinet du réseau d\'administration de la DGFIP',
-        'Traiter des demandes d\'ouverture de flux',
-        'Créer des règles à implémenter sur le Pare-feu Fortinet',
-        'Administrer la solution Bastion Wallix',
-        'Mettre en œuvre et gérer des solutions de virtualisation',
-      ],
-      tags: ['Fortinet', 'Wallix', 'Sécurité', 'Virtualisation'],
-      badgeClass: 'bg-linear-to-r from-blue-800 to-indigo-900',
-    },
-    {
-      id: 2,
-      type: 'emploi',
-      title: 'Employée de production',
-      company: 'LIMOJOUX',
-      location: 'Clermont-Ferrand',
-      period: '15/07/2025 - 29/08/2025',
-      description: 'Travail saisonnier en production alimentaire',
-      missions: [
-        'Mise en barquette et étiquetage de produits alimentaires',
-        'Respect des règles d\'hygiène et de sécurité alimentaire',
-        'Travail en équipe sur ligne de production',
-      ],
-      tags: ['Travail en équipe', 'Rigueur', 'Hygiène'],
-      badgeClass: 'bg-indigo-600',
-    },
-    {
-      id: 3,
-      type: 'stage',
-      title: 'Stagiaire en support à la PRA',
-      company: 'Lije-Technologies',
-      location: 'Couzeix',
-      period: '26/05/2025 - 27/06/2025',
-      description: 'Stage de première année BTS SIO',
-      missions: [
-        'Mettre en place d\'un environnement de développement géospatial via l\'installation de QGIS dans un conteneur Docker',
-        'Rédiger une documentation technique détaillant la procédure d\'installation, de configuration et d\'utilisation',
-      ],
-      tags: ['Docker', 'QGIS', 'Documentation', 'Linux'],
-      badgeClass: 'bg-indigo-700',
-    },
-  ];
+  const badgeClasses = ['bg-linear-to-r from-blue-800 to-indigo-900', 'bg-indigo-600', 'bg-indigo-700'];
+  const experiences = t.experiences.list.map((exp, i) => ({ ...exp, id: i + 1, badgeClass: badgeClasses[i] || 'bg-indigo-800' }));
 
   return (
     <section id="experiences" className="relative py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden">
@@ -87,7 +38,7 @@ export default function Experience() {
             <div className="w-2 h-1 bg-indigo-400 rounded-full"></div>
           </div>
           <p className="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Mes stages et expériences professionnelles qui ont façonné mon parcours
+            {t.experiences.subtitle}
           </p>
         </div>
 
@@ -190,10 +141,10 @@ export default function Experience() {
         <div ref={statsReveal.ref} className={`mt-20 scroll-reveal scroll-reveal-up ${statsReveal.isRevealed ? 'revealed' : ''}`}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', value: '2', label: 'Stages' },
-              { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', value: '4+', label: "Mois d'expérience" },
-              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', value: '1', label: 'Stage Sécurité' },
-              { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', value: '3', label: 'Entreprises' },
+              { icon: 'M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', value: '2', label: t.experiences.stages },
+              { icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z', value: '4+', label: t.experiences.months },
+              { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', value: '1', label: t.experiences.securityStage },
+              { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', value: '3', label: t.experiences.companies },
             ].map((stat, index) => (
               <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="w-12 h-12 bg-linear-to-br from-blue-800 to-indigo-900 rounded-xl flex items-center justify-center mx-auto mb-3">
