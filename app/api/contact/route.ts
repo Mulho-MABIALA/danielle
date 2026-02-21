@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from ''next/server'';
+import { NextRequest, NextResponse } from 'next/server';
 
 type ContactBody = {
   name: string;
@@ -12,34 +12,33 @@ export async function POST(request: NextRequest) {
     const body: ContactBody = await request.json();
     const { name, email, subject, message } = body;
 
-    if (\!name || \!email || \!subject || \!message) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { error: ''Tous les champs sont requis.'' },
+        { error: 'Tous les champs sont requis.' },
         { status: 400 }
       );
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (\!emailRegex.test(email)) {
+    if (!emailRegex.test(email)) {
       return NextResponse.json(
-        { error: ''Adresse email invalide.'' },
+        { error: 'Adresse email invalide.' },
         { status: 400 }
       );
     }
 
-    // Ici on pourrait intégrer un service d''email (Resend, Nodemailer, etc.)
-    console.log(''Message reçu:'', { name, email, subject, message });
+    console.log('Message recu:', { name, email, subject, message });
 
     return NextResponse.json(
       {
         success: true,
-        message: ''Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.'',
+        message: 'Votre message a bien ete envoye. Je vous repondrai dans les plus brefs delais.',
       },
       { status: 200 }
     );
   } catch {
     return NextResponse.json(
-      { error: ''Erreur serveur. Veuillez réessayer plus tard.'' },
+      { error: 'Erreur serveur. Veuillez reessayer plus tard.' },
       { status: 500 }
     );
   }
@@ -47,7 +46,7 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   return NextResponse.json(
-    { message: ''Endpoint contact actif. Utilisez POST pour envoyer un message.'' },
+    { message: 'Endpoint contact actif. Utilisez POST pour envoyer un message.' },
     { status: 200 }
   );
 }
