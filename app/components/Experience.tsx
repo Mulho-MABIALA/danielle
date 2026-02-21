@@ -27,7 +27,7 @@ export default function Experience() {
         'Mettre en œuvre et gérer des solutions de virtualisation',
       ],
       tags: ['Fortinet', 'Wallix', 'Sécurité', 'Virtualisation'],
-      badgeClass: 'bg-linear-to-r from-red-600 to-green-600',
+      badgeClass: 'bg-linear-to-r from-blue-500 to-indigo-600',
     },
     {
       id: 2,
@@ -43,7 +43,7 @@ export default function Experience() {
         'Travail en équipe sur ligne de production',
       ],
       tags: ['Travail en équipe', 'Rigueur', 'Hygiène'],
-      badgeClass: 'bg-green-600',
+      badgeClass: 'bg-indigo-600',
     },
     {
       id: 3,
@@ -58,7 +58,7 @@ export default function Experience() {
         'Rédiger une documentation technique détaillant la procédure d\'installation, de configuration et d\'utilisation',
       ],
       tags: ['Docker', 'QGIS', 'Documentation', 'Linux'],
-      badgeClass: 'bg-green-700',
+      badgeClass: 'bg-indigo-700',
     },
   ];
 
@@ -66,8 +66,8 @@ export default function Experience() {
     <section id="experiences" className="relative py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-200 dark:bg-red-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        <div className="absolute bottom-1/4 -left-40 w-96 h-96 bg-slate-100 dark:bg-green-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-200 dark:bg-blue-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 -left-40 w-96 h-96 bg-slate-100 dark:bg-indigo-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -92,7 +92,7 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical line */}
-          <div className="absolute left-6 lg:left-8 top-0 w-1 h-full bg-linear-to-b from-red-500 via-orange-500 to-green-500 rounded-full"></div>
+          <div className="absolute left-6 lg:left-8 top-0 w-1 h-full bg-linear-to-b from-blue-400 via-indigo-500 to-purple-500 rounded-full"></div>
 
           <div className="space-y-12">
             {experiences.map((exp, index) => {
@@ -106,13 +106,13 @@ export default function Experience() {
                 >
                   {/* Timeline dot with ping */}
                   <div className="absolute left-4 lg:left-6 w-6 h-6 z-10">
-                    <div className="w-6 h-6 bg-red-500 dark:bg-red-400 rounded-full border-4 border-slate-50 dark:border-slate-900"></div>
-                    <div className="absolute inset-0 rounded-full bg-red-500 dark:bg-red-400 animate-ping opacity-20"></div>
+                    <div className="w-6 h-6 bg-blue-500 dark:bg-blue-400 rounded-full border-4 border-slate-50 dark:border-slate-900"></div>
+                    <div className="absolute inset-0 rounded-full bg-blue-500 dark:bg-blue-400 animate-ping opacity-20"></div>
                   </div>
 
                   {/* Card */}
                   <div className="w-full">
-                    <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-red-200 dark:hover:border-red-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                       {/* Card header */}
                       <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                         <div>
@@ -123,7 +123,7 @@ export default function Experience() {
                             {exp.title}
                           </h3>
                         </div>
-                        <span className="bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 text-sm font-semibold px-4 py-2 rounded-lg">
+                        <span className="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-sm font-semibold px-4 py-2 rounded-lg">
                           {exp.period}
                         </span>
                       </div>
@@ -156,7 +156,7 @@ export default function Experience() {
                         <ul className="space-y-2">
                           {exp.missions.map((mission, idx) => (
                             <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                              <svg className="w-5 h-5 text-green-500 dark:text-green-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                               </svg>
                               <span>{mission}</span>
@@ -170,7 +170,7 @@ export default function Experience() {
                         {exp.tags.map((tag, idx) => (
                           <span
                             key={idx}
-                            className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-medium px-3 py-1 rounded-full hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-700 dark:hover:text-red-400 transition-colors duration-200 cursor-default"
+                            className="bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-medium px-3 py-1 rounded-full hover:bg-blue-50 dark:hover:bg-red-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200 cursor-default"
                           >
                             {tag}
                           </span>
@@ -194,12 +194,12 @@ export default function Experience() {
               { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', value: '3', label: 'Entreprises' },
             ].map((stat, index) => (
               <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="w-12 h-12 bg-linear-to-br from-red-600 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={stat.icon} />
                   </svg>
                 </div>
-                <p className="text-3xl font-bold bg-linear-to-r from-red-600 to-green-600 bg-clip-text text-transparent mb-1">{stat.value}</p>
+                <p className="text-3xl font-bold bg-linear-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent mb-1">{stat.value}</p>
                 <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">{stat.label}</p>
               </div>
             ))}

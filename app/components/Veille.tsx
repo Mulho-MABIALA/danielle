@@ -92,7 +92,7 @@ export default function Veille() {
     <section id="veille" className="relative py-32 bg-white dark:bg-slate-800 overflow-hidden">
       {/* Background décoratif */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-slate-100 dark:bg-red-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-slate-100 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
         <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-slate-100 dark:bg-green-800/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
       </div>
 
@@ -105,8 +105,8 @@ export default function Veille() {
           }`}
         >
           {/* Subtle blue glow overlay */}
-          <div className="absolute inset-0 bg-red-500/10 rounded-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-red-500/15 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 bg-blue-500/10 rounded-3xl"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/15 rounded-full blur-3xl"></div>
           <h2 className="relative text-5xl md:text-6xl font-bold mb-6">
             Veille Technologique
           </h2>
@@ -138,7 +138,7 @@ export default function Veille() {
               onClick={() => setActiveTab(tab.id)}
               className={`px-6 py-4 rounded-2xl font-semibold text-sm transition-all duration-300 flex items-center gap-2 ${
                 activeTab === tab.id
-                  ? 'bg-linear-to-r from-red-600 to-green-600 text-white shadow-xl scale-105'
+                  ? 'bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-xl scale-105'
                   : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 shadow-md border border-slate-200 dark:border-slate-700'
               }`}
             >
@@ -199,12 +199,12 @@ export default function Veille() {
                     }`}
                   >
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Objectifs Stratégiques</h3>
-                    <div className="h-1 w-20 bg-linear-to-r from-red-500 to-green-500 rounded-full mb-8"></div>
+                    <div className="h-1 w-20 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full mb-8"></div>
                     <div className="grid md:grid-cols-2 gap-6">
                       {objectifs.map((obj, index) => (
                         <div
                           key={index}
-                          className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-red-400 dark:hover:border-red-600 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                          className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
                         >
                           <div className="flex items-start gap-4">
                             <div className="w-12 h-12 bg-linear-to-br from-red-50 to-green-50 dark:from-red-900/20 dark:to-green-900/20 rounded-xl flex items-center justify-center text-2xl shrink-0">
@@ -227,12 +227,12 @@ export default function Veille() {
                     }`}
                   >
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Axes de Veille Prioritaires</h3>
-                    <div className="h-1 w-20 bg-linear-to-r from-red-500 to-green-500 rounded-full mb-8"></div>
+                    <div className="h-1 w-20 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full mb-8"></div>
                     <div className="grid md:grid-cols-3 gap-6">
                       {axes.map((axe, index) => (
                         <div
                           key={index}
-                          className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:border-red-400 dark:hover:border-red-600 hover:shadow-lg transition-all duration-300 text-center"
+                          className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-lg transition-all duration-300 text-center"
                         >
                           <h4 className="font-bold text-slate-900 dark:text-white mb-3">{axe.title}</h4>
                           <p className="text-sm text-slate-600 dark:text-slate-300">{axe.description}</p>
@@ -294,12 +294,12 @@ export default function Veille() {
                     }`}
                   >
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Pour les Professionnels IT</h3>
-                    <div className="h-1 w-20 bg-linear-to-r from-red-500 to-green-500 rounded-full mb-8"></div>
+                    <div className="h-1 w-20 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full mb-8"></div>
                     <div className="grid md:grid-cols-2 gap-6">
                       {benefices.map((benefice, index) => (
                         <div
                           key={index}
-                          className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-red-400 dark:hover:border-red-600 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+                          className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
                         >
                           <h4 className="font-bold text-slate-900 dark:text-white mb-3">{benefice.title}</h4>
                           <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{benefice.description}</p>
@@ -315,7 +315,7 @@ export default function Veille() {
                     }`}
                   >
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">Indicateurs de Performance</h3>
-                    <div className="h-1 w-20 bg-linear-to-r from-red-500 to-green-500 rounded-full mb-8"></div>
+                    <div className="h-1 w-20 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full mb-8"></div>
                     <div
                       ref={progressReveal.ref}
                       className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700"
@@ -325,11 +325,11 @@ export default function Veille() {
                           <div key={index}>
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-slate-700 dark:text-slate-300 font-medium">{ind.label}</span>
-                              <span className="text-sm font-bold text-red-600 dark:text-red-400">{ind.value}%</span>
+                              <span className="text-sm font-bold text-blue-600 dark:text-blue-400">{ind.value}%</span>
                             </div>
                             <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3 overflow-hidden">
                               <div
-                                className="h-full bg-linear-to-r from-red-500 to-green-500 rounded-full"
+                                className="h-full bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"
                                 style={{
                                   width: progressReveal.shouldAnimate ? ind.value + '%' : '0%',
                                   transition: 'width 1.5s cubic-bezier(0.22, 1, 0.36, 1)'

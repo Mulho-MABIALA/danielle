@@ -91,7 +91,7 @@ export default function Technologies() {
     const isActive = activeFilter === filterName;
 
     if (isActive) {
-      return 'bg-linear-to-r from-red-600 to-green-600 text-white shadow-lg scale-105';
+      return 'bg-linear-to-r from-blue-500 to-indigo-600 text-white shadow-lg scale-105';
     }
     return 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 shadow-md hover:shadow-lg border border-slate-200 dark:border-slate-700';
   };
@@ -112,7 +112,7 @@ export default function Technologies() {
       gradientHeader: 'from-green-700 to-green-500',
       borderColor: 'border-green-100 dark:border-green-900 hover:border-green-300 dark:hover:border-green-700',
       hoverBg: 'from-green-50 to-transparent dark:from-green-900/20 dark:to-transparent',
-      hoverText: 'group-hover:text-green-700 dark:group-hover:text-green-400',
+      hoverText: 'group-hover:text-green-700 dark:group-hover:text-indigo-400',
       gridCols: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-5',
     },
     {
@@ -121,7 +121,7 @@ export default function Technologies() {
       gradientHeader: 'from-red-700 to-red-500',
       borderColor: 'border-red-100 dark:border-red-900 hover:border-red-300 dark:hover:border-red-700',
       hoverBg: 'from-red-50 to-transparent dark:from-red-900/20 dark:to-transparent',
-      hoverText: 'group-hover:text-red-700 dark:group-hover:text-red-400',
+      hoverText: 'group-hover:text-blue-700 dark:group-hover:text-blue-400',
       gridCols: 'grid-cols-2 md:grid-cols-3 lg:grid-cols-6',
     },
     {
@@ -157,9 +157,9 @@ export default function Technologies() {
     <section id="technologies" className="relative py-32 bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
       {/* Background décoratif amélioré */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-200 dark:bg-red-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-1/3 -left-40 w-96 h-96 bg-slate-200 dark:bg-green-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-slate-200 dark:bg-red-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-200 dark:bg-blue-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-1/3 -left-40 w-96 h-96 bg-slate-200 dark:bg-indigo-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-slate-200 dark:bg-blue-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -189,8 +189,8 @@ export default function Technologies() {
         {/* Section Title épurée */}
         <div ref={titleReveal.ref} className={`text-center mb-16 scroll-reveal scroll-reveal-up ${titleReveal.isRevealed ? 'revealed' : ''}`}>
           <div className="flex items-center justify-center gap-2 mb-8">
-            <div className="w-12 h-1 bg-linear-to-r from-red-500 to-green-500 rounded-full"></div>
-            <div className="w-4 h-1 bg-linear-to-r from-red-500 to-green-500 rounded-full"></div>
+            <div className="w-12 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
+            <div className="w-4 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
             <div className="w-2 h-1 bg-green-500 rounded-full"></div>
           </div>
         </div>

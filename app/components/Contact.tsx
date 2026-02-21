@@ -54,8 +54,8 @@ export default function Contact() {
     <section id="contact" className="relative py-32 bg-linear-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 overflow-hidden">
       {/* Background décoratif */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-200 dark:bg-red-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute bottom-1/4 -left-40 w-96 h-96 bg-slate-200 dark:bg-green-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-slate-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute bottom-1/4 -left-40 w-96 h-96 bg-slate-200 dark:bg-indigo-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -76,9 +76,9 @@ export default function Contact() {
             Vous avez un projet ou une opportunité à discuter ? N'hésitez pas à me contacter, je serais ravi d'échanger avec vous.
           </p>
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-linear-to-r from-red-500 to-green-500 rounded-full"></div>
-            <div className="w-4 h-1 bg-linear-to-r from-red-500 to-green-500 rounded-full"></div>
-            <div className="w-2 h-1 bg-linear-to-r from-red-500 to-green-500 rounded-full"></div>
+            <div className="w-12 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
+            <div className="w-4 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
+            <div className="w-2 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
           </div>
         </div>
 
@@ -95,7 +95,7 @@ export default function Contact() {
                 {/* Localisation */}
                 <div className="flex items-start gap-4 group">
                   <div className="w-12 h-12 bg-linear-to-br from-red-50 to-green-50 dark:from-red-900/20 dark:to-green-900/20 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6 text-slate-700 dark:text-slate-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -109,7 +109,7 @@ export default function Contact() {
                 {/* Téléphone */}
                 <div className="flex items-start gap-4 group">
                   <div className="w-12 h-12 bg-linear-to-br from-red-50 to-green-50 dark:from-red-900/20 dark:to-green-900/20 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6 text-slate-700 dark:text-slate-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
@@ -127,7 +127,7 @@ export default function Contact() {
                 {/* Email */}
                 <div className="flex items-start gap-4 group">
                   <div className="w-12 h-12 bg-linear-to-br from-red-50 to-green-50 dark:from-red-900/20 dark:to-green-900/20 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-6 h-6 text-slate-700 dark:text-slate-300 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-slate-700 dark:text-slate-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
@@ -149,7 +149,7 @@ export default function Contact() {
               ref={socialRef}
               className={`relative bg-linear-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-lg text-white overflow-hidden scroll-reveal scroll-reveal-up ${socialRevealed ? 'revealed' : ''}`}
             >
-              <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-red-500 to-green-500"></div>
+              <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-400 to-indigo-500"></div>
               <h3 className="text-2xl font-bold mb-6">Suivez-moi</h3>
               <div className="flex gap-4">
                 <a
@@ -192,10 +192,10 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-red-500 dark:focus:border-red-400 focus:outline-none transition-colors"
+                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none transition-colors"
                   placeholder=" "
                 />
-                <label htmlFor="name" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-red-600 dark:peer-focus:text-red-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Nom complet</label>
+                <label htmlFor="name" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-blue-600 dark:peer-focus:text-blue-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Nom complet</label>
               </div>
 
               <div className="relative">
@@ -206,10 +206,10 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-red-500 dark:focus:border-red-400 focus:outline-none transition-colors"
+                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none transition-colors"
                   placeholder=" "
                 />
-                <label htmlFor="email" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-red-600 dark:peer-focus:text-red-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Email</label>
+                <label htmlFor="email" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-blue-600 dark:peer-focus:text-blue-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Email</label>
               </div>
 
               <div className="relative">
@@ -220,10 +220,10 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-red-500 dark:focus:border-red-400 focus:outline-none transition-colors"
+                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none transition-colors"
                   placeholder=" "
                 />
-                <label htmlFor="subject" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-red-600 dark:peer-focus:text-red-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Sujet</label>
+                <label htmlFor="subject" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-blue-600 dark:peer-focus:text-blue-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Sujet</label>
               </div>
 
               <div className="relative">
@@ -234,16 +234,16 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-red-500 dark:focus:border-red-400 focus:outline-none transition-colors resize-none"
+                  className="peer w-full px-4 py-3 rounded-xl border-2 border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none transition-colors resize-none"
                   placeholder=" "
                 />
-                <label htmlFor="message" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-red-600 dark:peer-focus:text-red-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Message</label>
+                <label htmlFor="message" className="absolute left-4 top-3 text-slate-500 dark:text-slate-400 transition-all duration-200 peer-focus:-translate-y-5 peer-focus:scale-75 peer-focus:text-blue-600 dark:peer-focus:text-blue-400 peer-[:not(:placeholder-shown)]:-translate-y-5 peer-[:not(:placeholder-shown)]:scale-75 origin-left pointer-events-none">Message</label>
               </div>
 
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="relative overflow-hidden group w-full bg-linear-to-r from-red-600 to-green-600 text-white font-semibold py-4 rounded-xl hover:from-red-700 hover:to-green-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100"
+                className="relative overflow-hidden group w-full bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold py-4 rounded-xl hover:from-red-700 hover:to-green-700 hover:shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100"
               >
                 <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
                 <span className="relative">
@@ -252,12 +252,12 @@ export default function Contact() {
               </button>
 
               {status === 'success' && (
-                <div className="mt-4 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl text-green-700 dark:text-green-400 text-sm font-medium">
+                <div className="mt-4 p-4 bg-green-50 dark:bg-indigo-900/20 border border-green-200 dark:border-green-800 rounded-xl text-green-700 dark:text-indigo-400 text-sm font-medium">
                   ✓ {statusMessage}
                 </div>
               )}
               {status === 'error' && (
-                <div className="mt-4 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl text-red-700 dark:text-red-400 text-sm font-medium">
+                <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl text-blue-700 dark:text-blue-400 text-sm font-medium">
                   ✗ {statusMessage}
                 </div>
               )}

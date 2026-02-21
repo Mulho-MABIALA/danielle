@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-3xl font-bold bg-gradient-to-r from-red-600 to-green-600 bg-clip-text text-transparent hover:from-red-700 hover:to-green-700 transition-all duration-500"
+              className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent hover:from-red-700 hover:to-green-700 transition-all duration-500"
             >
               Danielle
             </Link>
@@ -66,11 +66,11 @@ export default function Navbar() {
                   }`}
                 >
                   {isActive && (
-                    <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-red-500 rounded-full"></span>
+                    <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
                   )}
                   {item.name}
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-red-500 to-green-500 rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full transition-all duration-300 ${
                       isActive ? 'w-3/4' : 'w-0 group-hover:w-3/4'
                     }`}
                   ></span>
@@ -98,7 +98,7 @@ export default function Navbar() {
             {/* Contact CTA */}
             <Link
               href="/contact"
-              className="ml-3 bg-gradient-to-r from-red-600 to-green-600 text-white px-7 py-2.5 rounded-full hover:shadow-lg hover:shadow-slate-800/25 dark:hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 font-medium text-sm animate-glow-pulse"
+              className="ml-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-7 py-2.5 rounded-full hover:shadow-lg hover:shadow-slate-800/25 dark:hover:shadow-blue-500/25 hover:scale-105 transition-all duration-300 font-medium text-sm animate-glow-pulse"
             >
               Contact
             </Link>
@@ -152,7 +152,7 @@ export default function Navbar() {
                   href={item.href}
                   className={`block px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
                     isActive
-                      ? 'bg-gradient-to-r from-red-500/10 to-green-500/10 text-red-600 dark:text-red-400'
+                      ? 'bg-gradient-to-r from-red-500/10 to-green-500/10 text-blue-600 dark:text-blue-400'
                       : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
@@ -166,7 +166,7 @@ export default function Navbar() {
             })}
             <Link
               href="/contact"
-              className="block px-4 py-3 bg-gradient-to-r from-red-600 to-green-600 text-white rounded-xl transition-all duration-300 font-medium text-center mt-3"
+              className="block px-4 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-xl transition-all duration-300 font-medium text-center mt-3"
               onClick={() => setIsMenuOpen(false)}
               style={{
                 animation: isMenuOpen ? `reveal-left 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${navItems.length * 60}ms both` : 'none',

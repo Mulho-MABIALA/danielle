@@ -34,8 +34,8 @@ export default function About() {
     <section id="apropos" className="relative py-32 overflow-hidden bg-linear-to-b from-white via-slate-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-slate-200 dark:bg-red-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-slate-100 dark:bg-green-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-slate-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-slate-100 dark:bg-indigo-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -48,8 +48,8 @@ export default function About() {
             À propos de moi
           </h2>
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-linear-to-r from-red-500 to-green-500 rounded-full"></div>
-            <div className="w-4 h-1 bg-red-400 rounded-full"></div>
+            <div className="w-12 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
+            <div className="w-4 h-1 bg-blue-400 rounded-full"></div>
             <div className="w-2 h-1 bg-green-400 rounded-full"></div>
           </div>
         </div>
@@ -60,9 +60,9 @@ export default function About() {
             {/* Main card */}
             <div ref={mainCardReveal.ref} className={`scroll-reveal scroll-reveal-left ${mainCardReveal.isRevealed ? 'revealed' : ''}`}>
               <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-red-500 to-green-500"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-linear-to-b from-blue-400 to-indigo-500"></div>
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 bg-linear-to-br from-red-600 to-green-600 rounded-2xl flex items-center justify-center shrink-0">
+                  <div className="w-16 h-16 bg-linear-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shrink-0">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
@@ -75,7 +75,7 @@ export default function About() {
 
                 <div className="space-y-6 text-lg text-gray-700 dark:text-slate-300 leading-relaxed">
                   <p>
-                    Actuellement étudiante en <span className="font-bold text-slate-800 dark:text-slate-200 bg-red-50 dark:bg-red-900/20 px-2 py-1 rounded">BTS SIO option SISR</span> au Lycée Beaupeyrat,
+                    Actuellement étudiante en <span className="font-bold text-slate-800 dark:text-slate-200 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">BTS SIO option SISR</span> au Lycée Beaupeyrat,
                     je me forme à l&apos;administration des systèmes et réseaux, à la virtualisation, à la gestion de serveurs (web, DNS, FTP)
                     et à la sécurisation des infrastructures informatiques.
                   </p>
@@ -92,7 +92,7 @@ export default function About() {
             {/* Expertise domains */}
             <div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
-                <span className="w-10 h-10 bg-linear-to-br from-red-600 to-green-600 rounded-lg flex items-center justify-center">
+                <span className="w-10 h-10 bg-linear-to-br from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center">
                   <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -110,7 +110,7 @@ export default function About() {
                     <div className="relative flex items-start gap-4">
                       <span className="text-3xl">{domain.icon}</span>
                       <div>
-                        <h4 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors">{domain.title}</h4>
+                        <h4 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{domain.title}</h4>
                         <p className="text-sm text-slate-600 dark:text-slate-300">{domain.desc}</p>
                       </div>
                     </div>
@@ -125,14 +125,14 @@ export default function About() {
             <div className="sticky top-24 space-y-6">
               <div ref={sidebarReveal.ref} className={`scroll-reveal scroll-reveal-right ${sidebarReveal.isRevealed ? 'revealed' : ''}`}>
                 <div className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-2xl border-2 border-slate-200 dark:border-slate-700 overflow-hidden relative">
-                  <div className="absolute top-0 left-0 right-0 h-2 bg-linear-to-r from-red-500 via-orange-500 to-green-500"></div>
+                  <div className="absolute top-0 left-0 right-0 h-2 bg-linear-to-r from-blue-400 via-indigo-500 to-purple-500"></div>
 
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center">Me contacter</h3>
 
                   <div className="space-y-6">
                     {/* Email */}
                     <div className="group">
-                      <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-red-50/50 dark:hover:bg-red-900/10 transition-all duration-300">
+                      <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all duration-300">
                         <div className="shrink-0 w-14 h-14 bg-linear-to-br from-red-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                           <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -140,7 +140,7 @@ export default function About() {
                         </div>
                         <div className="flex-1">
                           <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Email</p>
-                          <a href="mailto:vhanndanielle@gmail.com" className="text-slate-900 dark:text-white font-semibold hover:text-red-600 dark:hover:text-red-400 transition-colors break-all">
+                          <a href="mailto:vhanndanielle@gmail.com" className="text-slate-900 dark:text-white font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors break-all">
                             vhanndanielle@gmail.com
                           </a>
                         </div>
@@ -149,7 +149,7 @@ export default function About() {
 
                     {/* Phone */}
                     <div className="group">
-                      <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-red-50/50 dark:hover:bg-red-900/10 transition-all duration-300">
+                      <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all duration-300">
                         <div className="shrink-0 w-14 h-14 bg-linear-to-br from-red-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                           <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -157,7 +157,7 @@ export default function About() {
                         </div>
                         <div className="flex-1">
                           <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">Téléphone</p>
-                          <a href="tel:+33771898971" className="text-slate-900 dark:text-white font-semibold hover:text-red-600 dark:hover:text-red-400 transition-colors">
+                          <a href="tel:+33771898971" className="text-slate-900 dark:text-white font-semibold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                             +33 7 71 89 89 71
                           </a>
                         </div>
@@ -166,7 +166,7 @@ export default function About() {
 
                     {/* Location */}
                     <div className="group">
-                      <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-red-50/50 dark:hover:bg-red-900/10 transition-all duration-300">
+                      <div className="flex items-center gap-4 p-4 rounded-2xl hover:bg-blue-50/50 dark:hover:bg-blue-900/10 transition-all duration-300">
                         <div className="shrink-0 w-14 h-14 bg-linear-to-br from-red-500 to-green-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
                           <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -205,7 +205,7 @@ export default function About() {
                     </div>
 
                     {/* CV Download */}
-                    <button type="button" onClick={handleDownloadCV} className="group/btn w-full bg-linear-to-r from-red-600 to-green-600 text-white px-8 py-4 rounded-2xl hover:shadow-2xl hover:shadow-red-500/25 hover:scale-[1.02] transition-all duration-300 font-bold flex items-center justify-center gap-3 mt-8 relative overflow-hidden cursor-pointer">
+                    <button type="button" onClick={handleDownloadCV} className="group/btn w-full bg-linear-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-2xl hover:shadow-2xl hover:shadow-blue-500/25 hover:scale-[1.02] transition-all duration-300 font-bold flex items-center justify-center gap-3 mt-8 relative overflow-hidden cursor-pointer">
                       <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
                       <svg className="w-6 h-6 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -219,11 +219,11 @@ export default function About() {
               {/* Stats */}
               <div ref={statsReveal.ref} className={`grid grid-cols-2 gap-4 scroll-reveal scroll-reveal-scale ${statsReveal.isRevealed ? 'revealed' : ''}`}>
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <p className="text-3xl font-bold bg-linear-to-r from-red-600 to-green-600 bg-clip-text text-transparent mb-1">2+</p>
+                  <p className="text-3xl font-bold bg-linear-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent mb-1">2+</p>
                   <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Années d&apos;étude</p>
                 </div>
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                  <p className="text-3xl font-bold bg-linear-to-r from-red-600 to-green-600 bg-clip-text text-transparent mb-1">100%</p>
+                  <p className="text-3xl font-bold bg-linear-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent mb-1">100%</p>
                   <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Motivation</p>
                 </div>
               </div>

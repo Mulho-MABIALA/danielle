@@ -50,14 +50,14 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-b from-slate-900 to-slate-950 dark:from-slate-950 dark:to-black text-white">
       {/* Gradient line at top */}
-      <div className="h-px bg-linear-to-r from-transparent via-red-500/50 to-transparent"></div>
+      <div className="h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         {/* Section principale */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* À propos */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-red-400 to-green-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-300 to-indigo-400 bg-clip-text text-transparent mb-4">
               Danielle
             </h3>
             <p className="text-slate-400 dark:text-slate-500 mb-6 leading-relaxed">
@@ -89,7 +89,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-slate-400 dark:text-slate-500 hover:text-slate-200 dark:hover:text-slate-300 transition-colors duration-300 flex items-center gap-2 group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 group-hover:bg-red-400 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 group-hover:bg-blue-400 transition-all duration-300"></span>
                     {link.name}
                   </Link>
                 </li>
@@ -107,7 +107,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-slate-400 dark:text-slate-500 hover:text-slate-200 dark:hover:text-slate-300 transition-colors duration-300 flex items-center gap-2 group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 group-hover:bg-red-400 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 group-hover:bg-blue-400 transition-all duration-300"></span>
                     {link.name}
                   </Link>
                 </li>
@@ -157,14 +157,14 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-6 text-sm">
-            <a href="#" className="text-slate-400 dark:text-slate-500 hover:text-red-400 transition-colors duration-300">
+            <a href="#" className="text-slate-400 dark:text-slate-500 hover:text-blue-400 transition-colors duration-300">
               Mentions légales
             </a>
-            <a href="#" className="text-slate-400 dark:text-slate-500 hover:text-red-400 transition-colors duration-300">
+            <a href="#" className="text-slate-400 dark:text-slate-500 hover:text-blue-400 transition-colors duration-300">
               Politique de confidentialité
             </a>
             {/* Back-to-top button */}
-            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-12 h-12 bg-linear-to-r from-red-600 to-green-600 rounded-full flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300">
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="w-12 h-12 bg-linear-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
             </button>
           </div>
@@ -173,7 +173,7 @@ export default function Footer() {
         {/* Message de crédit */}
         <div className="mt-8 text-center">
           <p className="text-slate-500 text-sm">
-            Concu avec <span className="text-red-500">♥</span> par Danielle
+            Concu avec <span className="text-blue-500">♥</span> par Danielle
           </p>
         </div>
       </div>

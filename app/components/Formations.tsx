@@ -15,8 +15,8 @@ export default function Formations() {
     <section id="formations" className="relative py-32 bg-white dark:bg-slate-800 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-slate-100 dark:bg-red-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
-        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-slate-50 dark:bg-green-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-slate-100 dark:bg-blue-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-slate-50 dark:bg-indigo-900/15 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
@@ -29,7 +29,7 @@ export default function Formations() {
             Formations
           </h2>
           <div className="flex items-center justify-center gap-2">
-            <div className="w-12 h-1 bg-linear-to-r from-red-500 to-green-500 rounded-full"></div>
+            <div className="w-12 h-1 bg-linear-to-r from-blue-400 to-indigo-500 rounded-full"></div>
             <div className="w-4 h-1 bg-blue-400 rounded-full"></div>
             <div className="w-2 h-1 bg-indigo-400 rounded-full"></div>
           </div>
@@ -39,7 +39,7 @@ export default function Formations() {
           {/* Column 1: Academic Path */}
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-12 bg-linear-to-br from-red-600 to-green-600 rounded-xl flex items-center justify-center">
+              <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
@@ -50,20 +50,20 @@ export default function Formations() {
             <div className="space-y-6">
               {/* BTS SIO */}
               <div ref={card1Reveal.ref} className={`group relative scroll-reveal scroll-reveal-left ${card1Reveal.isRevealed ? 'revealed' : ''}`}>
-                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-linear-to-b from-red-500 to-green-500 rounded-full"></div>
-                <div className="absolute -left-[7px] top-6 w-4 h-4 rounded-full bg-red-500 border-4 border-white dark:border-slate-800 z-10">
-                  <div className="absolute inset-0 rounded-full bg-red-500 animate-ping opacity-20"></div>
+                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-linear-to-b from-blue-400 to-indigo-500 rounded-full"></div>
+                <div className="absolute -left-[7px] top-6 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-slate-800 z-10">
+                  <div className="absolute inset-0 rounded-full bg-blue-500 animate-ping opacity-20"></div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-red-200 dark:hover:border-red-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
                   <div className="flex items-start justify-between mb-4">
-                    <span className="inline-block bg-linear-to-r from-red-600 to-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <span className="inline-block bg-linear-to-r from-blue-500 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                       2024 - 2026
                     </span>
                     <div className="flex gap-2">
-                      <span className="bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-400 text-xs font-semibold px-3 py-1 rounded-full">
+                      <span className="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-xs font-semibold px-3 py-1 rounded-full">
                         Motivée
                       </span>
-                      <span className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-semibold px-3 py-1 rounded-full">
+                      <span className="bg-green-50 dark:bg-indigo-900/20 text-green-700 dark:text-indigo-400 text-xs font-semibold px-3 py-1 rounded-full">
                         Travailleuse
                       </span>
                     </div>
@@ -87,12 +87,12 @@ export default function Formations() {
                 <div className="absolute -left-[7px] top-6 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-slate-800 z-10">
                   <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-red-200 dark:hover:border-red-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
                   <div className="flex items-start justify-between mb-4">
-                    <span className="inline-block bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <span className="inline-block bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                       2023 - 2024
                     </span>
-                    <span className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-semibold px-3 py-1 rounded-full">
+                    <span className="bg-green-50 dark:bg-indigo-900/20 text-green-700 dark:text-indigo-400 text-xs font-semibold px-3 py-1 rounded-full">
                       Passionnée
                     </span>
                   </div>
@@ -115,9 +115,9 @@ export default function Formations() {
                 <div className="absolute -left-[7px] top-6 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-slate-800 z-10">
                   <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></div>
                 </div>
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-red-200 dark:hover:border-red-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
+                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
                   <div className="flex items-start justify-between mb-4">
-                    <span className="inline-block bg-green-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                    <span className="inline-block bg-indigo-700 text-white text-xs font-bold px-3 py-1 rounded-full">
                       2021 - 2022
                     </span>
                   </div>
@@ -140,7 +140,7 @@ export default function Formations() {
           <div className="space-y-8">
             <div ref={rightColReveal.ref} className={`scroll-reveal scroll-reveal-right ${rightColReveal.isRevealed ? 'revealed' : ''}`}>
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-linear-to-br from-red-600 to-green-600 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -151,14 +151,14 @@ export default function Formations() {
               <div className="bg-linear-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-6 border-2 border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                     </svg>
-                    <span className="text-xs font-bold text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-900/20 px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-full">
                       Envisagée
                     </span>
                   </div>
-                  <span className="bg-linear-to-r from-red-600 to-green-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  <span className="bg-linear-to-r from-blue-500 to-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
                     BAC+3
                   </span>
                 </div>
@@ -173,7 +173,7 @@ export default function Formations() {
                   Après mon BTS SIO option SISR, je souhaite poursuivre ma formation avec le Bachelor AIS
                   pour approfondir mes compétences en administration d&apos;infrastructures et en sécurité informatique.
                 </p>
-                <a href="#" className="inline-flex items-center gap-2 text-red-600 dark:text-red-400 font-semibold hover:text-red-700 dark:hover:text-red-300 transition-colors group">
+                <a href="#" className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group">
                   En savoir plus sur cette formation
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -185,7 +185,7 @@ export default function Formations() {
             {/* Certifications */}
             <div ref={certsReveal.ref} className={`scroll-reveal scroll-reveal-right stagger-2 ${certsReveal.isRevealed ? 'revealed' : ''}`}>
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-linear-to-br from-red-600 to-green-600 rounded-xl flex items-center justify-center">
+                <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
@@ -206,7 +206,7 @@ export default function Formations() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xs font-bold text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 px-2 py-0.5 rounded-full">AWS</span>
-                        <span className="text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full">Obtenue</span>
+                        <span className="text-xs font-bold text-green-700 dark:text-indigo-400 bg-green-50 dark:bg-indigo-900/20 px-2 py-0.5 rounded-full">Obtenue</span>
                       </div>
                       <h4 className="text-lg font-bold text-slate-900 dark:text-white">
                         Certification Amazon Web Services
@@ -251,7 +251,7 @@ export default function Formations() {
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         <span className="text-xs font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded-full">ANSSI</span>
-                        <span className="text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full">Obtenue</span>
+                        <span className="text-xs font-bold text-green-700 dark:text-indigo-400 bg-green-50 dark:bg-indigo-900/20 px-2 py-0.5 rounded-full">Obtenue</span>
                       </div>
                       <h4 className="text-lg font-bold text-slate-900 dark:text-white">
                         Certification ANSSI
@@ -289,12 +289,12 @@ export default function Formations() {
             {/* Stats */}
             <div ref={statsReveal.ref} className={`mt-8 grid grid-cols-2 gap-4 scroll-reveal scroll-reveal-scale ${statsReveal.isRevealed ? 'revealed' : ''}`}>
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="w-12 h-12 bg-linear-to-br from-red-600 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3">
+                <div className="w-12 h-12 bg-linear-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-3">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <p className="text-3xl font-bold bg-linear-to-r from-red-600 to-green-600 bg-clip-text text-transparent mb-1">5+</p>
+                <p className="text-3xl font-bold bg-linear-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent mb-1">5+</p>
                 <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Années d&apos;étude</p>
               </div>
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">

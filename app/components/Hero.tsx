@@ -20,9 +20,9 @@ export default function Hero() {
     <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden dark:bg-slate-900">
       {/* Background */}
       <div className="absolute inset-0 bg-linear-to-br from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-slate-200 dark:bg-red-900/25 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-        <div className="absolute bottom-20 left-20 w-72 h-72 bg-slate-100 dark:bg-green-900/25 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-slate-200 dark:bg-red-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-20 right-20 w-72 h-72 bg-slate-200 dark:bg-blue-900/25 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div className="absolute bottom-20 left-20 w-72 h-72 bg-slate-100 dark:bg-indigo-900/25 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-slate-200 dark:bg-blue-900/20 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-20">
@@ -43,7 +43,7 @@ export default function Hero() {
                   Bonjour, je suis
                 </span>
                 <span className="relative inline-block mt-2">
-                  <span className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] bg-linear-to-r from-red-600 via-orange-500 to-green-600 dark:from-red-400 dark:via-orange-400 dark:to-green-400 bg-clip-text text-transparent">
+                  <span className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] bg-linear-to-r from-blue-500 via-indigo-500 to-purple-600 dark:from-blue-300 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
                     Vhann Danielle
                   </span>
                   <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
@@ -65,7 +65,7 @@ export default function Hero() {
             </div>
 
             {/* Description */}
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-red-500 dark:border-green-500 pl-6 opacity-0 animate-slide-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-blue-400 dark:border-indigo-500 pl-6 opacity-0 animate-slide-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
               Actuellement etudiante en <span className="font-bold text-slate-800 dark:text-slate-200">BTS SIO option SISR</span> au Lycee Beaupeyrat,
               je developpe des competences en administration systeme et reseau, en gestion d&apos;infrastructures informatiques
               et en maintenance de services afin d&apos;assurer la securite et la continuite des systemes.
@@ -104,7 +104,7 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={handleDownloadCV}
-                className="group relative bg-linear-to-r from-red-600 to-green-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-red-500/30 hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-3 overflow-hidden cursor-pointer"
+                className="group relative bg-linear-to-r from-blue-500 to-indigo-600 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-blue-500/30 hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-3 overflow-hidden cursor-pointer"
               >
                 <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,9 +116,9 @@ export default function Hero() {
               {/* Secondary CTA */}
               <Link
                 href="/contact"
-                className="relative border-2 border-red-600 dark:border-green-500 text-slate-800 dark:text-slate-300 px-10 py-4 rounded-full overflow-hidden group transition-all duration-300 font-semibold hover:text-white dark:hover:text-white hover:shadow-xl"
+                className="relative border-2 border-blue-500 dark:border-indigo-500 text-slate-800 dark:text-slate-300 px-10 py-4 rounded-full overflow-hidden group transition-all duration-300 font-semibold hover:text-white dark:hover:text-white hover:shadow-xl"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-green-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
                 <span className="relative z-10">Me contacter</span>
               </Link>
             </div>
@@ -128,7 +128,7 @@ export default function Hero() {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end opacity-0 animate-scale-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
             <div className="relative group">
               {/* Glow */}
-              <div className="absolute -inset-1 bg-linear-to-r from-red-500 via-orange-500 to-green-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+              <div className="absolute -inset-1 bg-linear-to-r from-blue-400 via-indigo-500 to-purple-500 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
 
               {/* Decorative frame */}
               <div className="absolute -inset-4 border-4 border-slate-200 dark:border-slate-700 rounded-3xl -rotate-3 transition-transform group-hover:rotate-0 duration-500"></div>
@@ -148,7 +148,7 @@ export default function Hero() {
               {/* Floating badge */}
               <div className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 border-4 border-slate-100 dark:border-slate-700 animate-bounce-slow">
                 <div className="text-center">
-                  <p className="text-3xl font-bold bg-linear-to-r from-red-600 to-green-600 bg-clip-text text-transparent">BTS</p>
+                  <p className="text-3xl font-bold bg-linear-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">BTS</p>
                   <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">SIO SISR</p>
                 </div>
               </div>
