@@ -249,7 +249,7 @@ export default function Projets() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div
           ref={heroReveal.ref}
-          className={`bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden scroll-reveal scroll-reveal-up ${heroReveal.isRevealed ? 'revealed' : ''}`}
+          className={`bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 rounded-3xl p-12 md:p-20 text-center mb-20 shadow-2xl relative overflow-hidden transition-all duration-1000 ${heroReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0" style={{
@@ -272,7 +272,7 @@ export default function Projets() {
         {/* À propos du projet Apache Guacamole */}
         <div
           ref={aboutReveal.ref}
-          className={`bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200 dark:border-slate-700 mb-20 scroll-reveal scroll-reveal-up ${aboutReveal.isRevealed ? 'revealed' : ''}`}
+          className={`bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-12 shadow-lg border border-slate-200 dark:border-slate-700 mb-20 transition-all duration-700 ${aboutReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
           <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-6">
             À propos du projet Apache Guacamole
@@ -302,7 +302,7 @@ export default function Projets() {
         {/* Titre principal */}
         <div
           ref={titleReveal.ref}
-          className={`text-center mb-20 scroll-reveal scroll-reveal-up ${titleReveal.isRevealed ? 'revealed' : ''}`}
+          className={`text-center mb-20 transition-all duration-700 ${titleReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
         >
           <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Mes Projets & Documentations
@@ -314,10 +314,10 @@ export default function Projets() {
         </div>
 
         {/* ===== BTS SIO SISR - Année 2 ===== */}
-        <div className="mb-20 scroll-reveal scroll-reveal-left">
+        <div className="mb-20">
           <div
             ref={year2HeaderReveal.ref}
-            className={`flex items-center gap-4 mb-2 scroll-reveal scroll-reveal-up ${year2HeaderReveal.isRevealed ? 'revealed' : ''}`}
+            className={`flex items-center gap-4 mb-2 transition-all duration-700 ${year2HeaderReveal.isRevealed ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             <div className="w-12 h-12 bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl flex items-center justify-center">
               <svg className="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -444,10 +444,10 @@ export default function Projets() {
         </div>
 
         {/* ===== BTS SIO SISR - Année 1 ===== */}
-        <div className="mb-20 scroll-reveal scroll-reveal-left">
+        <div className="mb-20">
           <div
             ref={year1HeaderReveal.ref}
-            className={`flex items-center gap-4 mb-2 scroll-reveal scroll-reveal-up ${year1HeaderReveal.isRevealed ? 'revealed' : ''}`}
+            className={`flex items-center gap-4 mb-2 transition-all duration-700 ${year1HeaderReveal.isRevealed ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'}`}
           >
             <div className="w-12 h-12 bg-linear-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl flex items-center justify-center">
               <svg className="w-6 h-6 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
