@@ -13,6 +13,57 @@ export default function Formations() {
   const certsReveal = useScrollReveal();
   const statsReveal = useScrollReveal();
 
+  const cardReveals = [card1Reveal, card2Reveal, card3Reveal];
+  const cardClasses = [
+    'scroll-reveal scroll-reveal-left',
+    'scroll-reveal scroll-reveal-left stagger-2',
+    'scroll-reveal scroll-reveal-left stagger-3',
+  ];
+  const cardLineColors = [
+    'bg-linear-to-b from-blue-700 to-indigo-800',
+    'bg-linear-to-b from-orange-500 to-green-500',
+    'bg-linear-to-b from-green-500 to-slate-300',
+  ];
+  const cardDotColors = ['bg-blue-800', 'bg-green-500', 'bg-green-500'];
+  const cardYearColors = [
+    'bg-linear-to-r from-blue-800 to-indigo-900',
+    'bg-indigo-600',
+    'bg-indigo-700',
+  ];
+  const schoolIcons = [
+    <path key="s1" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
+    <path key="s2" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />,
+    <path key="s3" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
+  ];
+
+  const certBadgeColors = [
+    {
+      border: 'hover:border-orange-300 dark:hover:border-orange-700',
+      topBar: 'bg-linear-to-r from-orange-400 to-yellow-400',
+      iconBg: 'bg-linear-to-br from-orange-400 to-yellow-500',
+      badgeText: 'text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20',
+      downloadBtn: 'bg-linear-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:shadow-orange-500/25',
+      viewHover: 'hover:bg-orange-50 dark:hover:bg-orange-900/20 hover:text-orange-700 dark:hover:text-orange-400',
+    },
+    {
+      border: 'hover:border-blue-300 dark:hover:border-blue-700',
+      topBar: 'bg-linear-to-r from-blue-600 to-red-600',
+      iconBg: 'bg-linear-to-br from-blue-700 to-red-600',
+      badgeText: 'text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20',
+      downloadBtn: 'bg-linear-to-r from-blue-700 to-red-600 hover:from-blue-800 hover:to-red-700 hover:shadow-blue-800/25',
+      viewHover: 'hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400',
+    },
+  ];
+
+  const certIcons = [
+    <svg key="ci1" className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M18.75 11.35a4.32 4.32 0 0 0 .09-.83 4.26 4.26 0 0 0-7.8-2.37 3 3 0 0 0-4.64 2.52 3 3 0 0 0 .05.52A3.75 3.75 0 0 0 7.5 18h10.88a3.37 3.37 0 0 0 .37-6.65z"/>
+    </svg>,
+    <svg key="ci2" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>,
+  ];
+
   return (
     <section id="formations" className="relative py-32 bg-white dark:bg-slate-800 overflow-hidden">
       {/* Background */}
@@ -50,91 +101,38 @@ export default function Formations() {
             </div>
 
             <div className="space-y-6">
-              {/* BTS SIO */}
-              <div ref={card1Reveal.ref} className={`group relative scroll-reveal scroll-reveal-left ${card1Reveal.isRevealed ? 'revealed' : ''}`}>
-                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-linear-to-b from-blue-700 to-indigo-800 rounded-full"></div>
-                <div className="absolute -left-[7px] top-6 w-4 h-4 rounded-full bg-blue-800 border-4 border-white dark:border-slate-800 z-10">
-                  <div className="absolute inset-0 rounded-full bg-blue-800 animate-ping opacity-20"></div>
-                </div>
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="inline-block bg-linear-to-r from-blue-800 to-indigo-900 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      2024 - 2026
-                    </span>
-                    <div className="flex gap-2">
-                      <span className="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-xs font-semibold px-3 py-1 rounded-full">
-                        Motivée
+              {t.formations.list.map((item, index) => (
+                <div key={index} ref={cardReveals[index]?.ref} className={`group relative ${cardClasses[index] || 'scroll-reveal scroll-reveal-left'} ${cardReveals[index]?.isRevealed ? 'revealed' : ''}`}>
+                  <div className={`absolute -left-4 top-0 bottom-0 w-1 ${cardLineColors[index] || 'bg-linear-to-b from-blue-700 to-indigo-800'} rounded-full`}></div>
+                  <div className={`absolute -left-[7px] top-6 w-4 h-4 rounded-full ${cardDotColors[index] || 'bg-blue-800'} border-4 border-white dark:border-slate-800 z-10`}>
+                    <div className={`absolute inset-0 rounded-full ${cardDotColors[index] || 'bg-blue-800'} animate-ping opacity-20`}></div>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
+                    <div className="flex items-start justify-between mb-4">
+                      <span className={`inline-block ${cardYearColors[index] || 'bg-linear-to-r from-blue-800 to-indigo-900'} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                        {item.years}
                       </span>
-                      <span className="bg-green-50 dark:bg-indigo-900/20 text-green-700 dark:text-indigo-400 text-xs font-semibold px-3 py-1 rounded-full">
-                        Travailleuse
-                      </span>
+                      <div className="flex gap-2">
+                        {item.tags.map((tag, ti) => (
+                          <span key={ti} className="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-xs font-semibold px-3 py-1 rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
+                      {item.degree}
+                    </h4>
+                    <p className="text-slate-600 dark:text-slate-300 font-medium mb-3">{item.option}</p>
+                    <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {schoolIcons[index]}
+                      </svg>
+                      <span className="font-semibold">{item.school}</span>
                     </div>
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                    BTS Services Informatiques aux Organisations
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-300 font-medium mb-3">Option SISR - Systèmes et Réseaux</p>
-                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    <span className="font-semibold">Lycée Beaupeyrat, Limoges</span>
-                  </div>
                 </div>
-              </div>
-
-              {/* Licence 2 */}
-              <div ref={card2Reveal.ref} className={`group relative scroll-reveal scroll-reveal-left stagger-2 ${card2Reveal.isRevealed ? 'revealed' : ''}`}>
-                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-linear-to-b from-orange-500 to-green-500 rounded-full"></div>
-                <div className="absolute -left-[7px] top-6 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-slate-800 z-10">
-                  <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></div>
-                </div>
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="inline-block bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      2023 - 2024
-                    </span>
-                    <span className="bg-green-50 dark:bg-indigo-900/20 text-green-700 dark:text-indigo-400 text-xs font-semibold px-3 py-1 rounded-full">
-                      Passionnée
-                    </span>
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                    Licence 2 Génie Logiciel
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-300 font-medium mb-3">Développement informatique</p>
-                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="font-semibold">Institut International (2i), Congo-Brazzaville</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bac */}
-              <div ref={card3Reveal.ref} className={`group relative scroll-reveal scroll-reveal-left stagger-3 ${card3Reveal.isRevealed ? 'revealed' : ''}`}>
-                <div className="absolute -left-4 top-0 bottom-0 w-1 bg-linear-to-b from-green-500 to-slate-300 rounded-full"></div>
-                <div className="absolute -left-[7px] top-6 w-4 h-4 rounded-full bg-green-500 border-4 border-white dark:border-slate-800 z-10">
-                  <div className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"></div>
-                </div>
-                <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
-                  <div className="flex items-start justify-between mb-4">
-                    <span className="inline-block bg-indigo-700 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      2021 - 2022
-                    </span>
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                    Baccalauréat Général
-                  </h4>
-                  <p className="text-slate-600 dark:text-slate-300 font-medium mb-3">Série D - Sciences Expérimentales</p>
-                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                    <span className="font-semibold">Le Jade, Congo-Brazzaville</span>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -154,10 +152,10 @@ export default function Formations() {
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-2">
                     <svg className="w-6 h-6 text-blue-800 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                     </svg>
                     <span className="text-xs font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-full">
-                      Envisagée
+                      {t.formations.planned}
                     </span>
                   </div>
                   <span className="bg-linear-to-r from-blue-800 to-indigo-900 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -166,17 +164,16 @@ export default function Formations() {
                 </div>
 
                 <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
-                  Bachelor AIS - Administrateur d&apos;Infrastructures Sécurisées
+                  {t.formations.bachelorTitle}
                 </h4>
                 <p className="text-sm text-slate-700 dark:text-slate-200 font-semibold mb-3">
-                  Formation reconnue par l&apos;État (RNCP 37680)
+                  {t.formations.bachelorRecognized}
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-                  Après mon BTS SIO option SISR, je souhaite poursuivre ma formation avec le Bachelor AIS
-                  pour approfondir mes compétences en administration d&apos;infrastructures et en sécurité informatique.
+                  {t.formations.bachelorDesc}
                 </p>
                 <a href="#" className="inline-flex items-center gap-2 text-blue-800 dark:text-blue-400 font-semibold hover:text-blue-700 dark:hover:text-blue-300 transition-colors group">
-                  En savoir plus sur cette formation
+                  {t.formations.learnMore}
                   <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -196,95 +193,52 @@ export default function Formations() {
               </div>
 
               <div className="space-y-4">
-                {/* AWS Certification */}
-                <div className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-orange-300 dark:hover:border-orange-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-orange-400 to-yellow-400"></div>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-linear-to-br from-orange-400 to-yellow-500 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M18.75 11.35a4.32 4.32 0 0 0 .09-.83 4.26 4.26 0 0 0-7.8-2.37 3 3 0 0 0-4.64 2.52 3 3 0 0 0 .05.52A3.75 3.75 0 0 0 7.5 18h10.88a3.37 3.37 0 0 0 .37-6.65z"/>
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-bold text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20 px-2 py-0.5 rounded-full">AWS</span>
-                        <span className="text-xs font-bold text-green-700 dark:text-indigo-400 bg-green-50 dark:bg-indigo-900/20 px-2 py-0.5 rounded-full">Obtenue</span>
+                {t.formations.certList.map((cert, index) => {
+                  const colors = certBadgeColors[index] || certBadgeColors[0];
+                  return (
+                    <div key={index} className={`group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 ${colors.border} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}>
+                      <div className={`absolute top-0 left-0 right-0 h-1 ${colors.topBar}`}></div>
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className={`w-14 h-14 ${colors.iconBg} rounded-xl flex items-center justify-center shrink-0 shadow-lg`}>
+                          {certIcons[index]}
+                        </div>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className={`text-xs font-bold ${colors.badgeText} px-2 py-0.5 rounded-full`}>{cert.badge}</span>
+                            <span className="text-xs font-bold text-green-700 dark:text-indigo-400 bg-green-50 dark:bg-indigo-900/20 px-2 py-0.5 rounded-full">{t.formations.obtained}</span>
+                          </div>
+                          <h4 className="text-lg font-bold text-slate-900 dark:text-white">
+                            {cert.label}
+                          </h4>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">{cert.domain}</p>
+                        </div>
                       </div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white">
-                        Certification Amazon Web Services
-                      </h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Cloud Computing &amp; Infrastructure</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <a
-                      href="/Certification_AWS.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-orange-50 dark:hover:bg-orange-900/20 text-slate-700 dark:text-slate-200 hover:text-orange-700 dark:hover:text-orange-400 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      {t.formations.visualiser}
-                    </a>
-                    <a
-                      href="/api/download/aws"
-                      className="flex-1 flex items-center justify-center gap-2 bg-linear-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/25"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      {t.formations.telecharger}
-                    </a>
-                  </div>
-                </div>
-
-                {/* ANSSI Certification */}
-                <div className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-linear-to-r from-blue-600 to-red-600"></div>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-14 h-14 bg-linear-to-br from-blue-700 to-red-600 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <span className="text-xs font-bold text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-2 py-0.5 rounded-full">ANSSI</span>
-                        <span className="text-xs font-bold text-green-700 dark:text-indigo-400 bg-green-50 dark:bg-indigo-900/20 px-2 py-0.5 rounded-full">Obtenue</span>
+                      <div className="flex gap-3">
+                        <a
+                          href={cert.pdfPath}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex-1 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-700 ${colors.viewHover} text-slate-700 dark:text-slate-200 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300`}
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                          {t.formations.visualiser}
+                        </a>
+                        <a
+                          href={cert.apiPath}
+                          className={`flex-1 flex items-center justify-center gap-2 ${colors.downloadBtn} text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-lg`}
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                          {t.formations.telecharger}
+                        </a>
                       </div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white">
-                        Certification ANSSI
-                      </h4>
-                      <p className="text-sm text-slate-500 dark:text-slate-400">Cybersécurité &amp; Sécurité des Systèmes</p>
                     </div>
-                  </div>
-                  <div className="flex gap-3">
-                    <a
-                      href="/Vhann_Certification_ANSSI.pdf"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-700 hover:bg-blue-50 dark:hover:bg-blue-900/20 text-slate-700 dark:text-slate-200 hover:text-blue-700 dark:hover:text-blue-400 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      {t.formations.visualiser}
-                    </a>
-                    <a
-                      href="/api/download/anssi"
-                      className="flex-1 flex items-center justify-center gap-2 bg-linear-to-r from-blue-700 to-red-600 hover:from-blue-800 hover:to-red-700 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-blue-800/25"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      {t.formations.telecharger}
-                    </a>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -297,7 +251,7 @@ export default function Formations() {
                   </svg>
                 </div>
                 <p className="text-3xl font-bold bg-linear-to-r from-blue-800 to-indigo-900 bg-clip-text text-transparent mb-1">5+</p>
-                <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Années d&apos;étude</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">{t.formations.yearsStudy}</p>
               </div>
               <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border border-slate-100 dark:border-slate-700 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <div className="w-12 h-12 bg-linear-to-br from-orange-600 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-3">
@@ -306,7 +260,7 @@ export default function Formations() {
                   </svg>
                 </div>
                 <p className="text-3xl font-bold bg-linear-to-r from-orange-600 to-green-600 bg-clip-text text-transparent mb-1">3</p>
-                <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">Diplômes</p>
+                <p className="text-sm text-slate-600 dark:text-slate-300 font-medium">{t.formations.diplomas}</p>
               </div>
             </div>
           </div>
