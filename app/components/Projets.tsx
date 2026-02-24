@@ -224,22 +224,22 @@ export default function Projets() {
       pdf: '/Installation.pdf',
     },
     {
-      title: 'BackupPC ou Rsync',
+      title: 'Rsync',
       description: 'Configuration de Rsync pour la synchronisation et la sauvegarde automatisée des fichiers entr...',
       icon: '☁️',
-      pdf: '/Backuppc.pdf',
+      pdf: '/sauvegarde_Rsync.pdf',
     },
     {
       title: 'SSH',
       description: 'Mise en place d\'une connexion SSH sécurisée avec authentification par clés, configuration d...',
       icon: '🔒',
-      pdf: '/SSH.pdf',
+      pdf: '/creation_des_cles_ssh.pdf',
     },
     {
       title: 'Netfilter',
       description: 'Configuration du pare-feu Linux avec iptables - Règles de filtrage, NAT, redirection de ports et...',
       icon: '🌐',
-      pdf: '/Netfilter.pdf',
+      pdf: '/netfilter_iptables.pdf',
     },
   ];
 
