@@ -194,8 +194,8 @@ export default function Projets() {
       pdf: '/DHCP.pdf',
     },
     {
-      title: 'Portsentry',
-      description: 'Configuration du pare-feu Linux avec iptables - Règles de filtrage, NAT, redirection de ports et...',
+      title: 'Fail2ban',
+      description: 'Configuration d\' service analysant en temps réel les journaux d\'évènement de divers services (SSH, Apache, FTP, entre autres) à la recherche de comportements malveillants',
       icon: '🛡️',
       pdf: '/fail2ban.pdf',
     },
