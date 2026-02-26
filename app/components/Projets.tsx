@@ -215,13 +215,13 @@ export default function Projets() {
       title: 'Contexte',
       description: 'Analyse approfondie du contexte du projet: besoins du client, contraintes techniques et...',
       icon: '🗃️',
-      pdf: '/Contexte_GSB.pdf',
+      pdf: '/installation_des_systeme.pdf',
     },
     {
       title: 'Installation',
       description: 'Guide détaillé d\'installation et de configuration initiale des systèmes Linux et Windows Server...',
       icon: '🗃️',
-      pdf: '/Installation.pdf',
+      pdf: '/etude_de_contexte_et_calcul_d_adresse_ip.pdf',
     },
     {
       title: 'Rsync',
