@@ -151,6 +151,8 @@ export default function Projets() {
 
   
 
+  const projetsAnnee1: Project[] = [];
+
   const docsAnnee1: Documentation[] = [
     {
       title: 'Munin',
@@ -442,7 +444,7 @@ export default function Projets() {
           <p className="text-slate-500 dark:text-slate-400 ml-16 mb-10">Fondamentaux de l&apos;administration système</p>
 
           {/* Projets Année 1 */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {projetsAnnee1.length > 0 && <div className="grid md:grid-cols-2 gap-8 mb-16">
             {projetsAnnee1.map((projet, index) => (
               <div key={index} className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
                 <div className="h-56 relative bg-slate-100 dark:bg-slate-700 overflow-hidden">
@@ -490,7 +492,7 @@ export default function Projets() {
                 </div>
               </div>
             ))}
-          </div>
+          </div>}
 
           {/* Documentations Techniques Année 1 */}
           <div>
