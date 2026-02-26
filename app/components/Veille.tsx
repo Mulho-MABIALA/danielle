@@ -1,17 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Veille() {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('pourquoi');
 
-  const heroReveal = useScrollReveal();
-  const introReveal = useScrollReveal();
-  const objectifsReveal = useScrollReveal();
-  const axesReveal = useScrollReveal();
   const tabs = [
     { id: 'pourquoi', label: t.veille.tabWhy, icon: '📖' },
     { id: 'benefices', label: t.veille.tabBenefits, icon: '✅' }
@@ -67,12 +62,7 @@ export default function Veille() {
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
         {/* En-tête Hero */}
-        <div
-          ref={heroReveal.ref}
-          className={`text-center mb-20 relative bg-linear-to-r from-slate-700 via-slate-800 to-slate-900 rounded-3xl p-16 text-white overflow-hidden transition-all duration-1000 ${
-            heroReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div className="text-center mb-20 relative bg-linear-to-r from-slate-700 via-slate-800 to-slate-900 rounded-3xl p-16 text-white overflow-hidden">
           <div className="absolute inset-0 bg-blue-800/10 rounded-3xl"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-800/15 rounded-full blur-3xl"></div>
           <h2 className="relative text-5xl md:text-6xl font-bold mb-6">
@@ -84,12 +74,7 @@ export default function Veille() {
         </div>
 
         {/* Section principale avec intro */}
-        <div
-          ref={introReveal.ref}
-          className={`text-center mb-16 transition-all duration-700 ${
-            introReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
+        <div className="text-center mb-16">
           <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
             {t.veille.title}
           </h3>
@@ -126,12 +111,7 @@ export default function Veille() {
                 <VhannCard />
 
                 <div className="lg:col-span-2 space-y-8">
-                  <div
-                    ref={objectifsReveal.ref}
-                    className={`transition-all duration-700 ${
-                      objectifsReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}
-                  >
+                  <div>
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t.veille.strategicObjectives}</h3>
                     <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mb-8"></div>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -154,12 +134,7 @@ export default function Veille() {
                     </div>
                   </div>
 
-                  <div
-                    ref={axesReveal.ref}
-                    className={`transition-all duration-700 ${
-                      axesReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}
-                  >
+                  <div>
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t.veille.watchAxes}</h3>
                     <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mb-8"></div>
                     <div className="grid md:grid-cols-3 gap-6">
