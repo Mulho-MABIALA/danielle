@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useScrollReveal, useProgressReveal } from '../hooks/useScrollReveal';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function Veille() {
@@ -12,10 +12,6 @@ export default function Veille() {
   const introReveal = useScrollReveal();
   const objectifsReveal = useScrollReveal();
   const axesReveal = useScrollReveal();
-  const beneficesReveal = useScrollReveal();
-  const indicateursReveal = useScrollReveal();
-  const progressReveal = useProgressReveal();
-
   const tabs = [
     { id: 'pourquoi', label: t.veille.tabWhy, icon: '📖' },
     { id: 'benefices', label: t.veille.tabBenefits, icon: '✅' }
@@ -190,12 +186,7 @@ export default function Veille() {
                 <VhannCard />
 
                 <div className="lg:col-span-2 space-y-8">
-                  <div
-                    ref={beneficesReveal.ref}
-                    className={`transition-all duration-700 ${
-                      beneficesReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}
-                  >
+                  <div>
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t.veille.forPros}</h3>
                     <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mb-8"></div>
                     <div className="grid md:grid-cols-2 gap-6">
@@ -211,18 +202,10 @@ export default function Veille() {
                     </div>
                   </div>
 
-                  <div
-                    ref={indicateursReveal.ref}
-                    className={`transition-all duration-700 ${
-                      indicateursReveal.isRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}
-                  >
+                  <div>
                     <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t.veille.performanceIndicators}</h3>
                     <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mb-8"></div>
-                    <div
-                      ref={progressReveal.ref}
-                      className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700"
-                    >
+                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700">
                       <div className="space-y-6">
                         {t.veille.indicateurs.map((ind, index) => (
                           <div key={index}>
@@ -234,7 +217,7 @@ export default function Veille() {
                               <div
                                 className="h-full bg-linear-to-r from-blue-700 to-indigo-800 rounded-full"
                                 style={{
-                                  width: progressReveal.shouldAnimate ? ind.value + '%' : '0%',
+                                  width: activeTab === 'benefices' ? ind.value + '%' : '0%',
                                   transition: 'width 1.5s cubic-bezier(0.22, 1, 0.36, 1)'
                                 }}
                               ></div>
