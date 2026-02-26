@@ -149,7 +149,24 @@ export default function Projets() {
     },
   ];
 
-  
+  // const projetsAnnee1: Project[] = [
+  //   {
+  //     title: 'Virtualisation d\'infrastructure',
+  //     description: 'Mise en place d\'une infrastructure virtuelle complète avec Proxmox, comprenant plusieurs serveurs et un système de sauvegarde.',
+  //     image: '/proxmox_image.png',
+  //     tags: ['Proxmox', 'BackupPC', 'Linux', 'Virtualisation'],
+  //     date: 'Nov 2024 - Déc 2024',
+  //     github: '',
+  //   },
+  //   {
+  //     title: 'Monitoring réseau avec Zabbix',
+  //     description: 'Implémentation d\'une solution de surveillance réseau complète avec Zabbix pour le monitoring en temps réel des équipements et services.',
+  //     image: '/virtualBox_image.jpg',
+  //     tags: ['Zabbix', 'SNMP', 'Monitoring', 'Network'],
+  //     date: 'Jan 2025 - Fév 2025',
+  //     github: '',
+  //   },
+  // ];
 
   const docsAnnee1: Documentation[] = [
     {
