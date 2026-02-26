@@ -207,7 +207,7 @@ export default function Projets() {
     },
     {
       title: 'MySQL',
-      description: 'Installation et paramétrage d\'un serveur DNS avec BIND9 - Configuration des zones, des...',
+      description: 'Installation et Configuration d\'un serveur de base de données avec MariaDB - Configuration des zones, des...',
       icon: '🔍',
       pdf: '/Maria_DB.pdf',
     },
