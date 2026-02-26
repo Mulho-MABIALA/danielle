@@ -151,6 +151,8 @@ export const fr = {
     months: "Mois d'expérience",
     securityStage: 'Stage sécurité',
     companies: 'Entreprises',
+    visualiser: 'Visualiser',
+    telecharger: 'Télécharger le rapport',
     list: [
       {
         type: 'stage',
@@ -167,6 +169,8 @@ export const fr = {
           'Mettre en œuvre et gérer des solutions de virtualisation',
         ],
         tags: ['Fortinet', 'Wallix', 'Sécurité', 'Virtualisation'],
+        pdfPath: '/rapport-stage-dgfip.pdf',
+        apiPath: '/api/download/rapport-dgfip',
       },
       {
         type: 'emploi',
@@ -181,6 +185,8 @@ export const fr = {
           'Travail en équipe sur ligne de production',
         ],
         tags: ['Travail en équipe', 'Rigueur', 'Hygiène'],
+        pdfPath: '',
+        apiPath: '',
       },
       {
         type: 'stage',
@@ -194,6 +200,8 @@ export const fr = {
           "Rédiger une documentation technique détaillant la procédure d'installation, de configuration et d'utilisation",
         ],
         tags: ['Docker', 'QGIS', 'Documentation', 'Linux'],
+        pdfPath: '/rapport-stage-lije.pdf',
+        apiPath: '/api/download/rapport-lije',
       },
     ],
   },
