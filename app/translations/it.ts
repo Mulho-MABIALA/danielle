@@ -202,7 +202,7 @@ export const it: Translations = {
           "Redigere una documentazione tecnica che descriva la procedura di installazione, configurazione e utilizzo",
         ],
         tags: ['Docker', 'QGIS', 'Documentazione', 'Linux'],
-        pdfPath: '/rapport-stage-lije.pdf',
+        pdfPath: '/RAPPORT_STAGE2.pdf',
         apiPath: '/api/download/rapport-lije',
       },
     ],

@@ -200,7 +200,7 @@ export const fr = {
           "Rédiger une documentation technique détaillant la procédure d'installation, de configuration et d'utilisation",
         ],
         tags: ['Docker', 'QGIS', 'Documentation', 'Linux'],
-        pdfPath: '/rapport-stage-lije.pdf',
+        pdfPath: '/RAPPORT_STAGE2.pdf',
         apiPath: '/api/download/rapport-lije',
       },
     ],
