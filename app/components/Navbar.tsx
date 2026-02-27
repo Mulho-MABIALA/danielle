@@ -5,13 +5,12 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { useLanguage } from '../context/LanguageContext';
-import type { Language } from '../context/LanguageContext';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { lang, t, setLang } = useLanguage();
+  const { t } = useLanguage();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -22,11 +21,6 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const languages: { code: Language; flag: string; label: string }[] = [
-    { code: 'fr', flag: '🇫🇷', label: 'FR' },
-    { code: 'it', flag: '🇮🇹', label: 'IT' },
-  ];
 
   return (
     <nav
@@ -75,25 +69,6 @@ export default function Navbar() {
               );
             })}
 
-            {/* Language switcher */}
-            <div className="ml-2 flex items-center gap-1 border border-slate-200 dark:border-slate-700 rounded-full px-1 py-1">
-              {languages.map(({ code, flag, label }) => (
-                <button
-                  key={code}
-                  onClick={() => setLang(code)}
-                  className={`flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold transition-all duration-200 ${
-                    lang === code
-                      ? 'bg-blue-800 text-white shadow'
-                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                  }`}
-                  aria-label={`Switch to ${label}`}
-                >
-                  <span>{flag}</span>
-                  <span>{label}</span>
-                </button>
-              ))}
-            </div>
-
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
@@ -122,24 +97,6 @@ export default function Navbar() {
 
           {/* Mobile Controls */}
           <div className="lg:hidden flex items-center gap-2">
-            {/* Mobile language switcher */}
-            <div className="flex items-center gap-0.5 border border-slate-200 dark:border-slate-700 rounded-full px-1 py-0.5">
-              {languages.map(({ code, flag }) => (
-                <button
-                  key={code}
-                  onClick={() => setLang(code)}
-                  className={`px-1.5 py-0.5 rounded-full text-sm transition-all duration-200 ${
-                    lang === code
-                      ? 'bg-blue-800 shadow'
-                      : 'opacity-50 hover:opacity-100'
-                  }`}
-                  aria-label={`Switch to ${code.toUpperCase()}`}
-                >
-                  {flag}
-                </button>
-              ))}
-            </div>
-
             <button
               onClick={toggleTheme}
               className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-300 hover:rotate-12"
