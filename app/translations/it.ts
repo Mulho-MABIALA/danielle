@@ -171,7 +171,7 @@ export const it: Translations = {
           'Implementare e gestire soluzioni di virtualizzazione',
         ],
         tags: ['Fortinet', 'Wallix', 'Sicurezza', 'Virtualizzazione'],
-        pdfPath: '/RAPPORT_STAGE1.pdf',
+        pdfPath: '/RAPPORT_STAGE2.pdf',
         apiPath: '/api/download/rapport-dgfip',
       },
       {
@@ -202,7 +202,7 @@ export const it: Translations = {
           "Redigere una documentazione tecnica che descriva la procedura di installazione, configurazione e utilizzo",
         ],
         tags: ['Docker', 'QGIS', 'Documentazione', 'Linux'],
-        pdfPath: '/RAPPORT_STAGE2.pdf',
+        pdfPath: '/RAPPORT_STAGE1.pdf',
         apiPath: '/api/download/rapport-lije',
       },
     ],

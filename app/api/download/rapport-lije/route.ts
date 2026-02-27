@@ -4,7 +4,7 @@ import path from 'path';
 
 export async function GET() {
   try {
-    const filePath = path.join(process.cwd(), 'public', 'RAPPORT_STAGE2.pdf');
+    const filePath = path.join(process.cwd(), 'public', 'RAPPORT_STAGE1.pdf');
     const file = await readFile(filePath);
 
     return new NextResponse(file, {
