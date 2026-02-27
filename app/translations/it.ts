@@ -6,9 +6,9 @@ export const it: Translations = {
       { name: 'Home', href: '/' },
       { name: 'Chi sono', href: '/about' },
       { name: 'Formazione', href: '/formations' },
-      { name: 'Competenze', href: '/competences' },
       { name: 'Esperienze', href: '/experiences' },
       { name: 'Progetti', href: '/projets' },
+      { name: 'Competenze', href: '/competences' },
       { name: 'Monitoraggio', href: '/veille' },
       { name: 'Tecnologie', href: '/technologies' },
     ],
@@ -153,6 +153,8 @@ export const it: Translations = {
     months: 'Mesi di esperienza',
     securityStage: 'Tirocinio sicurezza',
     companies: 'Aziende',
+    visualiser: 'Visualizza',
+    telecharger: 'Scarica il rapporto',
     list: [
       {
         type: 'stage',
@@ -169,6 +171,8 @@ export const it: Translations = {
           'Implementare e gestire soluzioni di virtualizzazione',
         ],
         tags: ['Fortinet', 'Wallix', 'Sicurezza', 'Virtualizzazione'],
+        pdfPath: '/rapport-stage-dgfip.pdf',
+        apiPath: '/api/download/rapport-dgfip',
       },
       {
         type: 'emploi',
@@ -183,6 +187,8 @@ export const it: Translations = {
           'Lavoro in team sulla linea di produzione',
         ],
         tags: ['Lavoro in team', 'Rigore', 'Igiene'],
+        pdfPath: '',
+        apiPath: '',
       },
       {
         type: 'stage',
@@ -196,6 +202,8 @@ export const it: Translations = {
           "Redigere una documentazione tecnica che descriva la procedura di installazione, configurazione e utilizzo",
         ],
         tags: ['Docker', 'QGIS', 'Documentazione', 'Linux'],
+        pdfPath: '/rapport-stage-lije.pdf',
+        apiPath: '/api/download/rapport-lije',
       },
     ],
   },
