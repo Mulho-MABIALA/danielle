@@ -171,7 +171,7 @@ export const it: Translations = {
           'Implementare e gestire soluzioni di virtualizzazione',
         ],
         tags: ['Fortinet', 'Wallix', 'Sicurezza', 'Virtualizzazione'],
-        pdfPath: '/rapport-stage-dgfip.pdf',
+        pdfPath: '/RAPPORT_STAGE1.pdf',
         apiPath: '/api/download/rapport-dgfip',
       },
       {

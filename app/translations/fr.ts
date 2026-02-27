@@ -169,7 +169,7 @@ export const fr = {
           'Mettre en œuvre et gérer des solutions de virtualisation',
         ],
         tags: ['Fortinet', 'Wallix', 'Sécurité', 'Virtualisation'],
-        pdfPath: '/rapport-stage-dgfip.pdf',
+        pdfPath: '/RAPPORT_STAGE1.pdf',
         apiPath: '/api/download/rapport-dgfip',
       },
       {
