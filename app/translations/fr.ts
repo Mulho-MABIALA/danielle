@@ -173,22 +173,6 @@ export const fr = {
         apiPath: '/api/download/rapport-dgfip',
       },
       {
-        type: 'emploi',
-        title: 'Employée de production',
-        company: 'LIMOJOUX',
-        location: 'Clermont-Ferrand',
-        period: '15/07/2025 - 29/08/2025',
-        description: 'Travail saisonnier en production alimentaire',
-        missions: [
-          'Mise en barquette et étiquetage de produits alimentaires',
-          "Respect des règles d'hygiène et de sécurité alimentaire",
-          'Travail en équipe sur ligne de production',
-        ],
-        tags: ['Travail en équipe', 'Rigueur', 'Hygiène'],
-        pdfPath: '',
-        apiPath: '',
-      },
-      {
         type: 'stage',
         title: 'Stagiaire en support à la PRA',
         company: 'Lije-Technologies',
