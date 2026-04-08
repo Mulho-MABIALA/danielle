@@ -41,8 +41,8 @@ export default function Projets() {
     },
     {
       title: 'Sécurisation d\'infrastructure',
-      description: 'Mise en place d\'une infrastructure sécurisée avec 2 serveurs DNS , un serveur web chiffré , avec pour service Wordpress.',
-      image: '/guacamole2.png',
+      description: 'Mise en place d\'une infrastructure réseau sécurisée avec DMZ, reverse proxy HAProxy, haute disponibilité de serveurs web Apache hébergeant WordPress et réplication automatisée via Rsync et Cron.',
+      image: '/Architecture.png',
       tags: ['OPNsense', 'DNS', 'HTTPS', 'SSH sécurisé'],
       date: 'Fév 2026 - Mars 2026',
       github: '#',
