@@ -46,7 +46,6 @@ export default function Projets() {
       tags: ['OPNsense', 'DNS', 'HTTPS', 'SSH sécurisé'],
       date: 'Fév 2026 - Mars 2026',
       github: '#',
-      status: 'En cours',
     },
   ];
 
