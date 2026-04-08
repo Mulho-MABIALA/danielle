@@ -123,13 +123,15 @@ export default function Formations() {
                     <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
                       {item.degree}
                     </h4>
-                    <p className="text-slate-600 dark:text-slate-300 font-medium mb-3">{item.option}</p>
-                    <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-3">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        {schoolIcons[index]}
-                      </svg>
-                      <span className="font-semibold">{item.school}</span>
-                    </div>
+                    {item.option && <p className="text-slate-600 dark:text-slate-300 font-medium mb-3">{item.option}</p>}
+                    {item.school && (
+                      <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-3">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          {schoolIcons[index]}
+                        </svg>
+                        <span className="font-semibold">{item.school}</span>
+                      </div>
+                    )}
                     {'desc' in item && item.desc && (
                       <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-700 pt-3 mt-1">
                         {item.desc}
