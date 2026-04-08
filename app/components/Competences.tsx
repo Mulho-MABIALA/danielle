@@ -4,16 +4,16 @@ import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollReveal, useProgressReveal } from '../hooks/useScrollReveal';
 import {
-  SiDebian, SiWindows, SiProxmox,
+  SiDebian, SiProxmox,
   SiFortinet, SiWireguard,
   SiNginx, SiPostgresql, SiDocker, SiGit,
 } from 'react-icons/si';
-import { FaNetworkWired, FaRoute, FaShieldAlt, FaLock, FaUsers, FaBrain, FaComments, FaSyncAlt, FaServer } from 'react-icons/fa';
+import { FaWindows, FaNetworkWired, FaRoute, FaShieldAlt, FaLock, FaUsers, FaBrain, FaComments, FaSyncAlt, FaServer } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
 
 const techIcons: { Icon: IconType; color: string }[] = [
   { Icon: SiDebian,      color: '#A80030' },   // Linux (Debian, Ubuntu)
-  { Icon: SiWindows,     color: '#0078D4' },   // Windows Server
+  { Icon: FaWindows,     color: '#0078D4' },   // Windows Server
   { Icon: SiProxmox,     color: '#E57000' },   // Virtualisation (VMware, Proxmox)
   { Icon: SiFortinet,    color: '#EE3124' },   // Pare-feu Fortinet
   { Icon: SiWireguard,   color: '#88171A' },   // VPN (WireGuard, OpenVPN)
