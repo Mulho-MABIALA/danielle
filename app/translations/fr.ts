@@ -358,7 +358,7 @@ export const fr = {
     ],
     view: 'Visualiser la veille',
     download: 'Télécharger (PDF)',
-    platformDesc: "Ma plateforme personnelle d'agrégation de sources d'information et de veille technologique.",
+    platformDesc: "Vous pouvez télécharger ici mon document de veille technologique, qui regroupe l'ensemble des sources et analyses réalisées dans le cadre de mon suivi des évolutions du secteur.",
     strategicObjectives: 'Objectifs Stratégiques',
     watchAxes: 'Axes de Veille Prioritaires',
     forPros: 'Pour les Professionnels IT',
