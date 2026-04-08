@@ -70,6 +70,7 @@ export const fr = {
         degree: 'BTS Services Informatiques aux Organisations',
         option: 'Option SISR - Systèmes et Réseaux',
         school: 'Lycée Beaupeyrat, Limoges',
+        desc: "Le BTS Services Informatiques aux Organisations (SIO) est une formation de deux ans après le baccalauréat qui prépare aux métiers de l'informatique en entreprise. Elle permet d'acquérir des compétences en programmation, gestion des systèmes, bases de données et cybersécurité, tout en intégrant des matières générales comme l'anglais, les mathématiques et la culture économique. Des stages en entreprise complètent la formation et permettent de mettre en pratique les connaissances.",
       },
       {
         years: '2023 - 2024',
