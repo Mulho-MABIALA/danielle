@@ -8,7 +8,7 @@ export const fr = {
       { name: 'Projets', href: '/projets' },
       { name: 'Veille', href: '/veille' },
       { name: 'Compétences', href: '/competences' },
-      { name: 'Technologies', href: '/technologies' },
+      // { name: 'Technologies', href: '/technologies' },
     ],
     contact: 'Contact',
   },
