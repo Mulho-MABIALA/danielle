@@ -77,7 +77,7 @@ export default function Veille() {
         {/* Section principale avec intro */}
         <div className="text-center mb-16">
           <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
-            {t.veille.title}
+            Supervision Et Monitoring Des Systèmes
           </h3>
           <p className="text-lg text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             {t.veille.intro}
