@@ -211,53 +211,79 @@ export default function Veille() {
 
           {/* Articles */}
           {activeTab === 'benefices' && (
-            <div key="benefices" className="space-y-12 animate-[fadeIn_0.5s_ease-in-out]">
-              <div className="grid lg:grid-cols-3 gap-8">
-                <VhannCard />
+            <div key="benefices" className="animate-[fadeIn_0.5s_ease-in-out]">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">Articles de veille</h3>
+                <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mx-auto mb-4"></div>
+                <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">Sélection d'articles analysés dans le cadre de ma veille technologique.</p>
+              </div>
 
-                <div className="lg:col-span-2 space-y-8">
-                  <div>
-                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t.veille.forPros}</h3>
-                    <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mb-8"></div>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {t.veille.benefits.map((benefice, index) => (
-                        <div
-                          key={index}
-                          className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-300 dark:hover:border-blue-800 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-                        >
-                          <h4 className="font-bold text-slate-900 dark:text-white mb-3">{benefice.title}</h4>
-                          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{benefice.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{t.veille.performanceIndicators}</h3>
-                    <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mb-8"></div>
-                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border-2 border-slate-100 dark:border-slate-700">
-                      <div className="space-y-6">
-                        {t.veille.indicateurs.map((ind, index) => (
-                          <div key={index}>
-                            <div className="flex items-center justify-between mb-2">
-                              <span className="text-slate-700 dark:text-slate-300 font-medium">{ind.label}</span>
-                              <span className="text-sm font-bold text-blue-800 dark:text-blue-400">{ind.value}%</span>
-                            </div>
-                            <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3 overflow-hidden">
-                              <div
-                                className="h-full bg-linear-to-r from-blue-700 to-indigo-800 rounded-full"
-                                style={{
-                                  width: activeTab === 'benefices' ? ind.value + '%' : '0%',
-                                  transition: 'width 1.5s cubic-bezier(0.22, 1, 0.36, 1)'
-                                }}
-                              ></div>
-                            </div>
-                          </div>
-                        ))}
+              <div className="flex flex-col gap-10">
+                {t.veille.articles.map((article, index) => (
+                  <div
+                    key={index}
+                    className="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-xl border-2 border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    {/* Image */}
+                    <div className="relative h-56 md:h-72 overflow-hidden">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-slate-900/70 to-transparent"></div>
+                      <div className="absolute bottom-4 left-6 flex items-center gap-3">
+                        <span className="bg-blue-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                          {article.category}
+                        </span>
+                        <span className="bg-white/20 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">
+                          {article.source} · {article.date}
+                        </span>
                       </div>
                     </div>
+
+                    {/* Contenu */}
+                    <div className="p-8">
+                      <h4 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                        {article.title}
+                      </h4>
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                        {article.summary}
+                      </p>
+
+                      {/* Points clés */}
+                      <div className="bg-slate-50 dark:bg-slate-700/50 rounded-2xl p-6 mb-6">
+                        <p className="text-sm font-bold text-slate-700 dark:text-slate-200 uppercase tracking-widest mb-4">
+                          {article.pointsLabel}
+                        </p>
+                        <ul className="space-y-3">
+                          {article.points.map((point, i) => (
+                            <li key={i} className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
+                              <div className="w-2 h-2 rounded-full bg-blue-700 shrink-0"></div>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <p className="text-slate-600 dark:text-slate-300 italic mb-6">
+                        {article.conclusion}
+                      </p>
+
+                      <a
+                        href={article.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-linear-to-r from-blue-800 to-indigo-900 text-white px-6 py-3 rounded-full font-semibold text-sm hover:shadow-lg hover:shadow-blue-900/25 hover:scale-105 transition-all duration-300"
+                      >
+                        Lire l'article complet
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </a>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           )}
