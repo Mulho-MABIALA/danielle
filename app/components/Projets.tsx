@@ -42,7 +42,7 @@ export default function Projets() {
     {
       title: 'Sécurisation d\'infrastructure',
       description: 'Mise en place d\'une infrastructure réseau sécurisée avec DMZ, reverse proxy HAProxy, haute disponibilité de serveurs web Apache hébergeant WordPress et réplication automatisée via Rsync et Cron.',
-      image: '/Architecture.png',
+      image: '/Architecture réseau sécurisée de NovaTech.png',
       tags: ['OPNsense', 'DNS', 'HTTPS', 'SSH sécurisé'],
       date: 'Fév 2026 - Mars 2026',
       github: '#',
