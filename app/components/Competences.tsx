@@ -3,6 +3,37 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useScrollReveal, useProgressReveal } from '../hooks/useScrollReveal';
+import {
+  SiDebian, SiWindows, SiProxmox,
+  SiFortinet, SiWireguard,
+  SiNginx, SiPostgresql, SiDocker, SiGit,
+} from 'react-icons/si';
+import { FaNetworkWired, FaRoute, FaShieldAlt, FaLock, FaUsers, FaBrain, FaComments, FaSyncAlt, FaServer } from 'react-icons/fa';
+import type { IconType } from 'react-icons';
+
+const techIcons: { Icon: IconType; color: string }[] = [
+  { Icon: SiDebian,      color: '#A80030' },   // Linux (Debian, Ubuntu)
+  { Icon: SiWindows,     color: '#0078D4' },   // Windows Server
+  { Icon: SiProxmox,     color: '#E57000' },   // Virtualisation (VMware, Proxmox)
+  { Icon: SiFortinet,    color: '#EE3124' },   // Pare-feu Fortinet
+  { Icon: SiWireguard,   color: '#88171A' },   // VPN (WireGuard, OpenVPN)
+  { Icon: FaNetworkWired,color: '#3B82F6' },   // DNS, DHCP, VLAN
+  { Icon: FaRoute,       color: '#6366F1' },   // Routage et Switching
+  { Icon: FaServer,      color: '#8B5CF6' },   // Bastion Wallix
+  { Icon: FaShieldAlt,   color: '#10B981' },   // Fail2ban, Portsentry
+  { Icon: FaLock,        color: '#F59E0B' },   // SSL/TLS, GPG
+  { Icon: SiFortinet,    color: '#EF4444' },   // Iptables/Netfilter
+  { Icon: SiNginx,       color: '#009639' },   // Apache, Nginx
+  { Icon: SiPostgresql,  color: '#336791' },   // MySQL, PostgreSQL
+  { Icon: SiDocker,      color: '#2496ED' },   // Docker
+  { Icon: SiGit,         color: '#F05032' },   // Git, Documentation
+  { Icon: FaUsers,       color: '#3B82F6' },   // Travail en équipe
+  { Icon: FaBrain,       color: '#8B5CF6' },   // Résolution de problèmes
+  { Icon: FaComments,    color: '#10B981' },   // Communication
+  { Icon: FaSyncAlt,     color: '#F59E0B' },   // Adaptation
+];
+
+const filterIcons = ['🔧', '💻', '🌐', '🛡️', '🗄️', '👥'];
 
 export default function Competences() {
   const { t } = useLanguage();
@@ -11,11 +42,8 @@ export default function Competences() {
   const progressReveal = useProgressReveal();
   const statsReveal = useScrollReveal();
 
-  const icons = ['💻', '🖥️', '☁️', '🛡️', '🔐', '🗄️', '⚙️', '🔒', '🛡️', '🔐', '🛡️', '🗄️', '💾', '🐳', '📝', '👥', '🎯', '💬', '🔄'];
-  const filterIcons = ['🔧', '💻', '🌐', '🛡️', '🗄️', '👥'];
-
   const competences = t.competences.list.map((item, i) => ({
-    icon: icons[i] || '⚙️',
+    iconData: techIcons[i] || { Icon: FaServer, color: '#6B7280' },
     title: item.name,
     subtitle: item.desc,
     level: item.level,
@@ -96,12 +124,8 @@ export default function Competences() {
               )}
 
               <div className="flex items-start gap-4 mb-4">
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center shrink-0 text-2xl ${
-                  comp.level >= 90
-                    ? 'bg-linear-to-br from-red-50 to-green-50 dark:from-red-900/20 dark:to-green-900/20'
-                    : 'bg-slate-100 dark:bg-slate-700'
-                }`}>
-                  {comp.icon}
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 bg-slate-100 dark:bg-slate-700">
+                  <comp.iconData.Icon size={28} color={comp.iconData.color} />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-bold text-slate-900 dark:text-white mb-1 group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors">
@@ -111,25 +135,6 @@ export default function Competences() {
                 </div>
               </div>
 
-              {/* Progress bar */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">{t.competences.mastery}</span>
-                  <span className="text-sm font-bold bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 px-3 py-1 rounded-full">
-                    {comp.level}%
-                  </span>
-                </div>
-                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2.5 overflow-hidden">
-                  <div
-                    className={`h-full rounded-full transition-all duration-1500 ease-out ${
-                      comp.level >= 90
-                        ? 'bg-linear-to-r from-blue-700 to-indigo-800'
-                        : 'bg-linear-to-r from-green-500 to-green-600 dark:from-green-400 dark:to-green-500'
-                    }`}
-                    style={{ width: progressReveal.shouldAnimate ? `${comp.level}%` : '0%', transition: 'width 1.5s cubic-bezier(0.22, 1, 0.36, 1)' }}
-                  ></div>
-                </div>
-              </div>
             </div>
           ))}
         </div>
