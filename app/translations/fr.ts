@@ -108,6 +108,13 @@ export const fr = {
         pdfPath: '/Vhann_Certification_ANSSI.pdf',
         apiPath: '/api/download/anssi',
       },
+      {
+        badge: 'PIX',
+        label: 'Certification Pix',
+        domain: 'Compétences Numériques',
+        pdfPath: '/certification-pix_VHANN.pdf',
+        apiPath: '/api/download/pix',
+      },
     ],
   },
   competences: {
