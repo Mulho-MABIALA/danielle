@@ -53,7 +53,7 @@ export const fr = {
     badge: 'Parcours académique',
     title: 'Mes Formations',
     subtitle: 'Un parcours orienté vers les systèmes, réseaux et la sécurité informatique',
-    cursus: 'Cursus académique',
+    cursus: 'BTS SIO',
     poursuite: "Poursuite d'études",
     certifications: 'Certifications',
     yearsStudy: "Années d'étude",
