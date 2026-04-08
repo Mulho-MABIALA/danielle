@@ -9,7 +9,8 @@ export default function Veille() {
 
   const tabs = [
     { id: 'pourquoi', label: t.veille.tabWhy, icon: '📖' },
-    { id: 'benefices', label: t.veille.tabBenefits, icon: '✅' }
+    { id: 'benefices', label: t.veille.tabBenefits, icon: '✅' },
+    { id: 'outils', label: t.veille.tabOutils, icon: '🛠️' },
   ];
 
   const objectifIcons = ['📈', 'ℹ️', '➕', '👥'];
@@ -154,7 +155,64 @@ export default function Veille() {
             </div>
           )}
 
-          {/* Bénéfices */}
+          {/* Outils */}
+          {activeTab === 'outils' && (
+            <div key="outils" className="animate-[fadeIn_0.5s_ease-in-out]">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-3">Mes outils de veille</h3>
+                <div className="h-1 w-20 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full mx-auto mb-4"></div>
+                <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">Les plateformes et outils que j'utilise au quotidien pour rester à jour sur les évolutions technologiques.</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {t.veille.outils.map((outil, index) => (
+                  <a
+                    key={index}
+                    href={outil.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-md hover:shadow-2xl border-2 border-slate-100 dark:border-slate-700 hover:-translate-y-3 transition-all duration-300 flex flex-col gap-4"
+                  >
+                    {/* Header */}
+                    <div className="flex items-center gap-4">
+                      <div
+                        className="w-14 h-14 rounded-xl flex items-center justify-center shrink-0 text-white font-bold text-xl shadow-lg"
+                        style={{ backgroundColor: outil.color }}
+                      >
+                        {outil.name.charAt(0)}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors text-lg">
+                          {outil.name}
+                        </h4>
+                        <span
+                          className="text-xs font-semibold px-2 py-0.5 rounded-full text-white"
+                          style={{ backgroundColor: outil.color }}
+                        >
+                          {outil.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1">
+                      {outil.desc}
+                    </p>
+
+                    {/* Footer link */}
+                    <div className="flex items-center gap-2 text-sm font-semibold group-hover:gap-3 transition-all duration-300" style={{ color: outil.color }}>
+                      <span>Visiter le site</span>
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Articles */}
           {activeTab === 'benefices' && (
             <div key="benefices" className="space-y-12 animate-[fadeIn_0.5s_ease-in-out]">
               <div className="grid lg:grid-cols-3 gap-8">
