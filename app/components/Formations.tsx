@@ -109,9 +109,11 @@ export default function Formations() {
                   </div>
                   <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 ml-4">
                     <div className="flex items-start justify-between mb-4">
-                      <span className={`inline-block ${cardYearColors[index] || 'bg-linear-to-r from-blue-800 to-indigo-900'} text-white text-xs font-bold px-3 py-1 rounded-full`}>
-                        {item.years}
-                      </span>
+                      {item.years && (
+                        <span className={`inline-block ${cardYearColors[index] || 'bg-linear-to-r from-blue-800 to-indigo-900'} text-white text-xs font-bold px-3 py-1 rounded-full`}>
+                          {item.years}
+                        </span>
+                      )}
                       <div className="flex gap-2">
                         {item.tags.map((tag, ti) => (
                           <span key={ti} className="bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-xs font-semibold px-3 py-1 rounded-full">

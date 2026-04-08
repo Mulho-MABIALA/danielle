@@ -73,7 +73,7 @@ export const fr = {
         desc: "Le BTS Services Informatiques aux Organisations (SIO) est une formation de deux ans après le baccalauréat qui prépare aux métiers de l'informatique en entreprise. Elle permet d'acquérir des compétences en programmation, gestion des systèmes, bases de données et cybersécurité, tout en intégrant des matières générales comme l'anglais, les mathématiques et la culture économique. Des stages en entreprise complètent la formation et permettent de mettre en pratique les connaissances.",
       },
       {
-        years: '2023 - 2024',
+        years: '',
         tags: ['Passionnée'],
         degree: 'Option SLAM',
         option: '',
@@ -81,7 +81,7 @@ export const fr = {
         desc: "L'option BTS SIO option SLAM (Solutions Logicielles et Applications Métiers) est spécialisée dans le développement informatique. Elle forme à la conception, au développement et à la maintenance d'applications, en utilisant différents langages comme JavaScript, PHP ou Python, ainsi que les bases de données. L'objectif est de créer des solutions logicielles adaptées aux besoins des utilisateurs.",
       },
       {
-        years: '2021 - 2022',
+        years: '',
         tags: [],
         degree: 'Option SISR',
         option: '',
