@@ -2,6 +2,8 @@
 
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext';
+import { FaAws, FaShieldAlt } from 'react-icons/fa';
+import { SiPix } from 'react-icons/si';
 
 export default function Formations() {
   const { t } = useLanguage();
@@ -36,32 +38,37 @@ export default function Formations() {
     <path key="s3" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />,
   ];
 
-  const certBadgeColors = [
+  const certConfig = [
     {
-      border: 'hover:border-orange-300 dark:hover:border-orange-700',
-      topBar: 'bg-linear-to-r from-orange-400 to-yellow-400',
-      iconBg: 'bg-linear-to-br from-orange-400 to-yellow-500',
+      Icon: FaAws,
+      iconColor: '#FF9900',
+      iconBg: 'bg-[#232F3E]',
+      border: 'hover:border-orange-300 dark:hover:border-orange-600',
+      topBar: 'bg-linear-to-r from-[#FF9900] to-[#FFB84D]',
       badgeText: 'text-orange-700 dark:text-orange-400 bg-orange-50 dark:bg-orange-900/20',
-      downloadBtn: 'bg-linear-to-r from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600 hover:shadow-orange-500/25',
+      downloadBtn: 'bg-linear-to-r from-[#FF9900] to-[#FFB84D] hover:shadow-orange-500/25',
       viewHover: 'hover:bg-orange-50 dark:hover:bg-orange-900/20 hover:text-orange-700 dark:hover:text-orange-400',
     },
     {
-      border: 'hover:border-blue-300 dark:hover:border-blue-700',
-      topBar: 'bg-linear-to-r from-blue-600 to-red-600',
+      Icon: FaShieldAlt,
+      iconColor: '#FFFFFF',
       iconBg: 'bg-linear-to-br from-blue-700 to-red-600',
+      border: 'hover:border-blue-300 dark:hover:border-blue-700',
+      topBar: 'bg-linear-to-r from-blue-700 to-red-600',
       badgeText: 'text-blue-700 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20',
-      downloadBtn: 'bg-linear-to-r from-blue-700 to-red-600 hover:from-blue-800 hover:to-red-700 hover:shadow-blue-800/25',
+      downloadBtn: 'bg-linear-to-r from-blue-700 to-red-600 hover:shadow-blue-800/25',
       viewHover: 'hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400',
     },
-  ];
-
-  const certIcons = [
-    <svg key="ci1" className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M18.75 11.35a4.32 4.32 0 0 0 .09-.83 4.26 4.26 0 0 0-7.8-2.37 3 3 0 0 0-4.64 2.52 3 3 0 0 0 .05.52A3.75 3.75 0 0 0 7.5 18h10.88a3.37 3.37 0 0 0 .37-6.65z"/>
-    </svg>,
-    <svg key="ci2" className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    </svg>,
+    {
+      Icon: SiPix,
+      iconColor: '#FFFFFF',
+      iconBg: 'bg-linear-to-br from-[#3D3D8F] to-[#6C63FF]',
+      border: 'hover:border-indigo-300 dark:hover:border-indigo-600',
+      topBar: 'bg-linear-to-r from-[#3D3D8F] to-[#6C63FF]',
+      badgeText: 'text-indigo-700 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20',
+      downloadBtn: 'bg-linear-to-r from-[#3D3D8F] to-[#6C63FF] hover:shadow-indigo-600/25',
+      viewHover: 'hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-700 dark:hover:text-indigo-400',
+    },
   ];
 
   return (
@@ -201,49 +208,48 @@ export default function Formations() {
                 <h3 className="text-3xl font-bold text-slate-900 dark:text-white">{t.formations.certifications}</h3>
               </div>
 
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 gap-4">
                 {t.formations.certList.map((cert, index) => {
-                  const colors = certBadgeColors[index] || certBadgeColors[0];
+                  const cfg = certConfig[index] || certConfig[0];
+                  const { Icon } = cfg;
                   return (
-                    <div key={index} className={`group bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg border-2 border-slate-100 dark:border-slate-700 ${colors.border} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}>
-                      <div className={`absolute top-0 left-0 right-0 h-1 ${colors.topBar}`}></div>
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className={`w-14 h-14 ${colors.iconBg} rounded-xl flex items-center justify-center shrink-0 shadow-lg`}>
-                          {certIcons[index]}
+                    <div key={index} className={`group bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-md border-2 border-slate-100 dark:border-slate-700 ${cfg.border} hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden`}>
+                      <div className={`absolute top-0 left-0 right-0 h-1 ${cfg.topBar}`}></div>
+                      <div className="flex items-center gap-4">
+                        <div className={`w-14 h-14 ${cfg.iconBg} rounded-xl flex items-center justify-center shrink-0 shadow-lg`}>
+                          <Icon size={28} color={cfg.iconColor} />
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className={`text-xs font-bold ${colors.badgeText} px-2 py-0.5 rounded-full`}>{cert.badge}</span>
-                            <span className="text-xs font-bold text-green-700 dark:text-indigo-400 bg-green-50 dark:bg-indigo-900/20 px-2 py-0.5 rounded-full">{t.formations.obtained}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
+                            <span className={`text-xs font-bold ${cfg.badgeText} px-2 py-0.5 rounded-full`}>{cert.badge}</span>
+                            <span className="text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-900/20 px-2 py-0.5 rounded-full">{t.formations.obtained}</span>
                           </div>
-                          <h4 className="text-lg font-bold text-slate-900 dark:text-white">
-                            {cert.label}
-                          </h4>
-                          <p className="text-sm text-slate-500 dark:text-slate-400">{cert.domain}</p>
+                          <h4 className="text-base font-bold text-slate-900 dark:text-white truncate">{cert.label}</h4>
+                          <p className="text-xs text-slate-500 dark:text-slate-400">{cert.domain}</p>
                         </div>
-                      </div>
-                      <div className="flex gap-3">
-                        <a
-                          href={cert.pdfPath}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`flex-1 flex items-center justify-center gap-2 bg-slate-100 dark:bg-slate-700 ${colors.viewHover} text-slate-700 dark:text-slate-200 px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300`}
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                          </svg>
-                          {t.formations.visualiser}
-                        </a>
-                        <a
-                          href={cert.apiPath}
-                          className={`flex-1 flex items-center justify-center gap-2 ${colors.downloadBtn} text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-lg`}
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                          </svg>
-                          {t.formations.telecharger}
-                        </a>
+                        <div className="flex gap-2 shrink-0">
+                          <a
+                            href={cert.pdfPath}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`flex items-center gap-1.5 bg-slate-100 dark:bg-slate-700 ${cfg.viewHover} text-slate-700 dark:text-slate-200 px-3 py-2 rounded-xl font-semibold text-xs transition-all duration-300`}
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            {t.formations.visualiser}
+                          </a>
+                          <a
+                            href={cert.apiPath}
+                            className={`flex items-center gap-1.5 ${cfg.downloadBtn} text-white px-3 py-2 rounded-xl font-semibold text-xs transition-all duration-300 hover:shadow-lg`}
+                          >
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            {t.formations.telecharger}
+                          </a>
+                        </div>
                       </div>
                     </div>
                   );

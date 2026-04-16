@@ -41,12 +41,11 @@ export default function Projets() {
     },
     {
       title: 'Sécurisation d\'infrastructure',
-      description: 'Mise en place d\'une infrastructure sécurisée avec 2 serveurs DNS , un serveur web chiffré , avec pour service Wordpress.',
-      image: '/guacamole2.png',
+      description: 'Mise en place d\'une infrastructure réseau sécurisée avec DMZ, reverse proxy HAProxy, haute disponibilité de serveurs web Apache hébergeant WordPress et réplication automatisée via Rsync et Cron.',
+      image: '/Architecture réseau sécurisée de NovaTech.png',
       tags: ['OPNsense', 'DNS', 'HTTPS', 'SSH sécurisé'],
       date: 'Fév 2026 - Mars 2026',
       github: '#',
-      status: 'En cours',
     },
   ];
 
@@ -331,10 +330,10 @@ export default function Projets() {
           <p className="text-slate-500 dark:text-slate-400 ml-16 mb-10">Projets de spécialisation</p>
 
           {/* Projets Année 2 */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
             {projetsAnnee2.map((projet, index) => (
-              <div key={index} className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
-                <div className="h-56 relative bg-slate-100 dark:bg-slate-700 overflow-hidden">
+              <div key={index} className="group bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden hover:-translate-y-2 hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
+                <div className="h-36 relative bg-slate-100 dark:bg-slate-700 overflow-hidden">
                   <Image
                     src={projet.image}
                     alt={projet.title}
@@ -344,7 +343,7 @@ export default function Projets() {
                   />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-t from-slate-900/60 to-transparent transition-opacity duration-300"></div>
                 </div>
-                <div className="p-6">
+                <div className="p-4">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-xl font-bold text-slate-900 dark:text-white">{projet.title}</h4>
                     <div className="flex items-center gap-2">
@@ -461,10 +460,10 @@ export default function Projets() {
           <p className="text-slate-500 dark:text-slate-400 ml-16 mb-10">Fondamentaux de l&apos;administration système</p>
 
           {/* Projets Année 1 */}
-          {projetsAnnee1.length > 0 && <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {projetsAnnee1.length > 0 && <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-16">
             {projetsAnnee1.map((projet, index) => (
-              <div key={index} className="group bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden hover:-translate-y-2 hover:shadow-2xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
-                <div className="h-56 relative bg-slate-100 dark:bg-slate-700 overflow-hidden">
+              <div key={index} className="group bg-white dark:bg-slate-800 rounded-xl shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden hover:-translate-y-2 hover:shadow-xl hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300">
+                <div className="h-36 relative bg-slate-100 dark:bg-slate-700 overflow-hidden">
                   <Image
                     src={projet.image}
                     alt={projet.title}
@@ -474,7 +473,7 @@ export default function Projets() {
                   />
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-linear-to-t from-slate-900/60 to-transparent transition-opacity duration-300"></div>
                 </div>
-                <div className="p-6">
+                <div className="p-4">
                   <div className="flex items-center justify-between mb-3">
                     <h4 className="text-xl font-bold text-slate-900 dark:text-white">{projet.title}</h4>
                     <div className="flex items-center gap-2">
