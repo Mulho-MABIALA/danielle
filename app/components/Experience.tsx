@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -11,6 +12,17 @@ export default function Experience() {
   const card2Reveal = useScrollReveal();
   const card3Reveal = useScrollReveal();
   const cardReveals = [card1Reveal, card2Reveal, card3Reveal];
+
+  const [modalImage, setModalImage] = useState<{ src: string; label: string } | null>(null);
+
+  const missionImages: Record<number, string> = {
+    0: '/mission_1.png',
+    1: '/mission_2.png',
+    2: '/mission_3.png',
+    3: '/mission_4.png',
+    4: '/mission_5.png',
+    5: '/mission_6.png',
+  };
 
   const badgeClasses = ['bg-linear-to-r from-blue-800 to-indigo-900', 'bg-indigo-600', 'bg-indigo-700'];
   const experiences = t.experiences.list.map((exp, i) => ({ ...exp, id: i + 1, badgeClass: badgeClasses[i] || 'bg-indigo-800' }));
@@ -107,14 +119,32 @@ export default function Experience() {
                           {t.experiences.missions}
                         </h4>
                         <ul className="space-y-2">
-                          {exp.missions.map((mission, idx) => (
-                            <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
-                              <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                              </svg>
-                              <span>{mission}</span>
-                            </li>
-                          ))}
+                          {exp.missions.map((mission, idx) => {
+                            const isFirstStage = index === 0;
+                            const hasImage = isFirstStage && missionImages[idx];
+                            return hasImage ? (
+                              <li
+                                key={idx}
+                                onClick={() => setModalImage({ src: missionImages[idx], label: mission })}
+                                className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-pointer group/mission hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg px-2 py-1 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                              >
+                                <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 group-hover/mission:text-blue-600 mt-0.5 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span className="flex-1">{mission}</span>
+                                <svg className="w-4 h-4 text-blue-400 opacity-0 group-hover/mission:opacity-100 mt-0.5 flex-shrink-0 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                              </li>
+                            ) : (
+                              <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
+                                <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>{mission}</span>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
 
@@ -187,6 +217,40 @@ export default function Experience() {
           </div>
         </div>
       </div>
+
+      {/* Modal image */}
+      {modalImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
+          onClick={() => setModalImage(null)}
+        >
+          <div
+            className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-3xl w-full overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-700">
+              <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 line-clamp-2 flex-1 pr-4">
+                {modalImage.label}
+              </p>
+              <button
+                onClick={() => setModalImage(null)}
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 dark:bg-slate-700 hover:bg-red-100 dark:hover:bg-red-900/30 hover:text-red-600 text-slate-600 dark:text-slate-300 transition-colors flex-shrink-0"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="p-4">
+              <img
+                src={modalImage.src}
+                alt={modalImage.label}
+                className="w-full h-auto rounded-xl object-contain max-h-[70vh]"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
