@@ -67,9 +67,11 @@ export default function Hero() {
             </div>
 
             {/* Description */}
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-blue-700 dark:border-indigo-700 pl-6 opacity-0 animate-slide-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
-              {t.hero.description}
-            </p>
+            {t.hero.description && (
+              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-blue-700 dark:border-indigo-700 pl-6 opacity-0 animate-slide-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+                {t.hero.description}
+              </p>
+            )}
 
             {/* Social links */}
             <div className="flex items-center gap-4 pt-2 opacity-0 animate-slide-up" style={{ animationDelay: '1.0s', animationFillMode: 'both' }}>

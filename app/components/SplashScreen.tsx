@@ -127,7 +127,7 @@ export default function SplashScreen({ onEnter }: SplashScreenProps) {
           <div className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-blue-400/20 bg-blue-500/5 backdrop-blur-sm">
             <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
             <span className="text-blue-300/80 text-sm font-medium tracking-[0.2em] uppercase">
-              Portfolio 2024 - 2025
+              Portfolio 2025 - 2026
             </span>
             <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
           </div>

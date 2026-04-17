@@ -16,8 +16,7 @@ export const fr = {
     badge: 'Bienvenue',
     greeting: 'Bonjour, je suis',
     subtitle: 'Etudiante en BTS SIO option SISR',
-    description:
-      "Actuellement etudiante en BTS SIO option SISR au Lycee Beaupeyrat, je developpe des competences en administration systeme et reseau, en gestion d'infrastructures informatiques et en maintenance de services afin d'assurer la securite et la continuite des systemes.",
+    description: '',
     findMe: 'Retrouvez-moi sur :',
     downloadCV: 'Télécharger mon CV',
     contact: 'Me contacter',
@@ -74,7 +73,7 @@ export const fr = {
       },
       {
         years: '',
-        tags: ['Passionnée'],
+        tags: [],
         degree: 'Option SLAM',
         option: '',
         school: '',
