@@ -56,7 +56,6 @@ export default function Competences() {
 
   const stats = [
     { value: `${t.competences.list.length}`, label: t.competences.skills },
-    { value: '86%', label: t.competences.avgLevel },
     { value: '3+', label: t.competences.experience },
     { value: '15+', label: t.competences.projects }
   ];
