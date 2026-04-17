@@ -177,6 +177,7 @@ export const fr = {
           'Créer des règles à implémenter sur le Pare-feu Fortinet',
           'Administrer la solution Bastion Wallix',
           'Mettre en œuvre et gérer des solutions de virtualisation',
+          "Réaliser un TP de déploiement et configuration de FortiManager, avec résolution d'un problème de proxy en environnement virtualisé",
         ],
         tags: ['Fortinet', 'Wallix', 'Sécurité', 'Virtualisation'],
         pdfPath: '/RAPPORT_STAGE2.pdf',
