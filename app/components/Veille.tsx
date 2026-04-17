@@ -28,7 +28,7 @@ export default function Veille() {
       </p>
       <div className="flex flex-col gap-3">
         <a
-          href="/Veille_Technologique_Supervision&Monitoring.pdf"
+          href="/Veille_Technologique_Supervision%26Monitoring.pdf"
           download
           className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors rounded-lg px-2 py-1"
         >
@@ -38,7 +38,7 @@ export default function Veille() {
           {t.veille.download}
         </a>
         <a
-          href="/Veille_Technologique_Supervision&Monitoring.pdf"
+          href="/Veille_Technologique_Supervision%26Monitoring.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-slate-700 dark:text-slate-200 font-semibold hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-700 dark:hover:text-blue-400 transition-colors rounded-lg px-2 py-1"
