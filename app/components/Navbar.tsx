@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="shrink-0">
             <Link
               href="/"
-              className="text-3xl font-bold bg-linear-to-r from-blue-800 to-indigo-900 bg-clip-text text-transparent hover:from-blue-900 hover:to-indigo-950 transition-all duration-500"
+              className="text-2xl font-extrabold gradient-text font-display hover:opacity-90 transition-all duration-300"
             >
               Danielle
             </Link>
@@ -57,11 +57,11 @@ export default function Navbar() {
                   }`}
                 >
                   {isActive && (
-                    <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-blue-800 rounded-full"></span>
+                    <span className="absolute -top-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-blue-500 rounded-full"></span>
                   )}
                   {item.name}
                   <span
-                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-linear-to-r from-blue-700 to-indigo-800 rounded-full transition-all duration-300 ${
+                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 bg-linear-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-300 ${
                       isActive ? 'w-3/4' : 'w-0 group-hover:w-3/4'
                     }`}
                   ></span>
@@ -89,7 +89,7 @@ export default function Navbar() {
             {/* Contact CTA */}
             <Link
               href="/contact"
-              className="ml-3 bg-linear-to-r from-blue-800 to-indigo-900 text-white px-7 py-2.5 rounded-full hover:shadow-lg hover:shadow-blue-900/25 hover:scale-105 transition-all duration-300 font-medium text-sm animate-glow-pulse"
+              className="ml-3 btn btn-primary btn-sm animate-glow-pulse"
             >
               {t.nav.contact}
             </Link>
@@ -143,8 +143,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`block px-4 py-3 rounded-xl transition-all duration-300 font-medium ${
                     isActive
-                      ? 'bg-linear-to-r from-blue-800/10 to-indigo-900/10 text-blue-800 dark:text-blue-400'
-                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50'
+                      ? 'bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/50'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                   style={{
@@ -157,7 +157,7 @@ export default function Navbar() {
             })}
             <Link
               href="/contact"
-              className="block px-4 py-3 bg-linear-to-r from-blue-800 to-indigo-900 text-white rounded-xl transition-all duration-300 font-medium text-center mt-3"
+              className="block px-4 py-3 btn btn-primary text-center mt-3"
               onClick={() => setIsMenuOpen(false)}
               style={{
                 animation: isMenuOpen ? `reveal-left 0.4s cubic-bezier(0.22, 1, 0.36, 1) ${t.nav.items.length * 60}ms both` : 'none',

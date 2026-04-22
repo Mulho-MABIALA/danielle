@@ -41,11 +41,11 @@ export default function Hero() {
 
               {/* Main heading */}
               <h1 className="opacity-0 animate-slide-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
-                <span className="block text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight">
+                <span className="block text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 dark:text-white leading-tight tracking-tight font-display">
                   {t.hero.greeting}
                 </span>
                 <span className="relative inline-block mt-2">
-                  <span className="text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] bg-linear-to-r from-blue-700 via-indigo-800 to-blue-900 dark:from-blue-300 dark:via-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+                  <span className="text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[0.9] gradient-text font-display">
                     Vhann Danielle
                   </span>
                   <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
@@ -61,14 +61,14 @@ export default function Hero() {
               </h1>
 
               {/* Subtitle */}
-              <p className="text-xl md:text-2xl font-medium text-slate-700 dark:text-slate-300 opacity-0 animate-slide-up" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+              <p className="text-lg md:text-xl font-medium text-slate-600 dark:text-slate-300 opacity-0 animate-slide-up font-display" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
                 {t.hero.subtitle}
               </p>
             </div>
 
             {/* Description */}
             {t.hero.description && (
-              <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed border-l-4 border-blue-700 dark:border-indigo-700 pl-6 opacity-0 animate-slide-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
+              <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 leading-relaxed border-l-[3px] border-blue-500/60 dark:border-blue-400/50 pl-5 opacity-0 animate-slide-up" style={{ animationDelay: '0.8s', animationFillMode: 'both' }}>
                 {t.hero.description}
               </p>
             )}
@@ -105,21 +105,16 @@ export default function Hero() {
               <button
                 type="button"
                 onClick={handleDownloadCV}
-                className="group relative bg-linear-to-r from-blue-800 to-indigo-900 text-white px-10 py-4 rounded-full hover:shadow-2xl hover:shadow-blue-800/30 hover:scale-105 transition-all duration-300 font-semibold flex items-center gap-3 overflow-hidden cursor-pointer"
+                className="btn btn-primary btn-lg cursor-pointer"
               >
-                <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                <span className="relative z-10">{t.hero.downloadCV}</span>
-              </button> 
+                {t.hero.downloadCV}
+              </button>
 
-              <Link
-                href="/contact"
-                className="relative border-2 border-blue-700 dark:border-indigo-700 text-slate-800 dark:text-slate-300 px-10 py-4 rounded-full overflow-hidden group transition-all duration-300 font-semibold hover:text-white dark:hover:text-white hover:shadow-xl"
-              >
-                <span className="absolute inset-0 bg-linear-to-r from-blue-800 to-indigo-900 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></span>
-                <span className="relative z-10">{t.hero.contact}</span>
+              <Link href="/contact" className="btn btn-outline btn-lg">
+                {t.hero.contact}
               </Link>
             </div>
           </div>
@@ -141,7 +136,7 @@ export default function Hero() {
               </div>
               <div className="absolute -bottom-4 -right-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 border-4 border-slate-100 dark:border-slate-700 animate-bounce-slow">
                 <div className="text-center">
-                  <p className="text-3xl font-bold bg-linear-to-r from-blue-800 to-indigo-900 bg-clip-text text-transparent">BTS</p>
+                  <p className="text-3xl font-bold gradient-text font-display">BTS</p>
                   <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">SIO SISR</p>
                 </div>
               </div>
