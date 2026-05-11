@@ -125,7 +125,7 @@ export default function Experience() {
                             return hasImage ? (
                               <li
                                 key={idx}
-                                onClick={() => setModalImage({ src: `/docker_mission_${idx + 1}.png`, label: mission                           }))}
+                                  onClick={() => setModalImage({ src: `/docker_mission_${idx + 1}.png`, label: mission })}
                                 className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-pointer group/mission hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg px-2 py-1 hover:bg-blue-50 dark:hover:bg-blue-900/20"
                               >
                                 <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 group-hover/mission:text-blue-600 mt-0.5 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@ export default function Experience() {
                             ) : (
                                 <li
 125:                                 key={idx}
-126:                                 onClick={() => setModalImage({ src: `/docker_mission_${idx + 1}.png`, label: mission                           }))}
+126:                                   onClick={() => setModalImage({ src: `/docker_mission_${idx + 1}.png`, label: mission })}
 127:                                 className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-pointer group/mission hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg px-2 py-1 hover:bg-blue-50 dark:hover:bg-blue-900/20"
                                 <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
