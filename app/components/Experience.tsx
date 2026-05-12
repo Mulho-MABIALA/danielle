@@ -15,6 +15,16 @@ export default function Experience() {
 
   const [modalImage, setModalImage] = useState<{ src: string; label: string } | null>(null);
 
+  // Images pour le stage DGFIP (index 0), dans l'ordre des missions
+  const dgfipMissionImages: Record<number, string> = {
+    0: '/mission_1.png',
+    1: '/mission_2.png',
+    2: '/mission_3.png',
+    3: '/mission_4.png',
+    4: '/mission_5.png',
+    5: '/mission_6.png',
+  };
+
   // Images pour le stage Lije-Technologies (index 1), dans l'ordre des missions
   const lijeDockerImages: Record<number, string> = {
     0: '/docker_mission_1.png',
@@ -61,6 +71,7 @@ export default function Experience() {
           <div className="space-y-12">
             {experiences.map((exp, index) => {
               const reveal = cardReveals[index];
+              const isDGFIPStage = index === 0;
               const isLijeStage = index === 1;
               return (
                 <div
@@ -120,7 +131,7 @@ export default function Experience() {
                         </h4>
                         <ul className="space-y-2">
                           {exp.missions.map((mission, idx) => {
-                            const imageSrc = isLijeStage ? lijeDockerImages[idx] : undefined;
+                            const imageSrc = isDGFIPStage ? dgfipMissionImages[idx] : isLijeStage ? lijeDockerImages[idx] : undefined;
                             return imageSrc ? (
                               <li
                                 key={idx}
