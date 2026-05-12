@@ -1,6 +1,6 @@
 'use client';
 
-    <section id="experiences" className="relative py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden">
+import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -15,17 +15,16 @@ export default function Experience() {
 
   const [modalImage, setModalImage] = useState<{ src: string; label: string } | null>(null);
 
-  const missionImages: Record<number, string> = {
-    0: '/mission_1.png',
-    1: '/mission_2.png',
-    2: '/mission_3.png',
-    3: '/mission_4.png',
-    4: '/mission_5.png',
-    5: '/mission_6.png',
+  // Images pour le stage Lije-Technologies (index 1), dans l'ordre des missions
+  const lijeDockerImages: Record<number, string> = {
+    0: '/docker_mission_1.png',
+    1: '/docker_mission_2.png',
+    2: '/docker_mission_3.png',
+    3: '/docker_mission_4.png',
   };
 
   const badgeClasses = ['bg-linear-to-r from-blue-800 to-indigo-900', 'bg-indigo-600', 'bg-indigo-700'];
-  const experiences = t.experiences.list.map((exp, i) => ({ ...exp, id: i + 1, badgeClass: badgeClasses[i] || 'bg-indigo-800'                           })));
+  const experiences = t.experiences.list.map((exp, i) => ({ ...exp, id: i + 1, badgeClass: badgeClasses[i] || 'bg-indigo-800' }));
 
   return (
     <section id="experiences" className="relative py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden">
@@ -62,6 +61,7 @@ export default function Experience() {
           <div className="space-y-12">
             {experiences.map((exp, index) => {
               const reveal = cardReveals[index];
+              const isLijeStage = index === 1;
               return (
                 <div
                   key={exp.id}
@@ -120,12 +120,11 @@ export default function Experience() {
                         </h4>
                         <ul className="space-y-2">
                           {exp.missions.map((mission, idx) => {
-                            const isFirstStage = index === 0;
-                            const hasImage = isFirstStage && missionImages[idx];
-                            return hasImage ? (
+                            const imageSrc = isLijeStage ? lijeDockerImages[idx] : undefined;
+                            return imageSrc ? (
                               <li
                                 key={idx}
-                                  onClick={() => setModalImage({ src: `/docker_mission_${idx + 1}.png`, label: mission })}
+                                onClick={() => setModalImage({ src: imageSrc, label: mission })}
                                 className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-pointer group/mission hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg px-2 py-1 hover:bg-blue-50 dark:hover:bg-blue-900/20"
                               >
                                 <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 group-hover/mission:text-blue-600 mt-0.5 flex-shrink-0 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -137,17 +136,14 @@ export default function Experience() {
                                 </svg>
                               </li>
                             ) : (
-                                <li
-125:                                 key={idx}
-126:                                   onClick={() => setModalImage({ src: `/docker_mission_${idx + 1}.png`, label: mission })}
-127:                                 className="flex items-start gap-3 text-slate-600 dark:text-slate-400 cursor-pointer group/mission hover:text-blue-700 dark:hover:text-blue-400 transition-colors duration-200 rounded-lg px-2 py-1 hover:bg-blue-50 dark:hover:bg-blue-900/20"
+                              <li key={idx} className="flex items-start gap-3 text-slate-600 dark:text-slate-400">
                                 <svg className="w-5 h-5 text-green-500 dark:text-indigo-400 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 <span>{mission}</span>
                               </li>
                             );
-                            ))}
+                          })}
                         </ul>
                       </div>
 
@@ -194,7 +190,7 @@ export default function Experience() {
                   </div>
                 </div>
               );
-                                      }))}
+            })}
           </div>
         </div>
 
